@@ -1,6 +1,6 @@
 @font-face {
   font-family: Opensans Variablefont Wdth Wght;
-  src: url('../images/') format("truetype");
+  src: url('../fonts/OpenSans-VariableFont_wdthwght.ttf') format("truetype");
   font-weight: 300 800;
   font-style: normal;
   font-display: swap;
@@ -4898,7 +4898,7 @@ strong {
 
 @font-face {
   font-family: 'Opensans Variablefont Wdth Wght';
-  src: url('../images/') format('truetype');
+  src: url('../fonts/OpenSans-VariableFont_wdthwght.ttf') format('truetype');
   font-weight: 300 800;
   font-style: normal;
   font-display: swap;
