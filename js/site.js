@@ -342,18 +342,40 @@
       }
     });
 
-    lightboxElements.forEach(function(el) {
-      el.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+    // Swiper с preventClicks блокирует click events на слайдах.
+    // Используем pointerup чтобы обойти это ограничение.
+    var pointerStartTarget = null;
+    var pointerStartPos = { x: 0, y: 0 };
 
-        if (el._lightboxGroup && groups[el._lightboxGroup]) {
-          openLightbox(groups[el._lightboxGroup], el._lightboxIndex);
-        } else if (el._lightboxItems) {
-          openLightbox(el._lightboxItems, 0);
-        }
-      });
-    });
+    document.addEventListener('pointerdown', function(e) {
+      var el = e.target.closest('.w-lightbox');
+      if (el) {
+        pointerStartTarget = el;
+        pointerStartPos = { x: e.clientX, y: e.clientY };
+      }
+    }, true);
+
+    document.addEventListener('pointerup', function(e) {
+      if (!pointerStartTarget) return;
+      var el = e.target.closest('.w-lightbox');
+      // Только если pointerup на том же элементе и не было перетаскивания
+      var dx = Math.abs(e.clientX - pointerStartPos.x);
+      var dy = Math.abs(e.clientY - pointerStartPos.y);
+      var wasDrag = dx > 10 || dy > 10;
+      var target = pointerStartTarget;
+      pointerStartTarget = null;
+
+      if (!el || el !== target || wasDrag) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (el._lightboxGroup && groups[el._lightboxGroup]) {
+        openLightbox(groups[el._lightboxGroup], el._lightboxIndex);
+      } else if (el._lightboxItems) {
+        openLightbox(el._lightboxItems, 0);
+      }
+    }, true);
   }
 
   // ─── W-BACKGROUND-VIDEO ───
