@@ -1097,9 +1097,7 @@ div[data-corners*="bottom-left"] {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
   }
   #custom-cursor {
     display: flex;
@@ -1109,8 +1107,12 @@ div[data-corners*="bottom-left"] {
     -webkit-backdrop-filter: blur(3px);
     border-radius: 1.35em;
     user-select: none;
-    transition: all var(--transition-function);
     z-index: 16;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s;
   }
   #custom-cursor svg {
     width: 1.04rem;

@@ -351,6 +351,54 @@
     });
   }
 
+  // ─── CUSTOM CURSOR (блок «Что мы еще делаем») ───
+
+  function initCustomCursor() {
+    const cursorWrapper = document.getElementById('cursor-wrapper');
+    const customCursor = document.getElementById('custom-cursor');
+    const linksContainer = document.getElementById('links-container');
+    if (!cursorWrapper || !customCursor || !linksContainer) return;
+
+    // Только для устройств с hover (не тач)
+    if (!window.matchMedia('(hover: hover)').matches) return;
+
+    let isInside = false;
+    let cursorX = 0, cursorY = 0;
+
+    // Скрыть курсор изначально
+    customCursor.style.opacity = '0';
+    customCursor.style.position = 'fixed';
+    customCursor.style.pointerEvents = 'none';
+    customCursor.style.transform = 'translate(-50%, -50%)';
+    customCursor.style.transition = 'opacity 0.2s';
+
+    // Убрать flex-центровку у wrapper (позиционируем вручную)
+    cursorWrapper.style.display = 'block';
+    cursorWrapper.style.alignItems = '';
+    cursorWrapper.style.justifyContent = '';
+
+    document.addEventListener('mousemove', (e) => {
+      cursorX = e.clientX;
+      cursorY = e.clientY;
+      if (isInside) {
+        customCursor.style.left = cursorX + 'px';
+        customCursor.style.top = cursorY + 'px';
+      }
+    });
+
+    linksContainer.addEventListener('mouseenter', () => {
+      isInside = true;
+      customCursor.style.opacity = '1';
+      customCursor.style.left = cursorX + 'px';
+      customCursor.style.top = cursorY + 'px';
+    });
+
+    linksContainer.addEventListener('mouseleave', () => {
+      isInside = false;
+      customCursor.style.opacity = '0';
+    });
+  }
+
   // ─── Инициализация ───
 
   function init() {
@@ -360,6 +408,7 @@
     initLightbox();
     initBackgroundVideo();
     initCurrentLinks();
+    initCustomCursor();
   }
 
   if (document.readyState === 'loading') {
