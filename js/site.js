@@ -165,18 +165,18 @@
 
     function createOverlay() {
       overlay = document.createElement('div');
-      overlay.className = 'w-lightbox-overlay';
+      overlay.className = 'site-lb-overlay';
       overlay.innerHTML = `
-        <div class="w-lightbox-backdrop"></div>
-        <div class="w-lightbox-container">
-          <div class="w-lightbox-content">
-            <div class="w-lightbox-view">
-              <img class="w-lightbox-img" src="" alt="">
+        <div class="site-lb-backdrop"></div>
+        <div class="site-lb-container">
+          <div class="site-lb-content">
+            <div class="site-lb-view">
+              <img class="site-lb-img" src="" alt="">
             </div>
-            <div class="w-lightbox-control w-lightbox-left"></div>
-            <div class="w-lightbox-control w-lightbox-right"></div>
-            <div class="w-lightbox-close"></div>
-            <div class="w-lightbox-counter"></div>
+            <div class="site-lb-control site-lb-left"></div>
+            <div class="site-lb-control site-lb-right"></div>
+            <div class="site-lb-close"></div>
+            <div class="site-lb-counter"></div>
           </div>
         </div>
       `;
@@ -184,74 +184,74 @@
 
       var style = document.createElement('style');
       style.textContent = `
-        .w-lightbox-overlay {
+        .site-lb-overlay {
           position: fixed; inset: 0; z-index: 10000;
           display: flex; align-items: center; justify-content: center;
           opacity: 0; transition: opacity 0.3s;
           pointer-events: none;
         }
-        .w-lightbox-overlay.w--open {
+        .site-lb-overlay.w--open {
           opacity: 1; pointer-events: auto;
         }
-        .w-lightbox-backdrop {
+        .site-lb-backdrop {
           position: absolute; inset: 0;
           background: rgba(0,0,0,0.9);
         }
-        .w-lightbox-container {
+        .site-lb-container {
           position: relative; z-index: 1;
           max-width: 90vw; max-height: 90vh;
         }
-        .w-lightbox-content {
+        .site-lb-content {
           position: relative;
         }
-        .w-lightbox-img {
+        .site-lb-img {
           max-width: 90vw; max-height: 90vh;
           object-fit: contain; display: block;
         }
-        .w-lightbox-close {
+        .site-lb-close {
           position: absolute; top: -40px; right: 0;
           width: 32px; height: 32px; cursor: pointer;
         }
-        .w-lightbox-close::before, .w-lightbox-close::after {
+        .site-lb-close::before, .site-lb-close::after {
           content: ''; position: absolute;
           top: 50%; left: 50%;
           width: 24px; height: 2px;
           background: white;
         }
-        .w-lightbox-close::before { transform: translate(-50%, -50%) rotate(45deg); }
-        .w-lightbox-close::after { transform: translate(-50%, -50%) rotate(-45deg); }
-        .w-lightbox-control {
+        .site-lb-close::before { transform: translate(-50%, -50%) rotate(45deg); }
+        .site-lb-close::after { transform: translate(-50%, -50%) rotate(-45deg); }
+        .site-lb-control {
           position: absolute; top: 50%; width: 48px; height: 48px;
           cursor: pointer; transform: translateY(-50%);
         }
-        .w-lightbox-control::after {
+        .site-lb-control::after {
           content: ''; position: absolute;
           top: 50%; left: 50%;
           width: 16px; height: 16px;
           border: 2px solid white;
           border-top: none; border-right: none;
         }
-        .w-lightbox-left { left: -60px; }
-        .w-lightbox-left::after { transform: translate(-30%, -50%) rotate(45deg); }
-        .w-lightbox-right { right: -60px; }
-        .w-lightbox-right::after { transform: translate(-70%, -50%) rotate(-135deg); }
-        .w-lightbox-counter {
+        .site-lb-left { left: -60px; }
+        .site-lb-left::after { transform: translate(-30%, -50%) rotate(45deg); }
+        .site-lb-right { right: -60px; }
+        .site-lb-right::after { transform: translate(-70%, -50%) rotate(-135deg); }
+        .site-lb-counter {
           position: absolute; bottom: -32px; left: 50%;
           transform: translateX(-50%);
           color: rgba(255,255,255,0.6); font-size: 14px;
         }
         @media (max-width: 768px) {
-          .w-lightbox-left { left: 8px; }
-          .w-lightbox-right { right: 8px; }
-          .w-lightbox-close { top: 8px; right: 8px; }
+          .site-lb-left { left: 8px; }
+          .site-lb-right { right: 8px; }
+          .site-lb-close { top: 8px; right: 8px; }
         }
       `;
       document.head.appendChild(style);
 
-      overlay.querySelector('.w-lightbox-backdrop').addEventListener('click', closeLightbox);
-      overlay.querySelector('.w-lightbox-close').addEventListener('click', closeLightbox);
-      overlay.querySelector('.w-lightbox-left').addEventListener('click', function() { navigateLightbox(-1); });
-      overlay.querySelector('.w-lightbox-right').addEventListener('click', function() { navigateLightbox(1); });
+      overlay.querySelector('.site-lb-backdrop').addEventListener('click', closeLightbox);
+      overlay.querySelector('.site-lb-close').addEventListener('click', closeLightbox);
+      overlay.querySelector('.site-lb-left').addEventListener('click', function() { navigateLightbox(-1); });
+      overlay.querySelector('.site-lb-right').addEventListener('click', function() { navigateLightbox(1); });
 
       // Свайп на мобильных
       var touchStartX = 0;
@@ -300,13 +300,13 @@
     function showItem(index) {
       if (!overlay || !currentItems.length) return;
       var item = currentItems[index];
-      var img = overlay.querySelector('.w-lightbox-img');
+      var img = overlay.querySelector('.site-lb-img');
       img.src = getLocalSrc(item);
 
       var hasMultiple = currentItems.length > 1;
-      overlay.querySelector('.w-lightbox-left').style.display = hasMultiple ? '' : 'none';
-      overlay.querySelector('.w-lightbox-right').style.display = hasMultiple ? '' : 'none';
-      overlay.querySelector('.w-lightbox-counter').textContent = hasMultiple
+      overlay.querySelector('.site-lb-left').style.display = hasMultiple ? '' : 'none';
+      overlay.querySelector('.site-lb-right').style.display = hasMultiple ? '' : 'none';
+      overlay.querySelector('.site-lb-counter').textContent = hasMultiple
         ? (index + 1) + ' / ' + currentItems.length : '';
     }
 
@@ -342,40 +342,19 @@
       }
     });
 
-    // Swiper с preventClicks блокирует click events на слайдах.
-    // Используем pointerup чтобы обойти это ограничение.
-    var pointerStartTarget = null;
-    var pointerStartPos = { x: 0, y: 0 };
-
-    document.addEventListener('pointerdown', function(e) {
+    // Клик на лайтбокс — делегирование на document
+    document.addEventListener('click', function(e) {
       var el = e.target.closest('.w-lightbox');
-      if (el) {
-        pointerStartTarget = el;
-        pointerStartPos = { x: e.clientX, y: e.clientY };
-      }
-    }, true);
-
-    document.addEventListener('pointerup', function(e) {
-      if (!pointerStartTarget) return;
-      var el = e.target.closest('.w-lightbox');
-      // Только если pointerup на том же элементе и не было перетаскивания
-      var dx = Math.abs(e.clientX - pointerStartPos.x);
-      var dy = Math.abs(e.clientY - pointerStartPos.y);
-      var wasDrag = dx > 10 || dy > 10;
-      var target = pointerStartTarget;
-      pointerStartTarget = null;
-
-      if (!el || el !== target || wasDrag) return;
+      if (!el) return;
 
       e.preventDefault();
-      e.stopPropagation();
 
       if (el._lightboxGroup && groups[el._lightboxGroup]) {
         openLightbox(groups[el._lightboxGroup], el._lightboxIndex);
       } else if (el._lightboxItems) {
         openLightbox(el._lightboxItems, 0);
       }
-    }, true);
+    });
   }
 
   // ─── W-BACKGROUND-VIDEO ───

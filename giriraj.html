@@ -704,6 +704,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("header");
   const menuButton = document.getElementById("header-button");
+  if (!menuButton) return;
   const headerNav = document.getElementById("header-nav");
   const langSwitcher = document.getElementById("lang-switcher");
   let clickCount = 0;
@@ -804,6 +805,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <script>
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
     let lastScrollTop = 0;
     const offset = 20; 
     window.addEventListener('scroll', () => {
@@ -825,6 +827,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <script>
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar2');
+    if (!navbar) return;
     let lastScrollTop = 0;
     const offset = 20; 
     window.addEventListener('scroll', () => {
@@ -847,7 +850,9 @@ document.addEventListener('DOMContentLoaded', () => {
 var mySwiper = new Swiper ('#basic-swiper', {
  	slidesPerView: 3.3,
   slidesPerGroup: 1,
-  grabCursor:true,
+  grabCursor: true,
+  preventClicks: false,
+  preventClicksPropagation: false,
   speed: 400,
   a11y: true,
   spaceBetween: 42,
@@ -884,7 +889,9 @@ var mySwiper = new Swiper ('#basic-swiper', {
 var mySwiper = new Swiper ('#basic-swiper2', {
  	slidesPerView: 3.3,
   slidesPerGroup: 1,
-  grabCursor:true,
+  grabCursor: true,
+  preventClicks: false,
+  preventClicksPropagation: false,
   speed: 400,
   a11y: true,
   spaceBetween: 42,
