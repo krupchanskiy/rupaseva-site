@@ -274,12 +274,12 @@
     var currentItems = [];
     var currentIndex = 0;
 
-    // Получить локальный путь из URL или fileName
+    // Получить src для лайтбокса — берём из img элемента или из JSON
     function getLocalSrc(item) {
-      // Определяем базовый путь относительно текущей страницы
-      var depth = window.location.pathname.split('/').filter(Boolean).length;
-      var prefix = depth > 1 ? '../images/' : 'images/';
-      return prefix + item.fileName;
+      // Если при сборе группы сохранили src из img — используем его
+      if (item._localSrc) return item._localSrc;
+      // Fallback — fileName из JSON
+      return 'images/' + item.fileName;
     }
 
     function openLightbox(items, index) {
@@ -326,6 +326,13 @@
         var data = JSON.parse(jsonEl.textContent);
         if (!data.items || !data.items.length) return;
 
+        // Сохраняем src из img элемента — он уже содержит правильный относительный путь
+        var imgEl = el.querySelector('img');
+        var localSrc = imgEl ? imgEl.getAttribute('src') : null;
+        if (localSrc) {
+          data.items[0]._localSrc = localSrc;
+        }
+
         var groupName = data.group || '';
         if (groupName) {
           if (!groups[groupName]) groups[groupName] = [];
@@ -334,7 +341,6 @@
           el._lightboxGroup = groupName;
           el._lightboxIndex = groupIndex;
         } else {
-          // Без группы — одиночное фото
           el._lightboxItems = data.items;
         }
       } catch (err) {
