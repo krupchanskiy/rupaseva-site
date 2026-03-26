@@ -153,32 +153,7 @@ color: #fff;}
         color: unset;}
         .lang_btn:hover { color: #fff !important;}
         </style>
-      <script>
-        let lastScrollTop = 0;
-        const navCover = document.querySelector('.nav-cover');
-        window.addEventListener('scroll', () => {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Скроллим вниз, скрываем элемент
-                navCover.style.transform = 'translateY(-100%)';
-                navCover.classList.remove('scrolled-up', 'starting');
-            } else {
-                // Скроллим вверх
-                navCover.style.transform = 'translateY(0)';
-                // Если скролл между 100 и 200 пикселями, меняем фон
-                if (scrollTop > 100 && scrollTop <= 200) {
-                    navCover.classList.add('starting');
-                    navCover.classList.remove('scrolled-up');
-                } else if (scrollTop <= 100) {
-                    navCover.classList.remove('scrolled-up', 'starting');
-                } else {
-                    navCover.classList.add('scrolled-up');
-                    navCover.classList.remove('starting');
-                }
-            }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Для мобильных устройств.
-        });
-    </script>
+      
     </div>
   </div>
   <div id="hero" class="section inner-cover"><img sizes="100vw" srcset="../images/ghheader3-p-500.jpeg 500w, ../images/ghheader3-p-800.jpeg 800w, ../images/ghheader3.jpeg 1080w, ../images/ghheader3.jpeg 1600w, ../,images/ghheader3.jpeg 2000w, ../, ../, ../images/ghheader3.jpeg 4032w" alt="" src="../images/ghheader3.jpeg" loading="lazy" class="s-cover">
@@ -603,23 +578,13 @@ color: #fff;}
         <div class="text---20px caption">© Sri Rupa Seva Kunj</div>
       </div>
     </div>
-  </footer>  <script src="../js/site.js"></script>
+  </footer>    <script src="../js/common.js"></script>
+  <script src="../js/site.js"></script>
   <script defer="" src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js" integrity="sha384-o3Jw8w4GQVg4a7wdJn3EY6OiObjk4e3VFa1VF4fEtDoIWnmdXuM1CkjpBS4zSKvU" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav" crossorigin="anonymous"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
-  <script>
-// General
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
-  const lenis = new Lenis();
-  lenis.on("scroll", ScrollTrigger.update);
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-  gsap.ticker.lagSmoothing(0);
-});
-</script>
+  
   <script>
         function playVideo(video) {
             if (video.paused) {
@@ -745,50 +710,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
-    let lastScrollTop = 0;
-    const offset = 20; 
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        // Проверяем, насколько изменилось положение скролла
-        if (Math.abs(scrollTop - lastScrollTop) > offset) {
-            if (scrollTop > lastScrollTop) {
-                // Скроллим вниз, скрываем меню
-                navbar.classList.remove('active');
-            } else {
-                // Скроллим вверх, показываем меню
-                navbar.classList.add('active');
-            }
-            lastScrollTop = scrollTop;
-        }
-    });
-});
-  </script>
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.querySelector('.navbar2');
-    if (!navbar) return;
-    let lastScrollTop = 0;
-    const offset = 20; 
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        // Проверяем, насколько изменилось положение скролла
-        if (Math.abs(scrollTop - lastScrollTop) > offset) {
-            if (scrollTop > lastScrollTop) {
-                // Скроллим вниз, скрываем меню
-                navbar.classList.remove('active');
-            } else {
-                // Скроллим вверх, показываем меню
-                navbar.classList.add('active');
-            }
-            lastScrollTop = scrollTop;
-        }
-    });
-});
-</script>
+  
+  
   <script>
 var mySwiper = new Swiper ('#basic-swiper', {
  	slidesPerView: 3.3,
