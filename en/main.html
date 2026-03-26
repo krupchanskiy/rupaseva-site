@@ -1712,28 +1712,26 @@ document.addEventListener('DOMContentLoaded', () => {
   <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script>
-$(document).ready(function () {
-    // Получаем текущую дату
+document.addEventListener('DOMContentLoaded', function () {
     var today = new Date();
-    // Выбираем все элементы коллекции с классом .swiper-slide
-    var $events = $('.swiper-slide');
-    // Фильтруем и сортируем элементы
-    var upcomingEvents = $events.filter(function () {
-        // Извлекаем дату из атрибута datetime первого тега <time>
-        var eventDate = new Date($(this).find('time').first().attr('datetime'));
-        // Оставляем только будущие мероприятия
-        return eventDate >= today;
-    }).sort(function (a, b) {
-        // Сортируем по возрастанию даты (старейшие сначала)
-        var dateA = new Date($(a).find('time').first().attr('datetime'));
-        var dateB = new Date($(b).find('time').first().attr('datetime'));
-        return dateA - dateB;
+    var wrapper = document.querySelector('.swiper-wrapper');
+    if (!wrapper) return;
+    var slides = Array.from(wrapper.querySelectorAll('.swiper-slide'));
+    var upcoming = slides.filter(function (el) {
+        var time = el.querySelector('time');
+        if (!time) return false;
+        return new Date(time.getAttribute('datetime')) >= today;
     });
-    // Перемещаем отсортированные элементы обратно в контейнер
-    $('.swiper-wrapper').html(upcomingEvents);
-    // Если нет предстоящих событий, можно добавить сообщение
-    if (upcomingEvents.length === 0) {
-        $('.swiper-wrapper').html('<p>Нет предстоящих мероприятий</p>');
+    upcoming.sort(function (a, b) {
+        var dA = new Date(a.querySelector('time').getAttribute('datetime'));
+        var dB = new Date(b.querySelector('time').getAttribute('datetime'));
+        return dA - dB;
+    });
+    wrapper.innerHTML = '';
+    if (upcoming.length === 0) {
+        wrapper.innerHTML = '<p>No upcoming events</p>';
+    } else {
+        upcoming.forEach(function (el) { wrapper.appendChild(el); });
     }
 });
 </script>

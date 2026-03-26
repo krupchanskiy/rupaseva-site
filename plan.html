@@ -681,8 +681,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
-  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
   <script>
-$( "div.srsk-map-wrapper" ).scrollLeft( 150 );
+document.addEventListener('DOMContentLoaded', function () {
+    var map = document.querySelector('div.srsk-map-wrapper');
+    if (map) map.scrollLeft = 150;
+});
 </script>
 </head></html>
