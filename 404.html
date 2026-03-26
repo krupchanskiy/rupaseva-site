@@ -1,0 +1,222 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Mar 26 2026 06:34:59 GMT+0000 (Coordinated Universal Time)  -->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Not Found</title>
+  <meta content="Not Found" property="og:title">
+  <meta content="Not Found" property="twitter:title">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <meta content="width=device-width, initial-scale=1" name="viewport">  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/srsk-v2.webflow.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-60KQDJS8PJ"></script>
+  <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('js', new Date());gtag('config', 'G-60KQDJS8PJ');</script>
+  <style>
+html.lenis {
+  height: auto;
+}
+</style>
+  <style>
+.navbar, .navbar2{
+transform: translateY(-100%);
+}
+.navbar.active,
+  .navbar2.active {
+    transform: translateY(0);
+}
+</style>
+</head>
+<body>
+  <div class="utility-page-wrap">
+    <div class="utility-page-content"><img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22/%3E" alt="">
+      <h2>Page Not Found</h2>
+      <div>The page you are looking for doesn&#x27;t exist or has been moved</div>
+    </div>
+  </div>  <script src="js/site.js"></script>
+  <script defer="" src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script>
+// General
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const lenis = new Lenis();
+  lenis.on("scroll", ScrollTrigger.update);
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
+});
+</script>
+  <script>
+        function playVideo(video) {
+            if (video.paused) {
+                video.play();
+            }
+        }
+        document.querySelectorAll('.video-element').forEach(element => {
+            const video = element.querySelector('video');
+            element.addEventListener('mouseover', () => playVideo(video));
+            element.addEventListener('touchstart', () => playVideo(video));
+                        element.addEventListener('mouseout', () => {
+                if (!video.paused) {
+                    video.pause();
+                }
+            });
+            element.addEventListener('touchend', () => {
+                if (!video.paused) {
+                    video.pause();
+                }
+            });
+        });
+    </script>
+  <script>
+  /* nav*/
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("header");
+  const menuButton = document.getElementById("header-button");
+  const headerNav = document.getElementById("header-nav");
+  const langSwitcher = document.getElementById("lang-switcher");
+  let clickCount = 0;
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" || event.key === "Esc") {
+      if (header.classList.contains("opened")) {
+        closeMenu();
+      }
+    }
+  });
+  menuButton.addEventListener("click", function () {
+    clickCount++;
+    if (clickCount % 2 === 1) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
+  function openMenu() {
+    menuButton.classList.add("open");
+    headerNav.style.display = "flex";
+    langSwitcher.style.display = "flex";
+    document.body.style.overflow = "hidden";
+    setTimeout(function () {
+      header.classList.add("opened");
+    }, 10);
+    menuButton.setAttribute("aria-expanded", "true");
+  }
+  function closeMenu() {
+    menuButton.classList.remove("open");
+    header.classList.remove("opened");
+    document.body.style.overflow = "";
+    setTimeout(function () {
+      headerNav.style.display = "none";
+      langSwitcher.style.display = "none";
+    }, 600);
+    menuButton.setAttribute("aria-expanded", "false");
+  }
+  let lastScrollY = 0;
+  const vh = window.innerHeight * 0.24;
+  const scrollThreshold = 20;
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY < window.innerHeight * 0.05) {
+      header.classList.remove("scrolled", "hidden");
+    } else if (currentScrollY < vh) {
+      if (Math.abs(currentScrollY - lastScrollY) > scrollThreshold) {
+        if (currentScrollY > lastScrollY) {
+          header.classList.add("hidden");
+        } else {
+          header.classList.remove("hidden");
+        }
+        lastScrollY = currentScrollY;
+      }
+    } else {
+      header.classList.add("scrolled");
+      if (Math.abs(currentScrollY - lastScrollY) > scrollThreshold) {
+        if (currentScrollY > lastScrollY) {
+          header.classList.add("hidden");
+        } else {
+          header.classList.remove("hidden");
+        }
+        lastScrollY = currentScrollY;
+      }
+    }
+  });
+  const links = document.querySelectorAll("a");
+  const currentUrl = window.location.pathname;
+  links.forEach(function (link) {
+    const href = link.getAttribute("href");
+    if (href && href === currentUrl) {
+      link.classList.add("inactive");
+      link.setAttribute("aria-current", "page");
+    }
+  });
+  const langSwitcherEn = document.getElementById("switch-to-en");
+  const langSwitcherRu = document.getElementById("switch-to-ru");
+  const currentPath = window.location.pathname;
+  if (!langSwitcherEn || !langSwitcherRu) {
+    return;
+  }
+  const isEnglish = currentPath.startsWith("/en");
+  let newPath;
+  if (isEnglish) {
+    langSwitcherEn.classList.add("inactive");
+    langSwitcherEn.setAttribute("aria-current", "page");
+    newPath = currentPath.replace("/en", "");
+    if (newPath === "") newPath = "/";
+    langSwitcherRu.href = newPath;
+  } else {
+    langSwitcherRu.classList.add("inactive");
+    langSwitcherRu.setAttribute("aria-current", "page");
+    newPath = "/en" + currentPath;
+    langSwitcherEn.href = newPath;
+  }
+});
+</script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    let lastScrollTop = 0;
+    const offset = 20; 
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // Проверяем, насколько изменилось положение скролла
+        if (Math.abs(scrollTop - lastScrollTop) > offset) {
+            if (scrollTop > lastScrollTop) {
+                // Скроллим вниз, скрываем меню
+                navbar.classList.remove('active');
+            } else {
+                // Скроллим вверх, показываем меню
+                navbar.classList.add('active');
+            }
+            lastScrollTop = scrollTop;
+        }
+    });
+});
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar2');
+    let lastScrollTop = 0;
+    const offset = 20; 
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // Проверяем, насколько изменилось положение скролла
+        if (Math.abs(scrollTop - lastScrollTop) > offset) {
+            if (scrollTop > lastScrollTop) {
+                // Скроллим вниз, скрываем меню
+                navbar.classList.remove('active');
+            } else {
+                // Скроллим вверх, показываем меню
+                navbar.classList.add('active');
+            }
+            lastScrollTop = scrollTop;
+        }
+    });
+});
+</script>
+</body>
+</html>
