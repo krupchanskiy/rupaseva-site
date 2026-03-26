@@ -176,13 +176,13 @@
             <div class="w-lightbox-control w-lightbox-left"></div>
             <div class="w-lightbox-control w-lightbox-right"></div>
             <div class="w-lightbox-close"></div>
+            <div class="w-lightbox-counter"></div>
           </div>
         </div>
       `;
       document.body.appendChild(overlay);
 
-      // Стили для лайтбокса
-      const style = document.createElement('style');
+      var style = document.createElement('style');
       style.textContent = `
         .w-lightbox-overlay {
           position: fixed; inset: 0; z-index: 10000;
@@ -235,6 +235,11 @@
         .w-lightbox-left::after { transform: translate(-30%, -50%) rotate(45deg); }
         .w-lightbox-right { right: -60px; }
         .w-lightbox-right::after { transform: translate(-70%, -50%) rotate(-135deg); }
+        .w-lightbox-counter {
+          position: absolute; bottom: -32px; left: 50%;
+          transform: translateX(-50%);
+          color: rgba(255,255,255,0.6); font-size: 14px;
+        }
         @media (max-width: 768px) {
           .w-lightbox-left { left: 8px; }
           .w-lightbox-right { right: 8px; }
@@ -243,14 +248,21 @@
       `;
       document.head.appendChild(style);
 
-      // Обработчики
       overlay.querySelector('.w-lightbox-backdrop').addEventListener('click', closeLightbox);
       overlay.querySelector('.w-lightbox-close').addEventListener('click', closeLightbox);
-      overlay.querySelector('.w-lightbox-left').addEventListener('click', () => navigateLightbox(-1));
-      overlay.querySelector('.w-lightbox-right').addEventListener('click', () => navigateLightbox(1));
+      overlay.querySelector('.w-lightbox-left').addEventListener('click', function() { navigateLightbox(-1); });
+      overlay.querySelector('.w-lightbox-right').addEventListener('click', function() { navigateLightbox(1); });
 
-      document.addEventListener('keydown', (e) => {
-        if (!overlay.classList.contains('w--open')) return;
+      // Свайп на мобильных
+      var touchStartX = 0;
+      overlay.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; });
+      overlay.addEventListener('touchend', function(e) {
+        var diff = e.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(diff) > 50) navigateLightbox(diff > 0 ? -1 : 1);
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (!overlay || !overlay.classList.contains('w--open')) return;
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowLeft') navigateLightbox(-1);
         if (e.key === 'ArrowRight') navigateLightbox(1);
@@ -259,8 +271,16 @@
       return overlay;
     }
 
-    let currentItems = [];
-    let currentIndex = 0;
+    var currentItems = [];
+    var currentIndex = 0;
+
+    // Получить локальный путь из URL или fileName
+    function getLocalSrc(item) {
+      // Определяем базовый путь относительно текущей страницы
+      var depth = window.location.pathname.split('/').filter(Boolean).length;
+      var prefix = depth > 1 ? '../images/' : 'images/';
+      return prefix + item.fileName;
+    }
 
     function openLightbox(items, index) {
       if (!overlay) createOverlay();
@@ -279,17 +299,15 @@
 
     function showItem(index) {
       if (!overlay || !currentItems.length) return;
-      const item = currentItems[index];
-      const img = overlay.querySelector('.w-lightbox-img');
-      // Используем локальный путь вместо CDN
-      const src = item.url && item.url.includes('website-files.com')
-        ? 'images/' + item.fileName
-        : (item.url || 'images/' + item.fileName);
-      img.src = src;
+      var item = currentItems[index];
+      var img = overlay.querySelector('.w-lightbox-img');
+      img.src = getLocalSrc(item);
 
-      // Показать/скрыть стрелки
-      overlay.querySelector('.w-lightbox-left').style.display = currentItems.length > 1 ? '' : 'none';
-      overlay.querySelector('.w-lightbox-right').style.display = currentItems.length > 1 ? '' : 'none';
+      var hasMultiple = currentItems.length > 1;
+      overlay.querySelector('.w-lightbox-left').style.display = hasMultiple ? '' : 'none';
+      overlay.querySelector('.w-lightbox-right').style.display = hasMultiple ? '' : 'none';
+      overlay.querySelector('.w-lightbox-counter').textContent = hasMultiple
+        ? (index + 1) + ' / ' + currentItems.length : '';
     }
 
     function navigateLightbox(dir) {
@@ -297,19 +315,42 @@
       showItem(currentIndex);
     }
 
-    // Привязать к элементам w-lightbox
-    document.querySelectorAll('.w-lightbox').forEach(el => {
-      el.addEventListener('click', (e) => {
+    // Собрать группы: все lightbox-элементы с одинаковой group объединяются
+    var groups = {};
+    var lightboxElements = document.querySelectorAll('.w-lightbox');
+
+    lightboxElements.forEach(function(el) {
+      var jsonEl = el.querySelector('.w-json');
+      if (!jsonEl) return;
+      try {
+        var data = JSON.parse(jsonEl.textContent);
+        if (!data.items || !data.items.length) return;
+
+        var groupName = data.group || '';
+        if (groupName) {
+          if (!groups[groupName]) groups[groupName] = [];
+          var groupIndex = groups[groupName].length;
+          data.items.forEach(function(item) { groups[groupName].push(item); });
+          el._lightboxGroup = groupName;
+          el._lightboxIndex = groupIndex;
+        } else {
+          // Без группы — одиночное фото
+          el._lightboxItems = data.items;
+        }
+      } catch (err) {
+        // ignore
+      }
+    });
+
+    lightboxElements.forEach(function(el) {
+      el.addEventListener('click', function(e) {
         e.preventDefault();
-        const jsonEl = el.querySelector('.w-json');
-        if (!jsonEl) return;
-        try {
-          const data = JSON.parse(jsonEl.textContent);
-          if (data.items && data.items.length) {
-            openLightbox(data.items, 0);
-          }
-        } catch (err) {
-          console.warn('Lightbox: ошибка парсинга JSON', err);
+        e.stopPropagation();
+
+        if (el._lightboxGroup && groups[el._lightboxGroup]) {
+          openLightbox(groups[el._lightboxGroup], el._lightboxIndex);
+        } else if (el._lightboxItems) {
+          openLightbox(el._lightboxItems, 0);
         }
       });
     });
