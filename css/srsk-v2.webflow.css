@@ -101,9 +101,14 @@ strong {
 }
 
 .section {
+  padding-block: 100px;
   padding-left: 5%;
   padding-right: 5%;
   position: relative;
+}
+
+.section[data-without-padding-block] {
+  padding-block: 0;
 }
 
 .section.hidden {
