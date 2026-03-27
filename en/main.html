@@ -218,21 +218,7 @@ color: #fff;}
       </div>
       <div class="swiper w-dyn-list">
         <div role="list" class="swiper-wrapper w-dyn-items">
-          <div role="listitem" class="swiper-slide w-dyn-item">
-            <article class="card event-card">
-              <h3 class="h-3">
-                <a href="#" class="card-link"></a>
-              </h3>
-              <p><time datetime=""><span class="w-dyn-bind-empty"></span><span class="w-dyn-bind-empty"></span></time><time datetime=""><span class="w-dyn-bind-empty"></span><span class="w-dyn-bind-empty"></span></time></p>
-              <div data-event="speakers" class="_0-8-rem opacity-60 w-dyn-bind-empty w-richtext"></div>
-              <div data-corners=""><img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22/%3E" alt="" class="w-dyn-bind-empty">
-                <div data-event="banner" class="w-dyn-bind-empty w-richtext"></div>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class="w-dyn-empty">
-          <div>No items found.</div>
+          <!-- Карточки загружаются из Supabase через js/retreats.js -->
         </div>
       </div>
       <div class="padding---100px"></div>
@@ -1634,83 +1620,10 @@ document.addEventListener("DOMContentLoaded", () => {
   <script defer="" src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js" integrity="sha384-o3Jw8w4GQVg4a7wdJn3EY6OiObjk4e3VFa1VF4fEtDoIWnmdXuM1CkjpBS4zSKvU" crossorigin="anonymous"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-    var today = new Date();
-    var wrapper = document.querySelector('.swiper-wrapper');
-    if (!wrapper) return;
-    var slides = Array.from(wrapper.querySelectorAll('.swiper-slide'));
-    var upcoming = slides.filter(function (el) {
-        var time = el.querySelector('time');
-        if (!time) return false;
-        return new Date(time.getAttribute('datetime')) >= today;
-    });
-    upcoming.sort(function (a, b) {
-        var dA = new Date(a.querySelector('time').getAttribute('datetime'));
-        var dB = new Date(b.querySelector('time').getAttribute('datetime'));
-        return dA - dB;
-    });
-    wrapper.innerHTML = '';
-    if (upcoming.length === 0) {
-        wrapper.innerHTML = '<p>No upcoming events</p>';
-    } else {
-        upcoming.forEach(function (el) { wrapper.appendChild(el); });
-    }
-});
-</script>
+  <script src="../js/retreats.js"></script>
   <script>
 // General
 document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper(".swiper", {
-    speed: 400,
-    a11y: true,
-    slidesPerView: 1.2,
-    spaceBetween: 18,
-    breakpoints: {
-      400: {
-        slidesPerView: 1.5,
-      },
-      480: {
-        slidesPerView: 1.8,
-      },
-      540: {
-        slidesPerView: 2.1,
-      },
-      630: {
-        slidesPerView: 2.4,
-      },
-      780: {
-        slidesPerView: 2,
-      },
-      840: {
-        slidesPerView: 2,
-      },
-      1280: {
-        slidesPerView: 2,
-        spaceBetween: 24,
-      },
-      1720: {
-        slidesPerView: 2,
-        spaceBetween: 27,
-      },
-    },
-    navigation: {
-      nextEl: "#swiper_button__next",
-      prevEl: "#swiper_button__prev",
-    },
-  });
-  if (window.innerWidth > 1279) {
-    const dataCornersElement = document.querySelector(
-      ".event-card [data-corners]"
-    );
-    if (dataCornersElement) {
-      const height = dataCornersElement.offsetHeight;
-      const eventsTitleElement = document.getElementById("events-title");
-      if (eventsTitleElement) {
-        eventsTitleElement.style.height = height + "px";
-      }
-    }
-  }
   if (window.innerWidth >= 768) {
     const projectElements = document.querySelectorAll("[data-project]");
     const triggerElement = document.getElementById("projects");
