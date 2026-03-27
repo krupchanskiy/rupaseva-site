@@ -1,11 +1,3 @@
-@font-face {
-  font-family: Opensans Variablefont Wdth Wght;
-  src: url('../fonts/OpenSans-VariableFont_wdthwght.ttf') format("truetype");
-  font-weight: 300 800;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --body: #f6fcf4;
   --font-primary: "Open Sans", sans-serif;
@@ -706,8 +698,10 @@ strong {
   flex: none;
   justify-content: center;
   align-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  min-width: 44px;
+  min-height: 44px;
   margin-left: 0;
   margin-right: 0;
   padding: 0;
@@ -1722,7 +1716,7 @@ strong {
 .utility-page-wrap {
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   max-width: 100%;
   height: 100vh;
   max-height: 100%;
@@ -3918,7 +3912,7 @@ strong {
   }
 
   .srsk-map-wrapper {
-    width: 100vw;
+    width: 100%;
     height: auto;
     margin-top: -15vw;
     padding-top: 10vw;
@@ -4895,11 +4889,3 @@ strong {
   }
 }
 
-
-@font-face {
-  font-family: 'Opensans Variablefont Wdth Wght';
-  src: url('../fonts/OpenSans-VariableFont_wdthwght.ttf') format('truetype');
-  font-weight: 300 800;
-  font-style: normal;
-  font-display: swap;
-}
