@@ -65,6 +65,17 @@
       });
       gsap.ticker.lagSmoothing(0);
 
+      // ─── Marquee: случайный порядок фото внутри каждой .marque-track ───
+      // Fisher-Yates shuffle при загрузке страницы.
+      document.querySelectorAll('.marque-track').forEach(function (track) {
+        var items = Array.prototype.slice.call(track.children);
+        for (var i = items.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = items[i]; items[i] = items[j]; items[j] = tmp;
+        }
+        items.forEach(function (el) { track.appendChild(el); });
+      });
+
       // ─── Marquee: горизонтальный сдвиг ленты при скролле страницы ───
       // Восстанавливает Webflow-анимацию SCROLLING_IN_VIEW (action a-20).
       // Чётные ленты двигаются влево, нечётные — вправо (зеркально).
