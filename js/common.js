@@ -64,6 +64,29 @@
         lenis.raf(time * 1000);
       });
       gsap.ticker.lagSmoothing(0);
+
+      // ─── Marquee: горизонтальный сдвиг ленты при скролле страницы ───
+      // Восстанавливает Webflow-анимацию SCROLLING_IN_VIEW (action a-20):
+      // .marque-container сдвигается с 0% до -50% пока .marquee-wrapper
+      // проезжает через viewport.
+      document.querySelectorAll('.marquee-wrapper').forEach(function (wrapper) {
+        var container = wrapper.querySelector('.marque-container');
+        if (!container) return;
+        gsap.fromTo(
+          container,
+          { xPercent: 0 },
+          {
+            xPercent: -50,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: wrapper,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1
+            }
+          }
+        );
+      });
     }
   });
 })();
