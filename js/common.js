@@ -65,15 +65,59 @@
       });
       gsap.ticker.lagSmoothing(0);
 
-      // ─── Marquee: случайный порядок фото внутри каждой .marque-track ───
-      // Fisher-Yates shuffle при загрузке страницы.
-      document.querySelectorAll('.marque-track').forEach(function (track) {
-        var items = Array.prototype.slice.call(track.children);
-        for (var i = items.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1));
-          var tmp = items[i]; items[i] = items[j]; items[j] = tmp;
+      // ─── Marquee: случайный порядок фото с min-distance между копиями ───
+      // Объединяем оба .marque-track одной ленты в общий пул (поток непрерывный
+      // при анимации), перемешиваем с условием "между копиями одной фото ≥ 4
+      // других", раскидываем обратно по двум track пополам.
+      var MIN_DISTANCE = 4;
+      var keyOf = function (el) {
+        var img = el.querySelector('img');
+        return img ? (img.getAttribute('src') || '') : '';
+      };
+      var shuffleWithMinDistance = function (items, minDistance) {
+        var n = items.length;
+        for (var attempt = 0; attempt < 50; attempt++) {
+          var pool = items.slice();
+          for (var i = pool.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+          }
+          var out = [];
+          var ok = true;
+          while (pool.length) {
+            var recent = out.slice(-minDistance).map(keyOf);
+            var pickedIdx = -1;
+            for (var k = 0; k < pool.length; k++) {
+              if (recent.indexOf(keyOf(pool[k])) === -1) { pickedIdx = k; break; }
+            }
+            if (pickedIdx === -1) { ok = false; pickedIdx = 0; }
+            out.push(pool[pickedIdx]);
+            pool.splice(pickedIdx, 1);
+          }
+          if (ok) return out;
         }
-        items.forEach(function (el) { track.appendChild(el); });
+        // best-effort, если ограничение недостижимо (слишком много дублей) —
+        // понижаем требуемую дистанцию на 1 и пробуем снова.
+        if (minDistance > 1) return shuffleWithMinDistance(items, minDistance - 1);
+        return items.slice();
+      };
+
+      document.querySelectorAll('.marquee-wrapper').forEach(function (wrapper) {
+        var tracks = wrapper.querySelectorAll('.marque-track');
+        if (tracks.length === 0) return;
+        var all = [];
+        tracks.forEach(function (t) {
+          Array.prototype.forEach.call(t.children, function (c) { all.push(c); });
+        });
+        var shuffled = shuffleWithMinDistance(all, MIN_DISTANCE);
+        // Раскидываем обратно поровну
+        var perTrack = Math.ceil(shuffled.length / tracks.length);
+        tracks.forEach(function (t, ti) {
+          while (t.firstChild) t.removeChild(t.firstChild);
+          shuffled.slice(ti * perTrack, (ti + 1) * perTrack).forEach(function (el) {
+            t.appendChild(el);
+          });
+        });
       });
 
       // ─── Marquee: горизонтальный сдвиг ленты при скролле страницы ───
