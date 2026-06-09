@@ -66,17 +66,17 @@
       gsap.ticker.lagSmoothing(0);
 
       // ─── Marquee: горизонтальный сдвиг ленты при скролле страницы ───
-      // Восстанавливает Webflow-анимацию SCROLLING_IN_VIEW (action a-20):
-      // .marque-container сдвигается с 0% до -50% пока .marquee-wrapper
-      // проезжает через viewport.
-      document.querySelectorAll('.marquee-wrapper').forEach(function (wrapper) {
+      // Восстанавливает Webflow-анимацию SCROLLING_IN_VIEW (action a-20).
+      // Чётные ленты двигаются влево, нечётные — вправо (зеркально).
+      document.querySelectorAll('.marquee-wrapper').forEach(function (wrapper, idx) {
         var container = wrapper.querySelector('.marque-container');
         if (!container) return;
+        var goesLeft = idx % 2 === 0;
         gsap.fromTo(
           container,
-          { xPercent: 0 },
+          { xPercent: goesLeft ? 0 : -50 },
           {
-            xPercent: -50,
+            xPercent: goesLeft ? -50 : 0,
             ease: 'none',
             scrollTrigger: {
               trigger: wrapper,
