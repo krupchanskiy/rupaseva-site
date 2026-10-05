@@ -1416,7 +1416,8 @@ a.win{display:block;color:inherit}
  #stay .st-head .body{display:contents}
  #stay .st-head .lead-it{grid-column:8/-1;grid-row:1;margin-top:0}
  #stay .st-head .body>p:not(.lead-it){grid-column:8/-1;grid-row:2;align-self:start;margin-top:14px!important}
- #stay .st-head .st-badge{grid-column:1/8;grid-row:2;margin-top:32px}
+ #stay .st-head{position:relative}
+ #stay .st-head .st-badge{position:absolute;left:40px;bottom:-108px;z-index:6;margin:0}
 }
 /* ===== Самый крупный шрифт — заголовок первого экрана; остальное не крупнее ===== */
 @media (min-width:1200px){
