@@ -1394,6 +1394,9 @@ a.win{display:block;color:inherit}
 .exit .d{font-size:18px}
 .pg .eyebrow{font-size:14px}
 
+/* перенос в заголовке первого экрана — только на компьютере */
+.hero-br{display:none}
+@media (min-width:1200px){.hero-br{display:inline}}
 /* шапка: логотип не сжимается, переключатель группы в одну строку */
 @media (min-width:1200px) and (max-width:1359px){ .gh-nav ul{gap:16px} }
 .gh-mark{flex:none}
@@ -1416,10 +1419,10 @@ a.win{display:block;color:inherit}
 }
 /* ===== Самый крупный шрифт — заголовок первого экрана; остальное не крупнее ===== */
 @media (min-width:1200px){
- .pg section h2.caps{font-size:clamp(40px,5vw,72px)}
- .pg .fa-w{font-size:clamp(42px,5.6vw,80px)}
- .pg .ww{font-size:clamp(42px,5.6vw,80px)}
- .pg .ix3-hd h3,.pg .gh-time,.pg .ft-cta h2{font-size:clamp(40px,5vw,72px)}
+ .pg section h2.caps{font-size:calc(var(--hfs) * .9)}
+ .pg .fa-w{font-size:var(--hfs)}
+ .pg .ww{font-size:var(--hfs)}
+ .pg .ix3-hd h3,.pg .gh-time,.pg .ft-cta h2{font-size:calc(var(--hfs) * .9)}
 }
 @media (min-width:768px) and (max-width:1199px){
  .pg .j-hC h1{font-size:clamp(60px,9.2vw,80px)}
@@ -1430,7 +1433,17 @@ a.win{display:block;color:inherit}
 @media (min-width:1200px){
  .pg .wrap,.pg .j-hC-head,.pg .track,.pg .cb-cb,.pg .ft-cta,.pg .ft-mid,.pg .ft-bot{padding-left:max(56px,calc(50% - 640px));padding-right:max(56px,calc(50% - 640px))}
  .pg header.gh{padding-left:max(44px,calc(50% - 652px));padding-right:max(44px,calc(50% - 652px))}
- .pg .j-hC h1{font-size:clamp(42px,5.6vw,80px)}
+ .pg{--hfs:clamp(42px,5.6vw,80px)}
+ /* правый блок не раздвигает строку: его низ на базовой линии, верх свободен */
+ .pg .j-hC-side{align-self:end;margin-top:-100vh}
+ /* шапки разделов: последняя строка заголовка и последняя строка вводного текста на одной базовой линии */
+ .pg .g12.head{align-items:last baseline}
+ .pg .j-hC h1{font-size:var(--hfs)}
+ .pg .j-hC h1 .mask{white-space:nowrap}
+ .pg .j-hC-logo{max-width:none;width:calc(var(--hfs) * 2.05)}
+ /* общая линия: верх лого = верх букв первой строки, низ переключателя и кнопки = базовая линия последней */
+ .pg .j-hC-side{padding-bottom:calc(var(--hfs) * .177)}
+ .pg .j-hC-lc{padding-top:calc(var(--hfs) * .108);padding-bottom:calc(var(--hfs) * .177)}
 }
 }
 /* ===== Плашки «More about …»: от края до края, без движения ===== */
@@ -1968,7 +1981,7 @@ a.win{display:block;color:inherit}
 <a role="menuitem" class="gh-mi on" href="#top" onClick="{{hdC}}"><span class="gh-mt">{{m1t}}</span><span class="gh-md">{{m1d}}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></a>
 <span role="menuitem" aria-disabled="true" class="gh-mi gh-off"><span class="gh-mt">{{m2t}}</span><span class="gh-md">{{m2d}}</span><span class="gh-soon">{{soon}}</span></span>
 <a role="menuitem" class="gh-mi gh-main" href="/en/main"><span class="gh-mt">{{m3t}}</span><span class="gh-md">rupaseva.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg></a></div></sc-if></div></div>
-<h1 class="caps"><span class="mask"><span style="--d:.2s">The place</span></span><span class="mask j-r2"><span style="--d:.32s">for a perfect</span></span><span class="mask"><span style="--d:.44s">retreat</span></span></h1>
+<h1 class="caps"><span class="mask"><span style="--d:.2s">The place</span></span><span class="mask j-r2"><span style="--d:.32s">for a<br class="hero-br"> perfect</span></span><span class="mask"><span style="--d:.44s">retreat</span></span></h1>
 <div class="j-hC-side rise" style="--d:.9s"><p>An ashram at the foot of sacred Govardhan Hill. Comfortable rooms, good vegetarian food and a team that looks after everything, so you can focus on your retreat.</p><div class="j-cta"><a class="btn btn-sun" href="#dates">Check availability <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></span></a></div></div>
 </div>
 </div>
