@@ -1394,6 +1394,15 @@ a.win{display:block;color:inherit}
 .exit .d{font-size:18px}
 .pg .eyebrow{font-size:14px}
 
+/* ===== Stay, шапка раздела: заголовок вверху вровень с текстом, печать «реальные фото» под заголовком ===== */
+@media (min-width:901px){
+ #stay .st-head{align-items:start;row-gap:0}
+ #stay .st-head .t{grid-column:1/8;grid-row:1}
+ #stay .st-head .body{display:contents}
+ #stay .st-head .lead-it{grid-column:8/-1;grid-row:1;margin-top:0}
+ #stay .st-head .body>p:not(.lead-it){grid-column:8/-1;grid-row:2;align-self:start;margin-top:14px!important}
+ #stay .st-head .st-badge{grid-column:1/8;grid-row:2;margin-top:32px}
+}
 /* ===== Самый крупный шрифт — заголовок первого экрана; остальное не крупнее ===== */
 @media (min-width:1200px){
  .pg section h2.caps{font-size:clamp(40px,5vw,72px)}
