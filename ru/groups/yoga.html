@@ -1399,6 +1399,9 @@ a.win{display:block;color:inherit}
 .exit .d{font-size:18px}
 .pg .eyebrow{font-size:14px}
 
+/* «Пространства»: без подписей площади, вместимости и места; цены: без вкладок */
+#spaces .sp-v,#spaces .sp-w{display:none}
+#prices .pc-opts{display:none}
 /* перенос в заголовке первого экрана — только на компьютере */
 .hero-br{display:none}
 @media (min-width:1200px){.hero-br{display:inline}}
@@ -2238,7 +2241,7 @@ const VIT = [{"src": "/images/groups/0302c148854750270ae60bd817fa2652.webp", "ca
 const REVS = [{"q": "[Цитата организатора: два-три предложения о месте, еде и о том, как команда заботилась о группе.]", "name": "[Имя организатора]", "org": "[Школа или студия] · [Город, страна]", "meta": "[YTT 200] · [34 гостя] · [март 2026]", "photo": "/images/groups/d11ea72c16d2cb0aa828c6489aa79fa7.webp", "ini": "A"}, {"q": "[Вторая цитата: что удивило, что говорили ученики, вернутся ли они.]", "name": "[Имя организатора]", "org": "[Школа или студия] · [Город, страна]", "meta": "[Йога-ретрит] · [22 гостя] · [ноябрь 2025]", "photo": "/images/groups/f4b3906a975d72b200ff1e143f133910.webp", "ini": "B"}, {"q": "[Третья цитата: о логистике, трансферах, координаторе и тишине места.]", "name": "[Имя организатора]", "org": "[Школа или студия] · [Город, страна]", "meta": "[YTT 300] · [41 гость] · [февраль 2026]", "photo": "/images/groups/4663edde6cbf475fcb139bdd830b00c7.webp", "ini": "C"}];
 const ROOMS = [{"key": "twin", "name": "Двухместный номер", "count": "24 номера · по 2 гостя", "corner": "br", "photos": [{"src": "/images/groups/76b19c53a23fce46b44c78cbe20b6707.webp", "ar": 1.5, "alt": "Двухместный номер"}, {"src": "/images/groups/b48251069d43cd97a817a87d41d8601e.webp", "ar": 0.667, "alt": "Своя ванная"}, {"src": "/images/groups/9345b11f48a3306e76ada8ea70ddaa55.webp", "ar": 1.778, "alt": "Вид с балкона"}], "feats": [{"t": "Две односпальные кровати", "d": "Матрасы IKEA", "p": 0, "x": 36, "y": 60}, {"t": "Ниша для алтаря", "d": "Место для вашего алтаря", "p": 0, "x": 6, "y": 27}, {"t": "Уголок для отдыха", "d": "Ротанговые кресла и столик", "p": 0, "x": 78, "y": 64}, {"t": "Своя ванная", "d": "Душ с горячей водой", "p": 1, "x": 40, "y": 48}, {"t": "Раковина и зеркало", "d": "Резное зеркало над раковиной", "p": 1, "x": 76, "y": 58}, {"t": "Балкон или сад", "d": "Зависит от номера", "p": 2, "x": 50, "y": 62}, {"t": "Кондиционер", "d": "", "p": -1}]}, {"key": "quad", "name": "Четырёхместный номер", "count": "6 номеров · по 4 гостя", "corner": "tl", "photos": [{"src": "/images/groups/a9de499abefc2e1c37f07fab13585f61.webp", "ar": 1.333, "alt": "Четырёхместный номер с двухъярусными кроватями"}, {"src": "/images/groups/7d3392510158fd2b6d61ff6046bbdbc4.webp", "ar": 1.333, "alt": "Гостиная зона четырёхместного номера"}, {"src": "/images/groups/afae1739e8e836e29c55d0aa386b40d1.webp", "ar": 1.333, "alt": "Письменный стол"}, {"src": "/images/groups/3886e9433c145c653867c914b1065a2e.webp", "ar": 1.333, "alt": "Ванная четырёхместного номера"}], "feats": [{"t": "Две двухъярусные кровати", "d": "Деревянные кровати на четверых", "p": 0, "x": 66, "y": 42}, {"t": "Лампа и розетки", "d": "У каждой кровати", "p": 0, "x": 69, "y": 31}, {"t": "Лесенка на верхний ярус", "d": "", "p": 0, "x": 86, "y": 57}, {"t": "Гостиная зона", "d": "Диван, кресла и столик", "p": 1, "x": 60, "y": 48}, {"t": "Кондиционер", "d": "", "p": 1, "x": 22, "y": 9}, {"t": "Балкон с видом на Говардхан", "d": "", "p": 1, "x": 8, "y": 36}, {"t": "Письменный стол", "d": "", "p": 2, "x": 62, "y": 62}, {"t": "Своя ванная", "d": "Горячая вода весь день", "p": 3, "x": 68, "y": 60}, {"t": "Мини-кухня с раковиной", "d": "", "p": -1}]}];
 const FA = 1.5;
-const H = 500, GAP = 16;
+const H = 350, GAP = 16;
 const W = SLIDES.map(s => Math.round(H * s.ar));
 const X = W.reduce((a, w, k) => (a.push(k ? a[k - 1] + W[k - 1] + GAP : 0), a), []);
 function place(x, y, ar) {
@@ -2391,7 +2394,7 @@ class Component extends DCLogic {
     if (disc) { calc.pp = Math.round(calc.pp * 0.85); calc.house = Math.round(calc.house * 0.85); }
     const yttOk = d >= 21 && meals;
     const best = calc.pp <= calc.house ? 'pp' : 'house';
-    const opt = this.state.opt && this.state.opt !== 'ytt' ? this.state.opt : best;
+    const opt = best;
     const tot = calc[opt], free = n >= FREE_FROM;
     const v = {
       indPos: 'transform:translateX(' + (inr ? 100 : 0) + '%)',

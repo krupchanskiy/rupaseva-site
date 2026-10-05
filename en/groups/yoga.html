@@ -1394,6 +1394,9 @@ a.win{display:block;color:inherit}
 .exit .d{font-size:18px}
 .pg .eyebrow{font-size:14px}
 
+/* «Пространства»: без подписей площади, вместимости и места; цены: без вкладок */
+#spaces .sp-v,#spaces .sp-w{display:none}
+#prices .pc-opts{display:none}
 /* перенос в заголовке первого экрана — только на компьютере */
 .hero-br{display:none}
 @media (min-width:1200px){.hero-br{display:inline}}
@@ -2232,7 +2235,7 @@ const VIT = [{"src": "/images/groups/0302c148854750270ae60bd817fa2652.webp", "ca
 const REVS = [{"q": "[Quote from the organiser: two or three sentences about the venue, the food and how the team looked after the group.]", "name": "[Organiser's name]", "org": "[School or studio] · [City, country]", "meta": "[YTT 200] · [34 guests] · [March 2026]", "photo": "/images/groups/d11ea72c16d2cb0aa828c6489aa79fa7.webp", "ini": "A"}, {"q": "[Second quote: what surprised them, what the students said, would they come back.]", "name": "[Organiser's name]", "org": "[School or studio] · [City, country]", "meta": "[Yoga retreat] · [22 guests] · [November 2025]", "photo": "/images/groups/f4b3906a975d72b200ff1e143f133910.webp", "ini": "B"}, {"q": "[Third quote: about logistics, transfers, the coordinator, the calm of the place.]", "name": "[Organiser's name]", "org": "[School or studio] · [City, country]", "meta": "[YTT 300] · [41 guests] · [February 2026]", "photo": "/images/groups/4663edde6cbf475fcb139bdd830b00c7.webp", "ini": "C"}];
 const ROOMS = [{"key": "twin", "name": "Twin room", "count": "24 rooms · 2 guests", "corner": "br", "photos": [{"src": "/images/groups/76b19c53a23fce46b44c78cbe20b6707.webp", "ar": 1.5, "alt": "Twin room"}, {"src": "/images/groups/b48251069d43cd97a817a87d41d8601e.webp", "ar": 0.667, "alt": "Private bathroom"}, {"src": "/images/groups/9345b11f48a3306e76ada8ea70ddaa55.webp", "ar": 1.778, "alt": "View from a balcony"}], "feats": [{"t": "Two single beds", "d": "IKEA mattresses", "p": 0, "x": 36, "y": 60}, {"t": "Altar niche", "d": "A place for your own altar", "p": 0, "x": 6, "y": 27}, {"t": "Sitting corner", "d": "Rattan armchairs and a table", "p": 0, "x": 78, "y": 64}, {"t": "Private bathroom", "d": "Shower with hot water", "p": 1, "x": 40, "y": 48}, {"t": "Washbasin and mirror", "d": "Carved mirror above the basin", "p": 1, "x": 76, "y": 58}, {"t": "Balcony or garden", "d": "Depending on the room", "p": 2, "x": 50, "y": 62}, {"t": "Air conditioning", "d": "", "p": -1}]}, {"key": "quad", "name": "Quad room", "count": "6 rooms · 4 guests", "corner": "tl", "photos": [{"src": "/images/groups/a9de499abefc2e1c37f07fab13585f61.webp", "ar": 1.333, "alt": "Quad room with bunk beds"}, {"src": "/images/groups/7d3392510158fd2b6d61ff6046bbdbc4.webp", "ar": 1.333, "alt": "Living area of the quad room"}, {"src": "/images/groups/afae1739e8e836e29c55d0aa386b40d1.webp", "ar": 1.333, "alt": "Writing desk"}, {"src": "/images/groups/3886e9433c145c653867c914b1065a2e.webp", "ar": 1.333, "alt": "Bathroom of the quad room"}], "feats": [{"t": "Two bunk beds", "d": "Wooden bunks for four guests", "p": 0, "x": 66, "y": 42}, {"t": "Lamp and sockets", "d": "At every bed", "p": 0, "x": 69, "y": 31}, {"t": "Steps to the upper bunk", "d": "", "p": 0, "x": 86, "y": 57}, {"t": "Living area", "d": "Sofa, armchairs and a table", "p": 1, "x": 60, "y": 48}, {"t": "Air conditioning", "d": "", "p": 1, "x": 22, "y": 9}, {"t": "Balcony facing Govardhan Hill", "d": "", "p": 1, "x": 8, "y": 36}, {"t": "Writing desk", "d": "", "p": 2, "x": 62, "y": 62}, {"t": "Private bathroom", "d": "Hot water all day", "p": 3, "x": 68, "y": 60}, {"t": "Kitchenette with sink", "d": "", "p": -1}]}];
 const FA = 1.5;
-const H = 500, GAP = 16;
+const H = 350, GAP = 16;
 const W = SLIDES.map(s => Math.round(H * s.ar));
 const X = W.reduce((a, w, k) => (a.push(k ? a[k - 1] + W[k - 1] + GAP : 0), a), []);
 function place(x, y, ar) {
@@ -2385,7 +2388,7 @@ class Component extends DCLogic {
     if (disc) { calc.pp = Math.round(calc.pp * 0.85); calc.house = Math.round(calc.house * 0.85); }
     const yttOk = d >= 21 && meals;
     const best = calc.pp <= calc.house ? 'pp' : 'house';
-    const opt = this.state.opt && this.state.opt !== 'ytt' ? this.state.opt : best;
+    const opt = best;
     const tot = calc[opt], free = n >= FREE_FROM;
     const v = {
       indPos: 'transform:translateX(' + (inr ? 100 : 0) + '%)',
