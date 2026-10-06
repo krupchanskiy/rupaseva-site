@@ -1394,6 +1394,15 @@ a.win{display:block;color:inherit}
 .exit .d{font-size:18px}
 .pg .eyebrow{font-size:14px}
 
+/* сервис: строки сетки не растягиваются по соседней ячейке */
+.pg .sv-cell{align-content:start}
+/* отзывы: большая кавычка не наезжает на текст */
+@media (max-width:1199px){.pg .rv-q{padding-right:58px}}
+/* мини-итог цен: подписи не мельче 13px */
+.pg .pc-mini small{font-size:13px}
+/* цены на узком планшете: калькулятор и итог друг под другом */
+@media (min-width:768px) and (max-width:900px){.pg .pc-calc>*{grid-column:1/-1!important}}
+
 /* выпадашка переключателя в первом экране — поверх заголовка */
 .pg .j-hC .gh-ctx{z-index:6}
 
@@ -2305,9 +2314,9 @@ class Component extends DCLogic {
   constructor(p) { super(p); this.state = { i: 0, open: 0, rs: ROOMS.map(() => ({ p: 0, s: 0 })), dx: 0, drag: null, cx: 0, cy: 0, hov: false, ci: 0, pet: 0, dwy: 0, rvp: -1, rvd: 'n', fss: 0, fsw: false, fsg: 0, vi: 0, rvi: 0, ixa: 0, ixs: [[0,1,2],[0,1,2],[0,1,2],[0,1,2],[0,1,2]], ixn: [3,3,3,3,3], ixp: [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]], ixd: [['l','l','l'],['l','l','l'],['l','l','l'],['l','l','l'],['l','l','l']], ixc: [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]], hs: false, hh: false, ha: -1, hm: false, hl: 'en', hd: false, ht: 0, fqo: 0, dwk: 1, dwhov: null, dws: null, dwe: null, dwdh: null, dwrr: null, n: 40, d: 7, inr: true, meals: true, opt: null, pah: -1, pam: [0, 0], svx: 50, svy: 50, sa: 0, sph: 0, suser: false, smx: 0, smy: 0 }; }
   componentDidMount() {
     if (!window.__fit) { window.__fit = 1;
-      const SEL = '#stay .room h3, .ix3-hd h3, section h2.caps, .fa-w, .gr-st h3, .vf h2.caps';
+      const SEL = '#stay .room h3, .ix3-hd h3, section h2.caps, .fa-w, .gr-st h3, .vf h2.caps, .wr-h, .ixm-t b, .fs-now b' + (innerWidth < 901 ? ', #spaces h3' : '');
       // однотипные заголовки (номера, слова о еде, пункты «Что мы предлагаем») получают общий, наименьший размер
-      const GROUPS = ['#stay .room h3', '.fa-w', '.ix3-hd h3'];
+      const GROUPS = ['#stay .room h3', '.fa-w', '.ix3-hd h3', '.ixm-t b'].concat(innerWidth < 901 ? ['#spaces h3'] : []);
       const fit = () => {
         const one = el => { el.style.removeProperty('font-size'); if (!el.clientWidth) return 0;
           let fs = parseFloat(getComputedStyle(el).fontSize), n = 0;

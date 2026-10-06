@@ -1025,7 +1025,7 @@ h2.caps{font-size:clamp(46px,6vw,96px);color:var(--green-d)}
 #service .chn,#food .chn,#dates .dw-chn,#faq .fq-chn{background:#fff}
 #getting-here .gh-trip{background:#fff}
 #stay .amen{border-top-left-radius:0;border-top-right-radius:74px;position:relative;padding-top:104px}
-#stay .amen::before{content:"In the guest house";position:absolute;left:clamp(24px,4vw,64px);top:36px;font-family:'Cormorant Garamond',serif;font-size:clamp(28px,2.6vw,38px);font-weight:300;letter-spacing:.08em;text-transform:uppercase;line-height:1;color:#fff}
+#stay .amen::before{content:"В гостевом доме";position:absolute;left:clamp(24px,4vw,64px);top:36px;font-family:'Cormorant Garamond',serif;font-size:clamp(28px,2.6vw,38px);font-weight:300;letter-spacing:.08em;text-transform:uppercase;line-height:1;color:#fff}
 #programmes .pa .ring0{fill:rgba(13,59,13,.18)}
 .ft{margin-top:0}
 /* chn-hover-fix: наведение на кнопки мессенджеров во всех разделах */
@@ -1398,6 +1398,15 @@ a.win{display:block;color:inherit}
 .ix3-hd p{font-size:21px;color:var(--ink)}
 .exit .d{font-size:18px}
 .pg .eyebrow{font-size:14px}
+
+/* сервис: строки сетки не растягиваются по соседней ячейке */
+.pg .sv-cell{align-content:start}
+/* отзывы: большая кавычка не наезжает на текст */
+@media (max-width:1199px){.pg .rv-q{padding-right:58px}}
+/* мини-итог цен: подписи не мельче 13px */
+.pg .pc-mini small{font-size:13px}
+/* цены на узком планшете: калькулятор и итог друг под другом */
+@media (min-width:768px) and (max-width:900px){.pg .pc-calc>*{grid-column:1/-1!important}}
 
 /* выпадашка переключателя в первом экране — поверх заголовка */
 .pg .j-hC .gh-ctx{z-index:6}
@@ -2311,9 +2320,9 @@ class Component extends DCLogic {
   constructor(p) { super(p); this.state = { i: 0, open: 0, rs: ROOMS.map(() => ({ p: 0, s: 0 })), dx: 0, drag: null, cx: 0, cy: 0, hov: false, ci: 0, pet: 0, dwy: 0, rvp: -1, rvd: 'n', fss: 0, fsw: false, fsg: 0, vi: 0, rvi: 0, ixa: 0, ixs: [[0,1,2],[0,1,2],[0,1,2],[0,1,2],[0,1,2]], ixn: [3,3,3,3,3], ixp: [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]], ixd: [['l','l','l'],['l','l','l'],['l','l','l'],['l','l','l'],['l','l','l']], ixc: [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]], hs: false, hh: false, ha: -1, hm: false, hl: 'en', hd: false, ht: 0, fqo: 0, dwk: 1, dwhov: null, dws: null, dwe: null, dwdh: null, dwrr: null, n: 40, d: 7, inr: true, meals: true, opt: null, pah: -1, pam: [0, 0], svx: 50, svy: 50, sa: 0, sph: 0, suser: false, smx: 0, smy: 0 }; }
   componentDidMount() {
     if (!window.__fit) { window.__fit = 1;
-      const SEL = '#stay .room h3, .ix3-hd h3, section h2.caps, .fa-w, .gr-st h3, .vf h2.caps';
+      const SEL = '#stay .room h3, .ix3-hd h3, section h2.caps, .fa-w, .gr-st h3, .vf h2.caps, .wr-h, .ixm-t b, .fs-now b' + (innerWidth < 901 ? ', #spaces h3' : '');
       // однотипные заголовки (номера, слова о еде, пункты «Что мы предлагаем») получают общий, наименьший размер
-      const GROUPS = ['#stay .room h3', '.fa-w', '.ix3-hd h3'];
+      const GROUPS = ['#stay .room h3', '.fa-w', '.ix3-hd h3', '.ixm-t b'].concat(innerWidth < 901 ? ['#spaces h3'] : []);
       const fit = () => {
         const one = el => { el.style.removeProperty('font-size'); if (!el.clientWidth) return 0;
           let fs = parseFloat(getComputedStyle(el).fontSize), n = 0;
@@ -2640,7 +2649,7 @@ class Component extends DCLogic {
     v.toPrice = (e) => { e.preventDefault(); };
     const fmtF = i => { const d = dayDate(i); return d.getDate() + ' ' + MS[d.getMonth()] + ' ' + d.getFullYear(); };
     const lo2 = st.dws != null ? (st.dwe != null ? Math.min(st.dws, st.dwe) : st.dws) : null, hi2 = st.dwe != null ? Math.max(st.dws, st.dwe) : null;
-    v.arrT = lo2 != null ? fmtF(lo2) : 'Выберите дату'; v.depT = hi2 != null ? fmtF(hi2) : 'Выберите дату';
+    v.arrT = lo2 != null ? fmtF(lo2) : 'Выбрать'; v.depT = hi2 != null ? fmtF(hi2) : 'Выбрать';
     v.fa = 'dw-fb' + (lo2 == null ? ' dw-fe' : '') + (st.dwpop === 'a' ? ' on' : ''); v.fd = 'dw-fb' + (hi2 == null ? ' dw-fe' : '') + (st.dwpop === 'd' ? ' on' : '');
     v.openA = () => this.setState({ dwpop: this.state.dwpop === 'a' ? null : 'a' });
     v.openD = () => this.setState({ dwpop: this.state.dwpop === 'd' ? null : (this.state.dws == null ? 'a' : 'd') });
