@@ -1427,6 +1427,10 @@ a.win{display:block;color:inherit}
 @media (max-width:767px){ .ps-it{height:124px} .ps-track{gap:8px} }
 @media (hover:none){ .pstrip{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch} .pstrip::-webkit-scrollbar{display:none} .ps-track{transform:none!important} }
 @media (prefers-reduced-motion:reduce){ .ps-it{transition:none;opacity:1;transform:none} }
+/* отзывы: кружок с инициалом — по центру, белый (его перебивало правило подписи) */
+.rv-who .rv-av{display:grid;place-items:center;margin-top:0;color:#fff;font-size:24px;line-height:1}
+/* кафе: логотип «Аньор» тёмно-коричневый на бежевой плашке */
+.pg .fa-cf-card .anyor{fill:#5a3a1f}
 /* «Пространства»: без подписей площади, вместимости и места; цены: без вкладок */
 #spaces .sp-v,#spaces .sp-w{display:none}
 #prices .pc-opts{display:none}
