@@ -2072,6 +2072,7 @@ a.win{display:block;color:inherit}
 .vf-lb.on{opacity:1}
 .vf-lb video{width:min(92vw,calc(86vh * 16 / 9));aspect-ratio:16/9;background:#000;border-radius:10px;box-shadow:0 40px 100px -30px rgba(0,0,0,.8);transform:scale(.94);transition:transform .5s var(--ease)}
 .vf-lb.on video{transform:none}
+.vf-lb.vf-v video{width:auto;height:100svh;max-width:100vw;aspect-ratio:9/16;border-radius:0}
 .vf-lbx{position:absolute;top:24px;right:24px;width:56px;height:56px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .3s,transform .4s var(--ease)}
 .vf-lbx:hover{background:rgba(255,255,255,.2);transform:rotate(90deg)}
 .vf-lbx svg{width:24px;height:24px}
@@ -2566,7 +2567,7 @@ class Component extends DCLogic {
         // видео открывается поверх страницы на весь экран
         const lb = document.createElement('div'); lb.className = 'vf-lb';
         lb.innerHTML = '<video controls autoplay playsinline preload="auto"></video><button type="button" class="vf-lbx" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
-        const v = lb.querySelector('video'); v.poster = b.dataset.poster; v.src = b.dataset.video;
+        const v = lb.querySelector('video'); const vm = b.dataset.videoM && matchMedia('(orientation: portrait) and (max-width: 900px)').matches; if (vm) lb.classList.add('vf-v'); v.poster = b.dataset.poster; v.src = vm ? b.dataset.videoM : b.dataset.video;
         const close = () => { v.pause(); lb.classList.remove('on'); document.documentElement.classList.remove('vf-lock'); document.removeEventListener('keydown', key); setTimeout(() => lb.remove(), 400); b.focus(); };
         const key = ev => { if (ev.key === 'Escape') close(); };
         lb.addEventListener('click', ev => { if (ev.target !== v) close(); });
