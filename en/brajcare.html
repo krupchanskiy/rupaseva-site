@@ -1,1380 +1,557 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Mar 26 2026 06:34:59 GMT+0000 (Coordinated Universal Time)  -->
-<html lang="ru">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>BrajCare – helping you to serve Braj</title>
-  <meta content="Благотворительный фонд BrajCare помогает служить Враджу и его обитателям. Мы кормим бездомных коров, поддерживаем садху, открыли школу для детей из бедных семей..." name="description">
-  <meta content="BrajCare – helping you to serve Braj" property="og:title">
-  <meta content="Благотворительный фонд BrajCare помогает служить Враджу и его обитателям. Мы кормим бездомных коров, поддерживаем садху, открыли школу для детей из бедных семей..." property="og:description">
-  <meta content="BrajCare – helping you to serve Braj" property="twitter:title">
-  <meta content="Благотворительный фонд BrajCare помогает служить Враджу и его обитателям. Мы кормим бездомных коров, поддерживаем садху, открыли школу для детей из бедных семей..." property="twitter:description">
-  <meta property="og:type" content="website">
-  <meta content="summary_large_image" name="twitter:card">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  <meta content="width=device-width, initial-scale=1" name="viewport">  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="../css/srsk-v2.webflow.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">  <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-  <link href="../images/webclip.png" rel="apple-touch-icon">
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-60KQDJS8PJ"></script>
-  <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('js', new Date());gtag('config', 'G-60KQDJS8PJ');</script>
-  <style>
-html.lenis {
-  height: auto;
-}
-</style>
-  <style>
-.navbar, .navbar2{
-transform: translateY(-100%);
-}
-.navbar.active,
-  .navbar2.active {
-    transform: translateY(0);
-}
-</style>
-  <style>
-.swiper-wrapper.basic-slider-list {display: flex !important;}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrajCare — Sri Rupa Seva Kunj</title>
+<meta name="description" content="The BrajCare foundation: we feed stray cows at Govardhan, teach children at Sri Rupa Seva School, care for sadhus and keep Giriraj clean.">
+<meta property="og:title" content="BrajCare — Sri Rupa Seva Kunj">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://rupaseva.com/en/brajcare">
+
+<link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+<link href="/images/webclip.png" rel="apple-touch-icon">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60KQDJS8PJ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-60KQDJS8PJ');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&amp;display=swap">
+<style>body{margin:0;background:#f6fcf4}</style>
+<script src="/js/dc-runtime.js"></script>
 </head>
-<body>
-  <div class="w-embed">
-    <style>/*
-  html { font-size: 1.625rem; }
-  @media screen and (max-width:1920px) { html { font-size: calc(0.8557692307692307rem + 0.6410256410256411vw); } }
-  @media screen and (max-width:360px) { html { font-size: 1.125rem; } }
-*/
-  html { font-size: calc(1.1247394476289734rem + 0.4168837936425221vw); }
-  @media screen and (max-width:1920px) { html { font-size: calc(1.1247394476289734rem + 0.4168837936425222vw); } }
-::marker {
-color: #F49800 !important;
-font-size: 1em;
-margin-top: 30px; }
-.ytp-chrome-top {
-display: none !important;}
-#hero-logo svg:not(:last-of-type) path {
-    fill: #fff;
-}
-.navbar {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  z-index: 1000;
-}
-.navlink.open.w--current {
-border-bottom-style: unset;}
-.navbar.hidden {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-@media screen and (min-width: 1281px) {
-.srsk-map-wrapper,
-.marker_item-grid {
-zoom: 1.5;}
-}
-#gallery .w-inline-block {
-border-bottom: 0px;}
-.lang_btn .w-nav-link.w--current:hover {
-color: #fff;}
-</style>
-  </div>
-  <div data-animation="over-right" class="navbar active w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-no-scroll="1" data-duration="400" id="header" data-doc-height="1">
-    <a href="../en/main.html" class="hero-logo_link w-nav-brand"><img loading="lazy" src="../images/logo.svg" alt="" class="hero_logo"></a>
-    <nav role="navigation" class="nav-menu open w-nav-menu">
-      <div class="nav-menu_wrapper">
-        <a href="../en/vision.html" class="navlink open w-nav-link">Ashram</a>
-        <a href="../en/details.html" class="navlink open w-nav-link">Details</a>
-        <a href="../en/retreats.html" class="navlink open w-nav-link">Retreats</a>
-        <a href="../en/projects.html" class="navlink open w-nav-link">Projects</a>
-        <a href="../en/join-us.html" class="navlink open w-nav-link">Join us</a>
-        <a href="../en/contacts.html" class="navlink open w-nav-link">Contacts</a>
-      </div>
-      <div class="mob-lang">
-        <a href="../contacts.html" class="mob-langw w-nav-link">рус</a>
-      </div>
-    </nav>
-    <a href="../brajcare.html" class="lang_btn w-nav-link">РУС</a>
-    <div class="menu-button w-nav-button">
-      <div data-w-id="696e60a7-c9bc-6fb1-5636-59602e87f793" class="m-wrapper">
-        <div class="m-line _1"></div>
-        <div class="m-line _2"></div>
-        <div class="m-line _3"></div>
-      </div>
-    </div>
-  </div>
-  <section class="section">
-    <div class="padding---80px"></div>
-    <div class="container">
-      <h2>BRAJ CARE</h2>
-      <div class="padding-txt---40px"></div>
-      <p class="subtitle">Helping you serve Braj.</p>
-      <div class="padding---120px"></div>
-    </div>
-  </section>
-  <section class="section"><img loading="lazy" src="../images/Vector.svg" alt="" class="bg-image">
-    <div class="container">
-      <div class="mw---1040px">
-        <p>Vrindavan is, perhaps, the most extraordinary place on the planet. Celebrated in the sacred scriptures, it has become home to thousands of sadhus, holy people who have dedicated their lives entirely to serving God. So many have a deep desire to offer some service to this sacred land and its inhabitants. To this end, Srila Sacinandana Swami established the BrajCare foundation.</p>
-        <div class="padding---60px"></div>
-        <div class="light-bg--wrapper">
-          <p class="subtitle">“O sadhu, if you can&#x27;t suddenly renounce this illusory world, then day and night meditate on Vrndavana. Worship Vrndavana&#x27;s king and queen, always chant Their holy names, and always hear Their glories. With food, clothing, and other gifts, serve the residents of Vrndavana.”</p>
-          <div class="padding---24px"></div>
-          <p class="mob---s">Sri Vrindavana Mahimamrita 1.72</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="section hidden">
-    <div class="padding---120px"></div>
-    <div class="mw---1040px">
-      <h3><strong>Feeding Homeless Cows</strong></h3>
-      <div class="padding-txt---48px"></div>
-      <p>The Vedic scriptures glorify the service of cows, and what could be better than serving the cows near Govardhan? Especially those who, for various reasons, are without shelter and care. For more than four years, our rickshaw, loaded with sacks of chopped grass, has followed its daily route from Govinda Kunda to Surabhi Kunda. The cows wait for us, and when they see the rickshaw, they start mooing joyfully and run toward it. Currently, we distribute about 400 kg of grass every day, but we plan to continue to increase this amount.</p>
-      <div class="padding---40px"></div>
-    </div>
-    <div class="swiper-arrow-wrapper">
-      <div id="left-button" class="slider-button-left w-node-_130f0465-e98b-897c-4192-b9d4f09fb8ae-cea4d901"></div>
-      <div id="right-button" class="slider-button-right w-node-_130f0465-e98b-897c-4192-b9d4f09fb8af-cea4d901"></div>
-    </div>
-    <div id="basic-swiper" class="basic-swiper">
-      <div class="swiper-wrapper basic-slider-list">
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/2024-07-30-21.57.36-p-500.jpg 500w, ../images/2024-07-30-21.57.36-p-800.jpg 800w, ../images/2024-07-30-21.57.36.jpg 1080w, ../images/2024-07-30-21.57.36.jpg 1280w" alt="" src="../images/2024-07-30-21.57.36.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66abb2b1b00a4bc01593b7e7",
-      "origFileName": "2024-07-30 21.57.36.jpg",
-      "fileName": "2024-07-30 21.57.36.jpg",
-      "fileSize": 286308,
-      "height": 960,
-      "url": "../images/2024-07-30-21.57.36.jpg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "korm"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-right_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/2024-07-30-21.55.47-p-500.jpg 500w, ../images/2024-07-30-21.55.47-p-800.jpg 800w, ../images/2024-07-30-21.55.47.jpg 960w" alt="" src="../images/2024-07-30-21.55.47.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66abb2be07c38a67917da6c3",
-      "origFileName": "2024-07-30 21.55.47.jpg",
-      "fileName": "2024-07-30 21.55.47.jpg",
-      "fileSize": 440334,
-      "height": 1280,
-      "url": "../images/2024-07-30-21.55.47.jpg",
-      "width": 960,
-      "type": "image"
-    }
-  ],
-  "group": "korm"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/2024-07-30-21.58.07-p-500.jpg 500w, ../images/2024-07-30-21.58.07-p-800.jpg 800w, ../images/2024-07-30-21.58.07.jpg 1080w, ../images/2024-07-30-21.58.07.jpg 1280w" alt="" src="../images/2024-07-30-21.58.07.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66abb2d6072028242322777e",
-      "origFileName": "2024-07-30 21.58.07.jpg",
-      "fileName": "2024-07-30 21.58.07.jpg",
-      "fileSize": 400914,
-      "height": 960,
-      "url": "../images/2024-07-30-21.58.07.jpg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "korm"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 479px) 31vw, (max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/2024-07-30-21.56.55-p-500.jpg 500w, ../images/2024-07-30-21.56.55-p-800.jpg 800w, ../images/2024-07-30-21.56.55.jpg 1080w, ../images/2024-07-30-21.56.55.jpg 1280w" alt="" src="../images/2024-07-30-21.56.55.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f307d09e0788b1cc16d2a0",
-      "origFileName": "2024-07-30 21.56.55.jpg",
-      "fileName": "2024-07-30 21.56.55.jpg",
-      "fileSize": 320051,
-      "height": 960,
-      "url": "../images/2024-07-30-21.56.55.jpg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "korm"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/2024-07-30-21.57.15-p-500.jpg 500w, ../images/2024-07-30-21.57.15-p-800.jpg 800w, ../images/2024-07-30-21.57.15.jpg 960w" alt="" src="../images/2024-07-30-21.57.15.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f307d02e75204bc6072cac",
-      "origFileName": "2024-07-30 21.57.15.jpg",
-      "fileName": "2024-07-30 21.57.15.jpg",
-      "fileSize": 294560,
-      "height": 1280,
-      "url": "../images/2024-07-30-21.57.15.jpg",
-      "width": 960,
-      "type": "image"
-    }
-  ],
-  "group": "korm"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-right_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/2024-07-30-21.57.24-p-500.jpg 500w, ../images/2024-07-30-21.57.24-p-800.jpg 800w, ../images/2024-07-30-21.57.24.jpg 960w" alt="" src="../images/2024-07-30-21.57.24.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f307d03324ca502b73ba40",
-      "origFileName": "2024-07-30 21.57.24.jpg",
-      "fileName": "2024-07-30 21.57.24.jpg",
-      "fileSize": 339260,
-      "height": 1280,
-      "url": "../images/2024-07-30-21.57.24.jpg",
-      "width": 960,
-      "type": "image"
-    }
-  ],
-  "group": "korm"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/2024-07-30-21.57.56-p-500.jpg 500w, ../images/2024-07-30-21.57.56-p-800.jpg 800w, ../images/2024-07-30-21.57.56.jpg 1080w, ../images/2024-07-30-21.57.56.jpg 1280w" alt="" src="../images/2024-07-30-21.57.56.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f307d0ec128a0d5ded1e51",
-      "origFileName": "2024-07-30 21.57.56.jpg",
-      "fileName": "2024-07-30 21.57.56.jpg",
-      "fileSize": 489524,
-      "height": 960,
-      "url": "../images/2024-07-30-21.57.56.jpg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "korm"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/2024-07-30-21.57.46-p-500.jpg 500w, ../images/2024-07-30-21.57.46-p-800.jpg 800w, ../images/2024-07-30-21.57.46.jpg 960w" alt="" src="../images/2024-07-30-21.57.46.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f307d01ee4636884544eb2",
-      "origFileName": "2024-07-30 21.57.46.jpg",
-      "fileName": "2024-07-30 21.57.46.jpg",
-      "fileSize": 462014,
-      "height": 1280,
-      "url": "../images/2024-07-30-21.57.46.jpg",
-      "width": 960,
-      "type": "image"
-    }
-  ],
-  "group": "korm"
-}</script>
-          </a>
-        </div>
-        <div class="mb-space"></div>
-      </div>
-    </div>
-  </div>
-  <div class="section hidden">
-    <div class="padding---120px"></div>
-    <div class="mw---1040px">
-      <h3><strong>School for Children from Poor Families</strong></h3>
-      <div class="padding-txt---48px"></div>
-      <p>In India, there is no free public education, and many families in Radha Kunda are so poor that they cannot afford to send their children to paid schools. About three years ago, we opened our own school, which we named the Sri Rupa Seva School. We rent a separate building with several classrooms, a small kitchen, and a yard for playing. We have wonderful teachers who hold classes in Hindi and English, teach the children to write and count, and give lessons on playing the mridanga. We provide the children with school uniforms, textbooks, and sometimes treat them to small gifts.</p>
-      <div class="padding---40px"></div>
-    </div>
-    <div class="swiper-arrow-wrapper">
-      <div id="left-button2" class="slider-button-left w-node-cd814afe-4e0c-b581-4a49-be96624047bc-cea4d901"></div>
-      <div id="right-button2" class="slider-button-right w-node-cd814afe-4e0c-b581-4a49-be96624047bd-cea4d901"></div>
-    </div>
-    <div id="basic-swiper2" class="basic-swiper">
-      <div class="swiper-wrapper basic-slider-list">
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/photo_2024-08-17-11.18.56-p-500.jpeg 500w, ../images/photo_2024-08-17-11.18.56-p-800.jpeg 800w, ../images/photo_2024-08-17-11.18.56.jpeg 1080w, ../images/photo_2024-08-17-11.18.56.jpeg 1280w" alt="" src="../images/photo_2024-08-17-11.18.56.jpeg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3080ec0bbcc73007d35a1",
-      "origFileName": "photo_2024-08-17 11.18.56.jpeg",
-      "fileName": "photo_2024-08-17 11.18.56.jpeg",
-      "fileSize": 141135,
-      "height": 960,
-      "url": "../images/photo_2024-08-17-11.18.56.jpeg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "school"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-right_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/photo_2024-08-17-11.17.36-p-500.jpeg 500w, ../images/photo_2024-08-17-11.17.36-p-800.jpeg 800w, ../images/photo_2024-08-17-11.17.36.jpeg 1080w, ../images/photo_2024-08-17-11.17.36.jpeg 1280w" alt="" src="../images/photo_2024-08-17-11.17.36.jpeg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3080b1bb354442b894944",
-      "origFileName": "photo_2024-08-17 11.17.36.jpeg",
-      "fileName": "photo_2024-08-17 11.17.36.jpeg",
-      "fileSize": 164285,
-      "height": 960,
-      "url": "../images/photo_2024-08-17-11.17.36.jpeg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "school"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/photo_2024-08-17-11.17.21-p-500.jpeg 500w, ../images/photo_2024-08-17-11.17.21-p-800.jpeg 800w, ../images/photo_2024-08-17-11.17.21.jpeg 1080w, ../images/photo_2024-08-17-11.17.21.jpeg 1280w" alt="" src="../images/photo_2024-08-17-11.17.21.jpeg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3080b960c4748603976da",
-      "origFileName": "photo_2024-08-17 11.17.21.jpeg",
-      "fileName": "photo_2024-08-17 11.17.21.jpeg",
-      "fileSize": 146438,
-      "height": 960,
-      "url": "../images/photo_2024-08-17-11.17.21.jpeg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "school"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/photo_2024-08-17-11.18.43-p-500.jpeg 500w, ../images/photo_2024-08-17-11.18.43-p-800.jpeg 800w, ../images/photo_2024-08-17-11.18.43.jpeg 1080w, ../images/photo_2024-08-17-11.18.43.jpeg 1280w" alt="" src="../images/photo_2024-08-17-11.18.43.jpeg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3080bffdd31c137cdfddf",
-      "origFileName": "photo_2024-08-17 11.18.43.jpeg",
-      "fileName": "photo_2024-08-17 11.18.43.jpeg",
-      "fileSize": 263196,
-      "height": 960,
-      "url": "../images/photo_2024-08-17-11.18.43.jpeg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "school"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/photo_2024-08-17-11.18.16-p-500.jpeg 500w, ../images/photo_2024-08-17-11.18.16-p-800.jpeg 800w, ../images/photo_2024-08-17-11.18.16.jpeg 960w" alt="" src="../images/photo_2024-08-17-11.18.16.jpeg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3080b75cc23e560035d76",
-      "origFileName": "photo_2024-08-17 11.18.16.jpeg",
-      "fileName": "photo_2024-08-17 11.18.16.jpeg",
-      "fileSize": 343427,
-      "height": 1280,
-      "url": "../images/photo_2024-08-17-11.18.16.jpeg",
-      "width": 960,
-      "type": "image"
-    }
-  ],
-  "group": "school"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-right_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/photo_2024-08-17-11.19.13-p-500.jpeg 500w, ../images/photo_2024-08-17-11.19.13-p-800.jpeg 800w, ../images/photo_2024-08-17-11.19.13.jpeg 1080w, ../images/photo_2024-08-17-11.19.13.jpeg 1280w" alt="" src="../images/photo_2024-08-17-11.19.13.jpeg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3080b981b13f820ff26f9",
-      "origFileName": "photo_2024-08-17 11.19.13.jpeg",
-      "fileName": "photo_2024-08-17 11.19.13.jpeg",
-      "fileSize": 252418,
-      "height": 961,
-      "url": "../images/photo_2024-08-17-11.19.13.jpeg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "school"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/photo_2024-08-17-11.18.52-p-500.jpeg 500w, ../images/photo_2024-08-17-11.18.52-p-800.jpeg 800w, ../images/photo_2024-08-17-11.18.52.jpeg 1080w, ../images/photo_2024-08-17-11.18.52.jpeg 1280w" alt="" src="../images/photo_2024-08-17-11.18.52.jpeg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3080bf3a11c740530db9c",
-      "origFileName": "photo_2024-08-17 11.18.52.jpeg",
-      "fileName": "photo_2024-08-17 11.18.52.jpeg",
-      "fileSize": 181596,
-      "height": 960,
-      "url": "../images/photo_2024-08-17-11.18.52.jpeg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "school"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/photo_2024-08-17-11.18.24-p-500.jpeg 500w, ../images/photo_2024-08-17-11.18.24-p-800.jpeg 800w, ../images/photo_2024-08-17-11.18.24.jpeg 960w" alt="" src="../images/photo_2024-08-17-11.18.24.jpeg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3080b9a88bc758d6262e1",
-      "origFileName": "photo_2024-08-17 11.18.24.jpeg",
-      "fileName": "photo_2024-08-17 11.18.24.jpeg",
-      "fileSize": 190914,
-      "height": 1280,
-      "url": "../images/photo_2024-08-17-11.18.24.jpeg",
-      "width": 960,
-      "type": "image"
-    }
-  ],
-  "group": "school"
-}</script>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section hidden">
-    <div class="padding---120px"></div>
-    <div class="mw---1040px">
-      <h3><strong>Distributing Warm Clothing</strong></h3>
-      <div class="padding-txt---48px"></div>
-      <p>Vrindavan&#x27;s winter is harsh, even though the temperature rarely falls below +2°C. The problem is that many Brajabasis live either on the streets or in huts where the temperature is the same as outside. To understand what it&#x27;s like, imagine sleeping in a refrigerator, waking up in it, bathing, and eating in the same cold. Warm clothes are a necessity. Every year, we bring sweaters, socks, and hats and distribute them to those most in need. Sometimes we also purchase warm blankets and drive along the parikrama road at night, covering those who sleep outside.</p>
-      <div class="padding---40px"></div>
-    </div>
-    <div class="swiper-arrow-wrapper">
-      <div id="left-button3" class="slider-button-left w-node-_9521d879-a379-ba22-d8a0-197fb5023bb5-cea4d901"></div>
-      <div id="right-button3" class="slider-button-right w-node-_9521d879-a379-ba22-d8a0-197fb5023bb6-cea4d901"></div>
-    </div>
-    <div id="basic-swiper3" class="basic-swiper">
-      <div class="swiper-wrapper basic-slider-list">
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/teplo19-p-500.jpg 500w, ../images/teplo19-p-800.jpg 800w, ../images/teplo19.jpg 1080w, ../images/teplo19.jpg 1600w, ../images/teplo19.jpg 2048w" alt="" src="../images/teplo19.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66beb08318948a6e4ec7d35a",
-      "origFileName": "teplo19.jpg",
-      "fileName": "teplo19.jpg",
-      "fileSize": 228786,
-      "height": 1365,
-      "url": "../images/teplo19.jpg",
-      "width": 2048,
-      "type": "image"
-    }
-  ],
-  "group": "cloth"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-right_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/teplo01-p-500.jpg 500w, ../images/teplo01.jpg 734w" alt="" src="../images/teplo01.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3de7754ff513c4e0d144e",
-      "origFileName": "teplo01.jpg",
-      "fileName": "teplo01.jpg",
-      "fileSize": 206877,
-      "height": 1122,
-      "url": "../images/teplo01.jpg",
-      "width": 734,
-      "type": "image"
-    }
-  ],
-  "group": "cloth"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-right w-inline-block w-lightbox"><img width="Auto" height="Auto" alt="" src="../images/teplo04.jpg" loading="lazy" srcset="../images/teplo04-p-500.jpg 500w, ../images/teplo04.jpg 735w" sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3de78ede96d206f4a18df",
-      "origFileName": "teplo03.jpg",
-      "fileName": "teplo03.jpg",
-      "fileSize": 269674,
-      "height": 1122,
-      "url": "../images/teplo03.jpg",
-      "width": 733,
-      "type": "image"
-    }
-  ],
-  "group": "cloth"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/teplo03-1-p-500.jpg 500w, ../images/teplo03-1.jpg 733w" alt="" src="../images/teplo03-1.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3de783c683126190473b4",
-      "origFileName": "teplo03-1.jpg",
-      "fileName": "teplo03-1.jpg",
-      "fileSize": 219714,
-      "height": 1122,
-      "url": "../images/teplo03-1.jpg",
-      "width": 733,
-      "type": "image"
-    }
-  ],
-  "group": "cloth"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/__2018-04-18__150043__2018-04-18__150042.webp 500w, ../images/__2018-04-18__150043__2018-04-18__150042.webp 800w, ../images/__2018-04-18__150043.webp 1017w" alt="" src="../images/__2018-04-18__150043.webp" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66beb0a000d67ddb99dcbc8b",
-      "origFileName": "__2018-04-18__150042.webp",
-      "fileName": "__2018-04-18__150042.webp",
-      "fileSize": 86310,
-      "height": 679,
-      "url": "../images/__2018-04-18__150042.webp",
-      "width": 1017,
-      "type": "image"
-    }
-  ],
-  "group": "cloth"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-right_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/__2018-04-18__145630-p-500.jpg 500w, ../images/__2018-04-18__145630-p-800.jpg 800w, ../images/__2018-04-18__145630.jpg 937w" alt="" src="../images/__2018-04-18__145630.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3de78eba111eb3e8b54d1",
-      "origFileName": "__2018-04-18__145630.jpg",
-      "fileName": "__2018-04-18__145630.jpg",
-      "fileSize": 275942,
-      "height": 681,
-      "url": "../images/__2018-04-18__145630.jpg",
-      "width": 937,
-      "type": "image"
-    }
-  ],
-  "group": "cloth"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/teplo01-1-p-500.jpg 500w, ../images/teplo01-1.jpg 725w" alt="" src="../images/teplo01-1.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3de78b0ef7f63febc8e2c",
-      "origFileName": "teplo01-1.jpg",
-      "fileName": "teplo01-1.jpg",
-      "fileSize": 231610,
-      "height": 1122,
-      "url": "../images/teplo01-1.jpg",
-      "width": 725,
-      "type": "image"
-    }
-  ],
-  "group": "cloth"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/__2018-04-18__150111-p-500.png 500w, ../images/__2018-04-18__150111-p-800.png 800w, ../images/__2018-04-18__150111.png 1080w, ../images/__2018-04-18__150111.png 1212w" alt="" src="../images/__2018-04-18__150111.png" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66beb0a1fae3f0931c2e71dd",
-      "origFileName": "__2018-04-18__150111.png",
-      "fileName": "__2018-04-18__150111.png",
-      "fileSize": 1412961,
-      "height": 681,
-      "url": "../images/__2018-04-18__150111.png",
-      "width": 1212,
-      "type": "image"
-    }
-  ],
-  "group": "cloth"
-}</script>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section hidden">
-    <div class="padding---120px"></div>
-    <div class="mw---1040px">
-      <h3><strong>Caring for Elderly Sadhus</strong></h3>
-      <div class="padding-txt---48px"></div>
-      <p>Many saints have chosen Radha Kunda as the place of their bhajan, vowing never to leave its banks. They live in ascetic conditions in small kutirs, for which they must pay monthly rent. We help repair these kutirs, organize medical care, and provide small monthly donations to the sadhus so they can pay for their rent and electricity.</p>
-      <div class="padding---40px"></div>
-    </div>
-    <div class="swiper-arrow-wrapper">
-      <div id="left-button4" class="slider-button-left w-node-_89674817-d696-9b84-2f8d-15290339d066-cea4d901"></div>
-      <div id="right-button4" class="slider-button-right w-node-_89674817-d696-9b84-2f8d-15290339d067-cea4d901"></div>
-    </div>
-    <div id="basic-swiper4" class="basic-swiper">
-      <div class="swiper-wrapper basic-slider-list">
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left-right w-inline-block w-lightbox"><img width="450" loading="lazy" alt="" src="../images/image-8.jpg">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f46a761fb6e68e52f3a411",
-      "origFileName": "image 8.jpg",
-      "fileName": "image 8.jpg",
-      "fileSize": 686425,
-      "height": 1350,
-      "url": "../images/image-8.jpg",
-      "width": 900,
-      "type": "image"
-    }
-  ],
-  "group": "care"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-right_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/66f309b9be025c91ac45b029_AKD_2717-p-500.jpeg 500w, ../images/66f309b9be025c91ac45b029_AKD_2717-p-800.jpeg 800w, ../images/66f309b9be025c91ac45b029_AKD_2717.jpeg 1000w" alt="" src="../images/66f309b9be025c91ac45b029_AKD_2717.jpeg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "671231e9d3b2768729ad0e7e",
-      "origFileName": "66f309b9be025c91ac45b029_AKD_2717.jpeg",
-      "fileName": "66f309b9be025c91ac45b029_AKD_2717.jpeg",
-      "fileSize": 150289,
-      "height": 1500,
-      "url": "../images/66f309b9be025c91ac45b029_AKD_2717.jpeg",
-      "width": 1000,
-      "type": "image"
-    }
-  ],
-  "group": "care"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/222-p-500.jpg 500w, ../images/222-p-800.jpg 800w, ../images/222.jpg 1000w" alt="" src="../images/222.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "6712321706a43383a93013e5",
-      "origFileName": "222.jpg",
-      "fileName": "222.jpg",
-      "fileSize": 296437,
-      "height": 1500,
-      "url": "../images/222.jpg",
-      "width": 1000,
-      "type": "image"
-    }
-  ],
-  "group": "care"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/333-p-500.jpg 500w, ../images/333-p-800.jpg 800w, ../images/333.jpg 1000w" alt="" src="../images/333.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "6712323d68408dfcf1151196",
-      "origFileName": "333.jpg",
-      "fileName": "333.jpg",
-      "fileSize": 291708,
-      "height": 1500,
-      "url": "../images/333.jpg",
-      "width": 1000,
-      "type": "image"
-    }
-  ],
-  "group": "care"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/444-p-500.jpg 500w, ../images/444-p-800.jpg 800w, ../images/444.jpg 1000w" alt="" src="../images/444.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "6712326890c2a6ccd1a1934f",
-      "origFileName": "444.jpg",
-      "fileName": "444.jpg",
-      "fileSize": 299044,
-      "height": 1500,
-      "url": "../images/444.jpg",
-      "width": 1000,
-      "type": "image"
-    }
-  ],
-  "group": "care"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-right_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/555-p-500.jpg 500w, ../images/555-p-800.jpg 800w, ../images/555.jpg 1000w" alt="" src="../images/555.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "67123289f943d0830032d18a",
-      "origFileName": "555.jpg",
-      "fileName": "555.jpg",
-      "fileSize": 265621,
-      "height": 1500,
-      "url": "../images/555.jpg",
-      "width": 1000,
-      "type": "image"
-    }
-  ],
-  "group": "care"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/666-p-500.jpg 500w, ../images/666-p-800.jpg 800w, ../images/666.jpg 1000w" alt="" src="../images/666.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "671232cbd3b2768729adf7e9",
-      "origFileName": "666.jpg",
-      "fileName": "666.jpg",
-      "fileSize": 305229,
-      "height": 1500,
-      "url": "../images/666.jpg",
-      "width": 1000,
-      "type": "image"
-    }
-  ],
-  "group": "care"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/888-p-500.jpg 500w, ../images/888-p-800.jpg 800w, ../images/888.jpg 1000w" alt="" src="../images/888.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "67123329ab2d7cb2ee7d8ded",
-      "origFileName": "888.jpg",
-      "fileName": "888.jpg",
-      "fileSize": 287563,
-      "height": 1500,
-      "url": "../images/888.jpg",
-      "width": 1000,
-      "type": "image"
-    }
-  ],
-  "group": "care"
-}</script>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section hidden">
-    <div class="padding---120px"></div>
-    <div class="mw---1040px">
-      <h3><strong>Cleaning Giriraj</strong></h3>
-      <div class="padding-txt---48px"></div>
-      <p>Pilgrims who come to Govardhan are often shocked by the amount of trash on the parikrama road. &quot;How can this be? How can a holy place be so dirty? Why isn’t anyone cleaning up?&quot; Those familiar with Vrindavan know that much of the trash is left by pilgrims who come from all over India. But the fact remains – there is a lot of trash. <br><br>We have two choices: complain and look for someone to blame, or clean it up ourselves. During almost every retreat, we set aside time to join with other Vaishnavas and clean at least a small section at the foot of Giriraj from plastic and other waste. One person can collect a large bag of trash in an hour. Five people can fill five bags. Now imagine what a group of 50 or 100 people can accomplish!</p>
-      <div class="padding---40px"></div>
-    </div>
-    <div class="swiper-arrow-wrapper">
-      <div id="left-button5" class="slider-button-left w-node-d8f63030-5213-0e39-58a2-49c71422f7cf-cea4d901"></div>
-      <div id="right-button5" class="slider-button-right w-node-d8f63030-5213-0e39-58a2-49c71422f7d0-cea4d901"></div>
-    </div>
-    <div id="basic-swiper5" class="basic-swiper">
-      <div class="swiper-wrapper basic-slider-list">
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/13112960_10201709179-p-500.jpg 500w, ../images/13112960_10201709179-p-800.jpg 800w, ../images/13112960_10201709179.jpg 1080w, ../images/13112960_10201709179.jpg 1288w" alt="" src="../images/13112960_10201709179.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f30872bc925dc957938d71",
-      "origFileName": "13112960_10201709179.jpg",
-      "fileName": "13112960_10201709179.jpg",
-      "fileSize": 281712,
-      "height": 859,
-      "url": "../images/13112960_10201709179.jpg",
-      "width": 1288,
-      "type": "image"
-    }
-  ],
-  "group": "clean"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-right_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/13116402_10201709175-p-500.jpg 500w, ../images/13116402_10201709175-p-800.jpg 800w, ../images/13116402_10201709175.jpg 1080w, ../images/13116402_10201709175.jpg 1288w" alt="" src="../images/13116402_10201709175.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f308723324ca502b745700",
-      "origFileName": "13116402_10201709175.jpg",
-      "fileName": "13116402_10201709175.jpg",
-      "fileSize": 198346,
-      "height": 859,
-      "url": "../images/13116402_10201709175.jpg",
-      "width": 1288,
-      "type": "image"
-    }
-  ],
-  "group": "clean"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-right w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/13116275_10201709175-p-500.jpg 500w, ../images/13116275_10201709175-p-800.jpg 800w, ../images/13116275_10201709175.jpg 1080w, ../images/13116275_10201709175.jpg 1288w" alt="" src="../images/13116275_10201709175.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f30872201e83ab532095b4",
-      "origFileName": "13116275_10201709175.jpg",
-      "fileName": "13116275_10201709175.jpg",
-      "fileSize": 211848,
-      "height": 859,
-      "url": "../images/13116275_10201709175.jpg",
-      "width": 1288,
-      "type": "image"
-    }
-  ],
-  "group": "clean"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-left w-inline-block w-lightbox"><img sizes="(max-width: 991px) 18vw, (max-width: 1919px) 17vw, 18vw" srcset="../images/13116036_10201709175-p-500.jpg 500w, ../images/13116036_10201709175-p-800.jpg 800w, ../images/13116036_10201709175.jpg 1080w, ../images/13116036_10201709175.jpg 1288w" alt="" src="../images/13116036_10201709175.jpg" loading="lazy">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66f3087274dac07f92640371",
-      "origFileName": "13116036_10201709175.jpg",
-      "fileName": "13116036_10201709175.jpg",
-      "fileSize": 195438,
-      "height": 859,
-      "url": "../images/13116036_10201709175.jpg",
-      "width": 1288,
-      "type": "image"
-    }
-  ],
-  "group": "clean"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left-right w-inline-block w-lightbox">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66abb2b1b00a4bc01593b7e7",
-      "origFileName": "2024-07-30 21.57.36.jpg",
-      "fileName": "2024-07-30 21.57.36.jpg",
-      "fileSize": 286308,
-      "height": 960,
-      "url": "../images/2024-07-30-21.57.36.jpg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "clean"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-right_bottom-left w-inline-block w-lightbox">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66abb2be07c38a67917da6c3",
-      "origFileName": "2024-07-30 21.55.47.jpg",
-      "fileName": "2024-07-30 21.55.47.jpg",
-      "fileSize": 440334,
-      "height": 1280,
-      "url": "../images/2024-07-30-21.55.47.jpg",
-      "width": 960,
-      "type": "image"
-    }
-  ],
-  "group": "clean"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-right w-inline-block w-lightbox">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66abb2d6072028242322777e",
-      "origFileName": "2024-07-30 21.58.07.jpg",
-      "fileName": "2024-07-30 21.58.07.jpg",
-      "fileSize": 400914,
-      "height": 960,
-      "url": "../images/2024-07-30-21.58.07.jpg",
-      "width": 1280,
-      "type": "image"
-    }
-  ],
-  "group": "clean"
-}</script>
-          </a>
-        </div>
-        <div class="swiper-slide basic-swiperr-item">
-          <a href="#" class="swiper-slide-content top-left_bottom-left w-inline-block w-lightbox">
-            <script type="application/json" class="w-json">{
-  "items": [
-    {
-      "_id": "66a40a7e09cb70c3b164aa48",
-      "origFileName": "4.jpg",
-      "fileName": "4.jpg",
-      "fileSize": 299771,
-      "height": 856,
-      "url": "../images/4.jpg",
-      "width": 784,
-      "type": "image"
-    }
-  ],
-  "group": "clean"
-}</script>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="padding---120px"></div>
-    <div class="mw---1040px">
-      <h3><strong>Principles of Our Service</strong></h3>
-      <div class="padding-txt---48px"></div>
-      <div class="padding---40px"></div><img loading="lazy" src="../images/Vector-2.svg" alt="" class="bg-image _2">
-      <p><span class="semibold"><strong>With love for Vraja<br></strong></span>We love Vrindavan, strive to deepen this love, and share it with others. We believe that motive and mood are key in any service.<br>‍<br><span class="semibold"><strong>Truly practical help<br>‍</strong></span>We work closely with people who have lived in Vraja for a long time and understand its real needs.<br><br><span class="semibold"><strong>Engagement and collaboration<br>‍</strong></span>We don’t take on projects that merely require raising money and handing it off. We immerse ourselves fully in each project, oversee every stage, and do our best to involve our volunteers.<br>‍<br><span class="semibold"><strong>Only targeted donations</strong></span><br>We spend money only on service. Donations designated for specific projects are never used for organizational or marketing expenses.<br><br><span class="semibold"><strong>More than just charity</strong></span><br>We understand that the opportunity to serve holy people is a great fortune, and we aim to approach everything with this mindset.</p>
-    </div>
-  </div>
-  <div class="section">
-    <div class="padding---160px"></div>
-    <div class="mw---1040px">
-      <p>With the establishment of Sri Rupa Seva Kunj, our ability to serve has greatly expanded. Now you can join in the service by either visiting us in person or by donating to accounts used exclusively for BrajCare:</p>
-      <div class="padding---40px"></div>
-      <div class="light-bg--wrapper">
-        <div class="rekvizity_grid">
-          <div class="col">
-            <div class="rekvizity_icon-wrapper"><img width="177" loading="lazy" alt="" src="../images/paypal.svg" class="paypal"></div>
-            <p><strong>info@rupaseva.ru</strong></p>
-          </div>
-          <div class="col">
-            <div class="rekvizity_icon-wrapper"><img loading="lazy" src="../images/sber.svg" alt="" class="sber"></div>
-            <p><strong>5484 3800 1917 6106<br></strong>Адриан К.</p>
-          </div>
-          <div class="col">
-            <div class="rekvizity_icon-wrapper"><img loading="lazy" src="../images/Frame-661.svg" alt="" class="upi"></div>
-            <p>7060061230@pnb<br>Pooran Chand</p>
-          </div>
-        </div>
-      </div>
-      <div class="padding---40px"></div>
-      <p>As you can see, most of our programs are long-term and require continuous support. That&#x27;s why regular donations are so essential for sustaining this service.</p>
-    </div>
-  </div>
-  <div class="padding---160px"></div>
-  <footer class="footer">
-    <div class="container">
-      <div id="w-node-_7cfe9154-cde9-ec8d-26e4-8da5571a4be2-571a4be0" class="div-block-3">
-        <div class="footer-row">
-          <div class="text---24px italic semibold"><em>nija-nikaṭa-nivāsaṁ dehi govardhana tvam</em><br></div>
-          <div class="text---24px italic">Oh Govardhan, please grant me eternal residence near you…</div>
-        </div>
-        <div id="w-node-_7cfe9154-cde9-ec8d-26e4-8da5571a4be9-571a4be0">
-          <div id="w-node-_7cfe9154-cde9-ec8d-26e4-8da5571a4bea-571a4be0" class="footer-row">
-            <div class="text---24px uppercase semibold">Our address</div>
-            <div class="text---24px">Sri Rupa Seva Kunj<br>Govardhan Parikrama Marg,<br>Aanyor, Uttar Pradesh 281502</div>
-            <a href="https://maps.app.goo.gl/bTU8N66GqsZw3UwB7" rel="noopener noreferrer" target="_blank" class="navlink underline">View on map</a>
-          </div>
-        </div>
-        <div id="w-node-_7cfe9154-cde9-ec8d-26e4-8da5571a4bf5-571a4be0" class="footer-buttons">
-          <a href="tel:+917060061230" class="outline---btn w-inline-block">
-            <div>+91 70 600 61 230</div>
-          </a>
-          <a href="mailto:info@rupaseva.ru" class="outline---btn w-inline-block">
-            <div>info@rupaseva.ru</div>
-          </a>
-          <a href="https://www.instagram.com/rupaseva/" rel="noopener noreferrer" target="_blank" class="outline---btn w-inline-block"><img src="../images/ic-inst.svg" loading="lazy" alt="" class="icon---24px invert">
-            <div>rupaseva</div>
-          </a>
-          <a href="https://www.youtube.com/@SriRupaseva" rel="noopener noreferrer" target="_blank" class="outline---btn w-inline-block"><img src="../images/ic-youtube.svg" loading="lazy" alt="" class="icon---24px invert">
-            <div>rupaseva</div>
-          </a>
-        </div>
-        <div id="w-node-_7cfe9154-cde9-ec8d-26e4-8da5571a4bfe-571a4be0" class="line mb"></div>
-        <div id="w-node-_7cfe9154-cde9-ec8d-26e4-8da5571a4bff-571a4be0" class="footer-menu">
-          <a href="../en/vision.html" class="navlink">ASHRAM</a>
-          <a href="../en/details2.html" class="navlink">DETAILS</a>
-          <a href="../en/retreats.html" class="navlink">RETREATS</a>
-          <a href="../en/retreats.html" class="navlink">PROJECTS</a>
-          <a href="../en/join-us.html" class="navlink">JOIN US</a>
-          <a href="../en/contacts.html" class="navlink">CONTACTS</a>
-        </div>
-        <div class="text---20px caption">© Sri Rupa Seva Kunj</div>
-      </div>
-    </div>
-  </footer>    <script src="../js/common.js"></script>
-  <script src="../js/site.js"></script>
-  <script defer="" src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js" integrity="sha384-o3Jw8w4GQVg4a7wdJn3EY6OiObjk4e3VFa1VF4fEtDoIWnmdXuM1CkjpBS4zSKvU" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav" crossorigin="anonymous"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
-  
-  <script>
-        function playVideo(video) {
-            if (video.paused) {
-                video.play();
-            }
-        }
-        document.querySelectorAll('.video-element').forEach(element => {
-            const video = element.querySelector('video');
-            element.addEventListener('mouseover', () => playVideo(video));
-            element.addEventListener('touchstart', () => playVideo(video));
-                        element.addEventListener('mouseout', () => {
-                if (!video.paused) {
-                    video.pause();
-                }
-            });
-            element.addEventListener('touchend', () => {
-                if (!video.paused) {
-                    video.pause();
-                }
-            });
-        });
-    </script>
-  <script>
-  /* nav*/
-document.addEventListener("DOMContentLoaded", () => {
-  const header = document.getElementById("header");
-  const menuButton = document.getElementById("header-button");
-  if (!menuButton) return;
-  const headerNav = document.getElementById("header-nav");
-  const langSwitcher = document.getElementById("lang-switcher");
-  let clickCount = 0;
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" || event.key === "Esc") {
-      if (header.classList.contains("opened")) {
-        closeMenu();
-      }
-    }
-  });
-  menuButton.addEventListener("click", function () {
-    clickCount++;
-    if (clickCount % 2 === 1) {
-      openMenu();
-    } else {
-      closeMenu();
-    }
-  });
-  function openMenu() {
-    menuButton.classList.add("open");
-    headerNav.style.display = "flex";
-    langSwitcher.style.display = "flex";
-    document.body.style.overflow = "hidden";
-    setTimeout(function () {
-      header.classList.add("opened");
-    }, 10);
-    menuButton.setAttribute("aria-expanded", "true");
+<body><style>/*beta-bar*/.beta-bar{background:#2f3b1f;color:rgba(255,255,255,.85);font:500 12px/1.4 "Open Sans",system-ui,sans-serif;letter-spacing:.06em;text-align:center;padding:6px 16px}@media (max-width:480px){.beta-bar{font-size:10.5px;letter-spacing:0;padding:5px 8px}}</style><div class="beta-bar">This site is still being filled in and tested</div>
+<template data-dc><x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&amp;display=swap">
+<style>body{margin:0;background:#f6fcf4}
+*{box-sizing:border-box}
+.pg{--bg:#f6fcf4;--bg2:#e7f2e3;--green:#155915;--green-d:#0d3b0d;--sun:#ffa30b;--sun-ink:#8a5200;--ink:#212322;--mute:#4d564f;--line:rgba(33,35,34,.16);--ease:cubic-bezier(.33,1,.68,1);--ease-out:cubic-bezier(.16,1,.3,1);--hfs:clamp(42px,5.3vw,76px);
+ background:var(--bg);color:var(--ink);font:400 18px/1.6 'Open Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+:where(.pg) a{color:inherit}
+.wrap{max-width:1392px;margin:0 auto;padding:0 clamp(16px,4vw,56px)}
+.eb{display:inline-flex;align-items:center;gap:14px;margin:0;font-size:14px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--sun-ink)}
+.eb i{display:block;width:40px;height:1px;background:currentColor}
+.caps{font-family:'Cormorant Garamond',serif;font-weight:300;text-transform:uppercase;letter-spacing:.05em;line-height:.95;color:var(--green-d);margin:0}
+h2.caps{font-size:calc(var(--hfs) * .9);margin-top:22px}
+.lead{margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(24px,2.4vw,32px);line-height:1.32;color:var(--ink)}
+.sec{padding:120px 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:last baseline;margin-bottom:64px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;border:1px solid rgba(13,59,13,.3);font:600 15px 'Open Sans';letter-spacing:.08em;text-decoration:none;color:var(--green-d);transition:background .35s,color .35s,border-color .35s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:hover{background:var(--green);border-color:var(--green);color:#fff}
+.btn-sun{background:var(--sun);border-color:var(--sun);color:#1f1a10;text-transform:uppercase;letter-spacing:.14em;padding:18px 28px}
+.btn-sun:hover{background:#fff;border-color:#fff;color:var(--green-d)}
+.sh{position:sticky;top:0;z-index:50}
+.sh-in{display:flex;align-items:center;gap:22px;height:76px;padding:0 max(clamp(16px,4vw,56px),calc(50% - 640px));background:rgba(250,253,248,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(33,35,34,.18)}
+.sh-logo{display:block;flex:none}
+.sh .lg{display:block;height:34px;width:auto;fill:#000}
+.lg .lg-acc{fill:var(--sun)}
+.sh-nav{display:flex;gap:22px;margin-left:auto}
+.sh-nav a{font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--mute);padding:6px 0;border-bottom:1.5px solid transparent;transition:color .3s,border-color .3s}
+.sh-nav a:hover{color:var(--green-d)}
+.sh-nav a.on{color:var(--green-d);border-color:var(--sun)}
+.sh-r{display:flex;align-items:center;gap:12px}
+.sh-lang{display:inline-flex;padding:3px;border-radius:999px;background:var(--bg2);font-size:13px;font-weight:600}
+.sh-lang a,.sh-lang b{padding:5px 10px;border-radius:999px;text-decoration:none;color:var(--mute)}
+.sh-lang b{background:#fff;color:var(--green-d)}
+.sh-ct{position:relative}
+.sh-ctb{padding:12px 20px;border:0;border-radius:999px;background:var(--green);color:#fff;font:600 14px 'Open Sans';letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.sh-cm{position:absolute;right:0;top:calc(100% + 10px);min-width:250px;padding:8px;border-radius:20px;background:#fff;box-shadow:0 24px 50px -20px rgba(13,59,13,.45);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .25s,transform .3s var(--ease),visibility .25s}
+.sh-ct.open .sh-cm{opacity:1;visibility:visible;transform:none}
+.sh-cm a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;text-decoration:none;font-size:16px}
+.sh-cm a:hover{background:var(--bg2)}
+.sh-cm svg{width:20px;height:20px;color:var(--green)}
+.s-hero{padding:80px 0 110px}
+.s-hero-g{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:end}
+.s-hero h1{font-size:var(--hfs);margin-top:24px}
+.s-hero .lead{margin-top:32px;max-width:520px}
+.s-hero-ph{margin:0;aspect-ratio:7/5;overflow:hidden;border-top-left-radius:120px;cursor:zoom-in}
+.s-hero-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.6s var(--ease)}
+.s-hero-ph:hover img{transform:scale(1.03)}
+.s-facts{list-style:none;margin:72px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.s-facts li{padding:28px 24px 0 0}
+.s-facts li+li{padding-left:28px;border-left:1px solid var(--line)}
+.s-facts b{display:block;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:44px;line-height:1;color:var(--green-d)}
+.s-facts span{display:block;margin-top:10px;font-size:16px;line-height:1.5;color:var(--mute)}
+.rm-ph{aspect-ratio:4/3;overflow:hidden;border-top-left-radius:80px;background:#ddd;cursor:zoom-in}
+.rm-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.rm-th{display:flex;gap:10px;margin-top:12px}
+.rm-th button{flex:1;padding:0;border:0;aspect-ratio:4/3;overflow:hidden;border-radius:10px;cursor:pointer;opacity:.55;outline:2px solid transparent;outline-offset:2px;transition:opacity .3s,outline-color .3s}
+.rm-th button.on,.rm-th button:hover{opacity:1}
+.rm-th button.on{outline-color:var(--sun)}
+.rm-th img{width:100%;height:100%;object-fit:cover;display:block}
+.rm h3{margin:26px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:calc(var(--hfs) * .6);line-height:1;text-transform:uppercase;letter-spacing:.05em;color:var(--green-d)}
+.sf{background:#14320f;color:rgba(255,255,255,.82);padding:72px 0 36px;font-size:16px;line-height:1.6}
+.sf-g{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:40px;align-items:start}
+.sf .lg{display:block;height:44px;width:auto;fill:#fff}
+.sf-h{margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.sf p{margin:0}
+.sf a{text-decoration:none;color:#fff}
+.sf a:hover{color:var(--sun)}
+.sf-b{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;color:rgba(255,255,255,.6)}
+.sf-ai{display:inline-flex;align-items:center;gap:10px}
+.sf-ai svg{width:18px;height:18px;color:var(--sun)}
+.vl{position:fixed;inset:0;z-index:110;display:grid;place-items:center;background:rgba(12,10,6,.94);opacity:0;transition:opacity .4s}
+.vl.on{opacity:1}
+.vl video{width:min(92vw,calc(86vh * 16 / 9));aspect-ratio:16/9;background:#000;border-radius:10px}
+.vl .lb-x{z-index:2}
+@media (max-width:767px){.vl video{width:100vw;border-radius:0}}
+@keyframes hvPulse{from{transform:scale(.85);opacity:1}to{transform:scale(1.4);opacity:0}}
+.lb{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:rgba(12,10,6,.94)}
+.lb[hidden]{display:none}
+.lb figure{margin:0;max-width:min(92vw,1400px)}
+.lb img{display:block;max-width:100%;max-height:82vh;border-radius:8px}
+.lb figcaption{margin-top:14px;text-align:center;color:rgba(255,255,255,.8);font-size:16px}
+.lb-x{position:absolute;top:20px;right:22px;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:none;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+.lb-a{position:absolute;top:50%;width:56px;height:56px;margin-top:-28px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);color:#fff;display:grid;place-items:center;cursor:pointer}
+.lb-a svg{width:24px;height:24px}
+.lb-p{left:22px}
+.lb-n{right:22px}
+@media (max-width:1359px){.sh-in{gap:16px}
+.sh-nav{gap:16px}
+.sh-nav a{font-size:13px;letter-spacing:.08em}}
+@media (max-width:1199px){.sh-nav{display:none}
+.s-hero-g{grid-template-columns:minmax(0,1fr);gap:40px}
+.s-facts{grid-template-columns:1fr 1fr}
+.s-facts li:nth-child(3){padding-left:0;border-left:0}
+.s-facts li:nth-child(n+3){margin-top:24px}
+.sf-g{grid-template-columns:1fr 1fr}}
+@media (max-width:767px){.pg{font-size:17px}
+.sec{padding:76px 0}
+.head{grid-template-columns:1fr;gap:20px;margin-bottom:36px}
+h2.caps{font-size:34px}
+.s-hero{padding:40px 0 76px}
+.s-hero h1{font-size:clamp(36px,10.4vw,46px)}
+.s-hero-ph{border-top-left-radius:64px}
+.s-facts{grid-template-columns:1fr;margin-top:40px}
+.s-facts li,.s-facts li+li{padding:20px 0;border-left:0;border-bottom:1px solid var(--line);margin:0!important}
+.s-facts b{font-size:36px}
+.sh-in{gap:10px;height:64px}
+.sh .lg{height:28px}
+.sh-lang{display:none}
+.sh-ctb{padding:10px 14px;font-size:13px}
+.sf-g{grid-template-columns:1fr}
+.lb-a{top:auto;bottom:22px;margin:0}}
+body{margin:0;background:#f6fcf4}
+*{box-sizing:border-box}
+.pg{--bg:#f6fcf4;--bg2:#e7f2e3;--green:#155915;--green-d:#0d3b0d;--sun:#ffa30b;--sun-ink:#8a5200;--ink:#212322;--mute:#4d564f;--line:rgba(33,35,34,.16);--ease:cubic-bezier(.33,1,.68,1);--ease-out:cubic-bezier(.16,1,.3,1);--hfs:clamp(42px,5.3vw,76px);
+ background:var(--bg);color:var(--ink);font:400 18px/1.6 'Open Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+:where(.pg) a{color:inherit}
+.wrap{max-width:1392px;margin:0 auto;padding:0 clamp(16px,4vw,56px)}
+.eb{display:inline-flex;align-items:center;gap:14px;margin:0;font-size:14px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--sun-ink)}
+.eb i{display:block;width:40px;height:1px;background:currentColor}
+.caps{font-family:'Cormorant Garamond',serif;font-weight:300;text-transform:uppercase;letter-spacing:.05em;line-height:.95;color:var(--green-d);margin:0}
+h2.caps{font-size:calc(var(--hfs) * .9);margin-top:22px}
+.lead{margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(24px,2.4vw,32px);line-height:1.32;color:var(--ink)}
+.sec{padding:120px 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:last baseline;margin-bottom:64px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;border:1px solid rgba(13,59,13,.3);font:600 15px 'Open Sans';letter-spacing:.08em;text-decoration:none;color:var(--green-d);transition:background .35s,color .35s,border-color .35s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:hover{background:var(--green);border-color:var(--green);color:#fff}
+.btn-sun{background:var(--sun);border-color:var(--sun);color:#1f1a10;text-transform:uppercase;letter-spacing:.14em;padding:18px 28px}
+.btn-sun:hover{background:#fff;border-color:#fff;color:var(--green-d)}
+.sh{position:sticky;top:0;z-index:50}
+.sh-in{display:flex;align-items:center;gap:22px;height:76px;padding:0 max(clamp(16px,4vw,56px),calc(50% - 640px));background:rgba(250,253,248,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(33,35,34,.18)}
+.sh-logo{display:block;flex:none}
+.sh .lg{display:block;height:34px;width:auto;fill:#000}
+.lg .lg-acc{fill:var(--sun)}
+.sh-nav{display:flex;gap:22px;margin-left:auto}
+.sh-nav a{font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--mute);padding:6px 0;border-bottom:1.5px solid transparent;transition:color .3s,border-color .3s}
+.sh-nav a:hover{color:var(--green-d)}
+.sh-nav a.on{color:var(--green-d);border-color:var(--sun)}
+.sh-r{display:flex;align-items:center;gap:12px}
+.sh-lang{display:inline-flex;padding:3px;border-radius:999px;background:var(--bg2);font-size:13px;font-weight:600}
+.sh-lang a,.sh-lang b{padding:5px 10px;border-radius:999px;text-decoration:none;color:var(--mute)}
+.sh-lang b{background:#fff;color:var(--green-d)}
+.sh-ct{position:relative}
+.sh-ctb{padding:12px 20px;border:0;border-radius:999px;background:var(--green);color:#fff;font:600 14px 'Open Sans';letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.sh-cm{position:absolute;right:0;top:calc(100% + 10px);min-width:250px;padding:8px;border-radius:20px;background:#fff;box-shadow:0 24px 50px -20px rgba(13,59,13,.45);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .25s,transform .3s var(--ease),visibility .25s}
+.sh-ct.open .sh-cm{opacity:1;visibility:visible;transform:none}
+.sh-cm a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;text-decoration:none;font-size:16px}
+.sh-cm a:hover{background:var(--bg2)}
+.sh-cm svg{width:20px;height:20px;color:var(--green)}
+.rm-ph{aspect-ratio:4/3;overflow:hidden;border-top-left-radius:80px;background:#ddd;cursor:zoom-in}
+.rm-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.rm-th{display:flex;gap:10px;margin-top:12px}
+.rm-th button{flex:1;padding:0;border:0;aspect-ratio:4/3;overflow:hidden;border-radius:10px;cursor:pointer;opacity:.55;outline:2px solid transparent;outline-offset:2px;transition:opacity .3s,outline-color .3s}
+.rm-th button.on,.rm-th button:hover{opacity:1}
+.rm-th button.on{outline-color:var(--sun)}
+.rm-th img{width:100%;height:100%;object-fit:cover;display:block}
+.rm h3{margin:26px 0 0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:calc(var(--hfs) * .6);line-height:1;text-transform:uppercase;letter-spacing:.05em;color:var(--green-d)}
+.sf{background:#14320f;color:rgba(255,255,255,.82);padding:72px 0 36px;font-size:16px;line-height:1.6}
+.sf-g{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:40px;align-items:start}
+.sf .lg{display:block;height:44px;width:auto;fill:#fff}
+.sf-h{margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.sf p{margin:0}
+.sf a{text-decoration:none;color:#fff}
+.sf a:hover{color:var(--sun)}
+.sf-b{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:56px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;color:rgba(255,255,255,.6)}
+.sf-ai{display:inline-flex;align-items:center;gap:10px}
+.sf-ai svg{width:18px;height:18px;color:var(--sun)}
+.vl{position:fixed;inset:0;z-index:110;display:grid;place-items:center;background:rgba(12,10,6,.94);opacity:0;transition:opacity .4s}
+.vl.on{opacity:1}
+.vl video{width:min(92vw,calc(86vh * 16 / 9));aspect-ratio:16/9;background:#000;border-radius:10px}
+.vl .lb-x{z-index:2}
+@media (max-width:767px){.vl video{width:100vw;border-radius:0}}
+@keyframes hvPulse{from{transform:scale(.85);opacity:1}to{transform:scale(1.4);opacity:0}}
+.lb{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:rgba(12,10,6,.94)}
+.lb[hidden]{display:none}
+.lb figure{margin:0;max-width:min(92vw,1400px)}
+.lb img{display:block;max-width:100%;max-height:82vh;border-radius:8px}
+.lb figcaption{margin-top:14px;text-align:center;color:rgba(255,255,255,.8);font-size:16px}
+.lb-x{position:absolute;top:20px;right:22px;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:none;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+.lb-a{position:absolute;top:50%;width:56px;height:56px;margin-top:-28px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);color:#fff;display:grid;place-items:center;cursor:pointer}
+.lb-a svg{width:24px;height:24px}
+.lb-p{left:22px}
+.lb-n{right:22px}
+@media (max-width:1359px){.sh-in{gap:16px}
+.sh-nav{gap:16px}
+.sh-nav a{font-size:13px;letter-spacing:.08em}}
+@media (max-width:1199px){.sh-nav{display:none}
+.sf-g{grid-template-columns:1fr 1fr}}
+@media (max-width:767px){.pg{font-size:17px}
+.sec{padding:76px 0}
+.head{grid-template-columns:1fr;gap:20px;margin-bottom:36px}
+h2.caps{font-size:34px}
+.sh-in{gap:10px;height:64px}
+.sh .lg{height:28px}
+.sh-lang{display:none}
+.sh-ctb{padding:10px 14px;font-size:13px}
+.sf-g{grid-template-columns:1fr}
+.lb-a{top:auto;bottom:22px;margin:0}}
+@keyframes mnIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hm-sh .sh-nav{margin-left:auto}
+.hm-burg{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.hm-burg i{display:block;width:18px;height:1.5px;background:var(--green-d);transition:transform .3s}
+.hm-mob{display:none}
+.hm-sh.open .hm-burg i:first-child{transform:translateY(3.75px) rotate(45deg)}
+.hm-sh.open .hm-burg i:last-child{transform:translateY(-3.75px) rotate(-45deg)}
+@keyframes hmZoom{from{transform:scale(1.08)}to{transform:none}}
+@keyframes hmSpin{to{transform:rotate(360deg)}}
+figcaption{font-size:14px}
+.hm-verse{text-align:center;padding-bottom:48px;margin-bottom:48px;border-bottom:1px solid var(--line)}
+.hm-verse p{margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,2.6vw,38px);color:var(--sun-ink)}
+.hm-verse span{display:block;margin-top:10px;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--green-d)}
+@media (max-width:1199px){.hm-sh .sh-nav{display:none}
+.hm-burg{display:flex}
+.hm-sh .sh-r{margin-left:auto}
+.hm-mob{position:fixed;inset:64px 0 0;z-index:49;display:flex;flex-direction:column;gap:32px;padding:32px max(16px,4vw);background:var(--bg);transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+.hm-sh.open .hm-mob{opacity:1;transform:none;pointer-events:auto}
+.hm-mob nav{display:flex;flex-direction:column}
+.hm-mob nav a{padding:14px 0;border-bottom:1px solid var(--line);font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--green-d);text-decoration:none}
+.hm-mob-c{display:flex;flex-wrap:wrap;gap:10px}}
+@keyframes dwn{0%{transform:none;opacity:1}70%{transform:translateY(14px);opacity:0}100%{opacity:0}}
+@keyframes prog{to{width:100%}}
+.h2-ac{position:relative;display:flex;flex-direction:column;color:inherit;text-decoration:none}
+.a-trail{padding-top:70px}
+.h2-trail{position:absolute;left:0;right:0;top:0;width:100%;height:60px;overflow:visible}
+.h2-trail path{fill:none;stroke:var(--sun-ink);stroke-width:2;stroke-dasharray:.006 .01;opacity:.5;vector-effect:non-scaling-stroke}
+.a-trail .h2-ac.lit small{color:var(--sun)}
+.a-acc{display:flex;gap:16px;height:560px}
+.a-acc .h2-ac{flex:1 1 0;min-width:0;transition:flex-grow .8s var(--ease)}
+.a-acc .h2-ac.on{flex-grow:3.2}
+.g3-day{position:relative;list-style:none;margin:0;padding:0}
+.g3-day::before{content:"";position:absolute;left:98px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--sun),var(--green))}
+.g3-day li{position:relative;display:grid;grid-template-columns:80px 40px minmax(0,1fr);align-items:start;padding:22px 0}
+.g3-day time{font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1;color:var(--sun-ink)}
+.g3-day b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:30px;line-height:1.05;color:var(--green-d)}
+.g3-day p{margin:6px 0 0;color:var(--mute)}
+.g3-day li:nth-child(2) b,.g3-day li:nth-child(4) b{color:var(--sun-ink)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.s3-p{position:absolute;left:50%;top:50%;width:120px;margin:-60px 0 0 -60px;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--green-d);text-decoration:none;
+ transform:rotate(calc(var(--a) + var(--spin,0deg))) translate(min(38vw,290px)) rotate(calc(-1 * (var(--a) + var(--spin,0deg))))}
+.s3-p span{display:grid;place-items:center;width:96px;height:96px;border-radius:50%;overflow:hidden;background:var(--green-d);box-shadow:0 0 0 6px var(--bg),0 16px 30px -12px rgba(0,0,0,.4);transition:transform .4s var(--ease)}
+.s3-p span img{width:100%;height:100%;object-fit:cover}
+.s3-p em{font-family:'Cormorant Garamond',serif;font-style:normal;font-size:44px;color:var(--sun)}
+.s3-p b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:22px}
+.s3-p:hover span{transform:scale(1.12)}
+.t2-path{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-bottom:56px}
+.t2-path svg{position:absolute;left:8%;right:8%;top:30px;width:84%;height:40px;overflow:visible}
+.t2-path path{fill:none;stroke:var(--sun);stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2s var(--ease);vector-effect:non-scaling-stroke}
+.t2-path.in path{stroke-dashoffset:0}
+@media (max-width:1199px){.a-acc{height:480px}}
+@media (max-width:767px){.a-acc{flex-direction:column;height:auto}
+.a-acc .h2-ac{min-height:120px}
+.a-acc .h2-ac.on{min-height:380px}
+.s3-p{width:90px;margin:-45px 0 0 -45px;transform:rotate(calc(var(--a) + var(--spin,0deg))) translate(40vw) rotate(calc(-1 * (var(--a) + var(--spin,0deg))))}
+.s3-p span{width:64px;height:64px}
+.s3-p b{font-size:16px}
+.t1-g,.t-led,.t-alt,.t2-path,.t3-board{grid-template-columns:1fr}
+.t2-path svg{display:none}}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.tb-st{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:end;margin-bottom:56px}
+@keyframes climb{0%{opacity:1;left:8%;bottom:calc(300px + 8px)}30%{left:30%;bottom:calc(300px + 8px)}36%{left:36%;bottom:calc(380px + 8px)}63%{left:63%;bottom:calc(380px + 8px)}69%{left:69%;bottom:calc(460px + 8px)}100%{opacity:1;left:88%;bottom:calc(460px + 8px)}}
+.tc-g{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-bottom:56px}
+@media (max-width:767px){.r2-g,.r3-g,.tb-st,.tc-g{grid-template-columns:1fr}}
+.gt-tg{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;align-self:flex-start;padding:5px;border-radius:999px;background:var(--bg2)}
+.gt-tg button{position:relative;z-index:1;padding:13px 22px;border:0;background:none;font:600 15px 'Open Sans';letter-spacing:.04em;color:var(--mute);cursor:pointer;transition:color .4s}
+.gt-tg button.on{color:#fff}
+.gt-tg i{position:absolute;left:5px;top:5px;bottom:5px;width:calc(50% - 5px);border-radius:999px;background:var(--green-d);transition:transform .5s var(--ease)}
+.gt-tg.y i{transform:translateX(100%)}
+.gt-p{display:none}
+.gt-p.on{display:block;animation:gtIn .6s var(--ease-out)}
+@keyframes gtIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.gv2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center}
+.gv2 ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.gv2 li{border-bottom:1px solid var(--line)}
+.gv2 li a{display:grid;grid-template-columns:36px minmax(0,1fr) 24px;gap:12px;align-items:baseline;padding:16px 0 12px;color:inherit;text-decoration:none}
+.gv2 li a > span{font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(138,82,0,.5)}
+.gv2 li b{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:30px;line-height:1;color:var(--green-d);transition:color .3s,transform .4s var(--ease)}
+.gv2 li em svg{width:20px;height:20px;color:var(--green);opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .4s var(--ease)}
+.gv2 li p{margin:0 0 0 48px;max-height:0;overflow:hidden;opacity:0;font-size:15px;color:var(--mute);transition:max-height .5s,opacity .5s,margin .5s}
+.gv2 li.on b{color:var(--sun-ink);transform:translateX(6px)}
+.gv2 li.on em svg{opacity:1;transform:none}
+.gv2 li.on p{max-height:60px;opacity:1;margin-bottom:14px}
+.tm4-p{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-bottom:56px}
+@keyframes tmDot{0%{left:0;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes tmPulse{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+@media (max-width:1199px){.gv2{grid-template-columns:1fr}}
+@media (max-width:767px){.gt-tg button{padding:11px 14px;font-size:13px}
+.tm4-p,.tm4-chips{grid-template-columns:1fr}}
+.a-acc .h2-ac{transition:flex-grow 1.3s cubic-bezier(.65,0,.35,1)}
+.gt-p.on{animation:gtRise .6s var(--ease-out)}
+@keyframes gtRise{from{transform:translateY(14px)}to{transform:none}}
+.a-acc .h2-ac{overflow:hidden;border-radius:999px 999px 16px 16px;transition:flex-grow 2.4s cubic-bezier(.45,0,.2,1)}
+.g6-s{cursor:pointer}
+.g6-s image,.g6-s .g6-sh,.g6-s text{transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+.g6-s text{fill:#fff;font-family:'Cormorant Garamond',serif;font-size:19px;pointer-events:none;paint-order:stroke;stroke:rgba(8,24,8,.35);stroke-width:3px}
+.g6-s:hover image,.g6-s:hover .g6-sh,.g6-s:hover text,.g6-s.on image,.g6-s.on .g6-sh,.g6-s.on text{transform:translate(var(--dx),var(--dy))}
+.hm-verse p{color:var(--sun)}
+.hm-verse span{color:rgba(255,255,255,.78)}
+.hm-verse{border-bottom-color:rgba(255,255,255,.14)}
+@media (max-width:767px){.g6-s text{font-size:16px}}
+.a-acc .h2-ac{transition:flex-grow 1s var(--ease)}
+.a-acc .h2-ac.on{flex-grow:3.4}
+.pg{--bg:#f6fcf4;--bg2:#e7f2e3;--green:#155915;--green-d:#0d3b0d;--sun:#ffa30b;--sun-ink:#8a5200;--ink:#212322;--mute:#4d564f;--line:rgba(33,35,34,.16);--ease:cubic-bezier(.33,1,.68,1);--ease-out:cubic-bezier(.16,1,.3,1);--hfs:clamp(42px,5.3vw,76px);
+ background:var(--bg);color:var(--ink);font:400 18px/1.6 'Open Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.sp7{display:flex;flex-direction:column;gap:10px;height:470px}
+.sp7-s{position:relative;flex:1 1 0;min-height:0;display:flex;align-items:center;gap:20px;padding:0 26px;overflow:hidden;border-radius:16px;color:#fff;text-decoration:none;transition:flex-grow 1.6s cubic-bezier(.45,0,.2,1)}
+.sp7-s:first-child{border-top-left-radius:60px}
+.sp7-s.on{flex-grow:4}
+.sp7-s img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1);transition:transform 2s cubic-bezier(.45,0,.2,1)}
+.sp7-s.on img{transform:none}
+@media (max-width:767px){.sp7{height:420px}}
+.gi-hero .s-hero-ph{border-radius:999px 999px 18px 18px;aspect-ratio:4/4.4;max-width:520px;justify-self:end;width:100%}
+.gi-ph{display:block;width:100%;padding:0;border:0;background:#ddd;overflow:hidden;cursor:zoom-in}
+.gi-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s var(--ease)}
+.gi-ph:hover img{transform:scale(1.04)}
+.gi-hero-ph .gi-ph{height:100%}
+.gi-nx-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:28px}
+.gi-nx-c{display:flex;flex-direction:column;color:inherit;text-decoration:none}
+.gi-nx-c > span{display:block;aspect-ratio:3/3.4;overflow:hidden;border-radius:999px 999px 14px 14px}
+.gi-nx-c img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.gi-nx-c:hover img{transform:scale(1.05)}
+.gi-nx-c b{margin-top:16px;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:28px;color:var(--green-d)}
+.gi-nx-c small{margin-top:4px;font-size:15px;color:var(--mute)}
+@media (max-width:1199px){.gi-nx-g{grid-template-columns:1fr 1fr}}
+@media (max-width:767px){.gi-hero .s-hero-ph{max-width:none}}
+.sv-p{margin:18px 0 0;font-size:18px;line-height:1.7;color:var(--mute);max-width:600px}
+.sv-b{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.bc-hp-g{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:64px;align-items:center}
+.bc-hp h2{margin-top:20px}
+.bc-hp .lead{margin-top:28px}
+@media (max-width:1199px){.bc-hp-g{grid-template-columns:1fr;gap:36px}}
+.bc-pay{padding:12px 32px 28px;border-radius:20px;background:var(--bg2)}
+.bc-pay-r{display:grid;grid-template-columns:1fr auto;column-gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.bc-pay-r small{grid-column:1;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sun-ink)}
+.bc-pay-r b{grid-column:1;margin-top:6px;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:28px;color:var(--green-d);word-break:break-all}
+.bc-pay-r span{grid-column:1;font-size:14px;color:var(--mute)}
+.bc-cp{grid-column:2;grid-row:1/4;align-self:center;padding:10px 16px;border:1px solid var(--line);border-radius:999px;background:var(--bg);font-size:13px;font-weight:600;color:var(--green-d);cursor:pointer;transition:background .3s}
+.bc-cp.ok{background:var(--green);color:#fff;border-color:var(--green)}
+.bc-pay-n{margin:18px 0 0;font-size:14px;color:var(--mute)}
+@media (max-width:767px){.bc-pay{padding:6px 20px 22px}
+.bc-pay-r{grid-template-columns:1fr}
+.bc-cp{grid-column:1;grid-row:auto;justify-self:start;margin-top:12px}}
+.bc-q,.bc-pc{background:var(--bg2)}
+.bc-q-in{max-width:900px;text-align:center}
+.bc-qt{margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,2.6vw,38px);line-height:1.35;color:var(--green-d)}
+.bc-qs{margin:20px 0 0;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sun-ink)}
+.bc-q .sv-p{margin:32px auto 0;max-width:680px}
+.bc-tb{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;align-items:start}
+.bc-tl{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.bc-tl button{display:flex;align-items:baseline;gap:14px;width:100%;padding:22px 0;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;font-family:'Cormorant Garamond',serif;font-size:28px;line-height:1.1;color:var(--mute);cursor:pointer;transition:color .4s,padding .6s var(--ease)}
+.bc-tl button span{font-family:'Open Sans';font-size:12px;font-weight:600;color:rgba(138,82,0,.55)}
+.bc-tl button.on{color:var(--green-d);padding-left:14px}
+.bc-tl button.on span{color:var(--sun-ink)}
+.bc-pn{display:none}
+.bc-pn.on{display:block;animation:bcRise .6s var(--ease-out)}
+@keyframes bcRise{from{transform:translateY(14px)}to{transform:none}}
+.bc-pp{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:180px 180px;gap:14px}
+.bc-pp .gi-ph{height:100%;border-radius:14px}
+.bc-pp .gi-ph:first-child{grid-row:1/3;border-top-left-radius:120px}
+.bc-pn h3{margin:28px 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:34px;color:var(--green-d)}
+.bc-pn > p{margin:12px 0 0;font-size:18px;line-height:1.7;color:var(--mute);max-width:720px}
+.bc-fc{background:var(--green-d);color:#e9f3e5}
+.bc-fc .eb{color:var(--sun)}
+.bc-fc h2{color:#fff}
+.bc-fc .lead{color:rgba(233,243,229,.9)}
+.bc-fg{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:14px}
+.bc-f{display:block;aspect-ratio:2/3;overflow:hidden;border-radius:999px 999px 14px 14px}
+.bc-f:nth-child(even){transform:translateY(34px)}
+.bc-f .gi-ph{height:100%;filter:saturate(.85);transition:filter .6s}
+.bc-f .gi-ph:hover{filter:none}
+.bc-fc .wrap{padding-bottom:34px}
+.bc-pg{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.bc-pg article{padding:28px 24px;border-radius:18px;background:var(--bg)}
+.bc-pg span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--sun);color:#1f1a10;font-weight:700}
+.bc-pg h3{margin:18px 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:26px;line-height:1.1;color:var(--green-d)}
+.bc-pg p{margin:10px 0 0;font-size:15px;line-height:1.6;color:var(--mute)}
+@media (max-width:1199px){.bc-tb,.bc-hp-g{grid-template-columns:1fr;gap:36px}
+.bc-fg{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bc-pg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:767px){.bc-tl{display:flex;overflow-x:auto;gap:8px;border:0;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}
+.bc-tl li{flex:0 0 auto}
+.bc-tl button{padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:18px;white-space:nowrap}
+.bc-tl button.on{padding-left:16px;background:var(--green-d);color:#fff;border-color:var(--green-d)}
+.bc-tl button span{display:none}
+.bc-pp{grid-template-rows:140px 140px}
+.bc-pg{grid-template-columns:1fr}
+.bc-fg{gap:10px}
+.bc-f:nth-child(even){transform:translateY(20px)}}
+.pg{--bg:#f6fcf4;--bg2:#e7f2e3;--green:#155915;--green-d:#0d3b0d;--sun:#ffa30b;--sun-ink:#8a5200;--ink:#212322;--mute:#4d564f;--line:rgba(33,35,34,.16);--ease:cubic-bezier(.33,1,.68,1);--ease-out:cubic-bezier(.16,1,.3,1);--hfs:clamp(42px,5.3vw,76px);
+ background:var(--bg);color:var(--ink);font:400 18px/1.6 'Open Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+/*fix1*/.hm-verse p,.gs-sk,.kj-sk,.wp-sk,.gr-v,.gs-v{font-family:'Open Sans',sans-serif!important;font-style:italic!important;font-weight:600!important;letter-spacing:0!important;line-height:1.45!important}.hm-verse p{font-size:clamp(19px,1.8vw,26px)!important}.gs-sk,.kj-sk,.wp-sk{font-size:clamp(22px,2.4vw,34px)!important}.gr-v,.gs-v{font-size:clamp(19px,1.7vw,24px)!important}@media (max-width:1359px){.sh-back span{display:inline!important;font-size:13px}}@media (max-width:767px){.sh-back span{display:none!important}}/*fix2*/.sh .sh-logo .lg{height:48px!important}@media (max-width:767px){.sh .sh-logo .lg{height:38px!important}}</style>
+</helmet>
+<div class="pg" id="top"><header class="sh hm-sh"><div class="sh-in"><a class="sh-logo" href="/en/#top" aria-label="Sri Rupa Seva Kunj — home"><svg class="lg" viewBox="0 0 308.75 98.28" role="img" aria-label="Sri Rupa Seva Kunj"><title>Sri Rupa Seva Kunj</title><path d="M26.44,33.99c0-1.56-.46-2.83-1.39-3.81-.93-.98-2.09-1.86-3.48-2.62-1.39-.76-2.91-1.48-4.54-2.14-1.63-.67-3.15-1.48-4.54-2.42-1.39-.95-2.55-2.12-3.48-3.51-.93-1.39-1.39-3.17-1.39-5.32,0-3.05,1.06-5.46,3.18-7.24,2.12-1.78,5.12-2.67,9.02-2.67,2.26,0,4.33.17,6.18.5,1.86.34,3.3.76,4.35,1.28l-1.39,4.12c-.85-.42-2.11-.82-3.76-1.21-1.65-.38-3.52-.58-5.6-.58-2.45,0-4.29.55-5.52,1.64-1.22,1.1-1.84,2.39-1.84,3.87s.46,2.66,1.39,3.62c.93.96,2.09,1.83,3.48,2.59,1.39.76,2.91,1.51,4.54,2.26,1.63.74,3.15,1.61,4.54,2.59,1.39.98,2.55,2.16,3.48,3.54.93,1.38,1.39,3.08,1.39,5.12,0,1.67-.3,3.18-.89,4.51-.59,1.34-1.47,2.49-2.62,3.46-1.15.97-2.54,1.71-4.18,2.23-1.64.52-3.49.78-5.57.78-2.79,0-5.09-.21-6.91-.64-1.82-.43-3.23-.9-4.23-1.42l1.56-4.12c.85.47,2.12.93,3.79,1.38,1.67.45,3.55.68,5.63.68,1.23,0,2.38-.12,3.45-.36,1.08-.24,2.01-.63,2.79-1.17.78-.54,1.4-1.22,1.87-2.03.46-.82.7-1.78.7-2.9"></path> <rect x="63.63" y="4.91" width="4.62" height="38.99"></rect> <path d="M89.54,5.25c1.41-.26,3.04-.46,4.87-.61,1.84-.15,3.52-.22,5.04-.22,1.71,0,3.33.19,4.87.56,1.54.37,2.9.98,4.07,1.84,1.17.86,2.11,1.97,2.81,3.34s1.06,3.05,1.06,5.01c0,3.04-.84,5.51-2.51,7.41-1.67,1.89-2.76,2.86-5.32,3.49l10.86,17.79h-5.4l-10.27-16.82h-5.46s0,16.82,0,16.82h-4.62V5.25ZM99.57,8.43h-1.5c-.52,0-1.02.02-1.5.06-.48.04-.94.08-1.37.11-.43.04-.77.09-1.03.17v14.37h4.34c2.56,0,4.68-.63,6.35-1.89,1.67-1.26,2.51-3.23,2.51-5.9,0-2.01-.69-3.66-2.06-4.96-1.37-1.3-3.29-1.95-5.74-1.95"></path> <path d="M150.26,5.25c1.41-.33,2.93-.56,4.57-.67,1.63-.11,3.25-.17,4.85-.17,1.71,0,3.44.17,5.21.5,1.76.33,3.37.95,4.82,1.84,1.45.89,2.63,2.12,3.54,3.68.91,1.56,1.36,3.55,1.36,5.96s-.43,4.38-1.28,6.02c-.86,1.64-1.99,2.96-3.4,3.98-1.41,1.02-3.03,1.75-4.85,2.2-1.82.45-3.7.67-5.63.67h-.92c-.43,0-.87,0-1.34-.03-.46-.02-.92-.05-1.37-.08-.45-.04-.76-.07-.95-.11v14.82h-4.62V5.25ZM159.78,8.43c-.97,0-1.89.02-2.79.06-.89.04-1.6.13-2.12.28v16.16c.19.08.48.12.89.14.41.02.84.04,1.28.06.45.02.87.03,1.28.03h.89c1.26,0,2.52-.12,3.76-.36,1.24-.24,2.37-.68,3.37-1.31,1-.63,1.81-1.52,2.42-2.67.61-1.15.92-2.62.92-4.4,0-1.52-.29-2.79-.86-3.81-.58-1.02-1.34-1.84-2.28-2.45-.95-.61-2.01-1.05-3.2-1.31-1.19-.26-2.37-.39-3.56-.39"></path> <path d="M80.84,80.79c0-1.56-.46-2.83-1.39-3.82-.93-.98-2.09-1.86-3.48-2.62-1.39-.76-2.91-1.48-4.54-2.15-1.63-.67-3.15-1.47-4.54-2.42-1.39-.95-2.55-2.12-3.48-3.51-.93-1.39-1.39-3.17-1.39-5.32,0-3.04,1.06-5.46,3.18-7.24,2.12-1.78,5.12-2.67,9.02-2.67,2.26,0,4.33.17,6.18.5,1.86.33,3.3.76,4.35,1.28l-1.39,4.12c-.85-.42-2.11-.82-3.76-1.21-1.65-.38-3.52-.58-5.6-.58-2.45,0-4.29.55-5.52,1.64-1.22,1.1-1.84,2.39-1.84,3.87s.46,2.66,1.39,3.62c.93.97,2.09,1.83,3.48,2.59,1.39.76,2.91,1.51,4.54,2.26,1.63.74,3.15,1.61,4.54,2.59,1.39.98,2.55,2.16,3.48,3.54.93,1.38,1.39,3.08,1.39,5.12,0,1.67-.3,3.18-.89,4.51-.59,1.34-1.47,2.49-2.62,3.45-1.15.97-2.54,1.71-4.18,2.23-1.64.52-3.49.78-5.57.78-2.79,0-5.09-.21-6.91-.64-1.82-.43-3.23-.9-4.23-1.42l1.56-4.12c.85.47,2.12.93,3.79,1.38,1.67.45,3.55.68,5.63.68,1.23,0,2.38-.12,3.45-.36,1.08-.24,2.01-.63,2.79-1.17.78-.54,1.4-1.22,1.87-2.03.46-.82.7-1.78.7-2.9"></path> <polygon points="89.42 51.71 111.13 51.71 111.13 55.84 94.05 55.84 94.05 68.59 109.25 68.59 109.25 72.72 94.05 72.72 94.05 86.59 112.38 86.59 112.38 90.71 89.42 90.71 89.42 51.71"></polygon> <polygon points="195.8 72.33 195.61 72.33 195.61 90.38 190.98 90.38 190.98 51.39 195.61 51.39 195.61 68.77 195.69 68.77 211.2 51.39 216.55 51.39 199.62 69.92 217.8 90.38 212.43 90.38 195.8 72.33"></polygon> <path d="M291.04,51.39h4.62v30.42c0,2.97-.66,5.24-1.98,6.8-1.32,1.56-3.31,2.34-5.99,2.34-.3,0-.67-.02-1.11-.06-.45-.04-.89-.09-1.34-.17-.45-.08-.88-.17-1.31-.28-.43-.11-.77-.24-1.03-.39l.89-3.9c1.04.45,2.17.67,3.4.67,1.56,0,2.59-.55,3.09-1.64.5-1.09.75-2.59.75-4.48v-29.3Z"></path> <path d="M158.1,51.1h-2.12l-14.76,39.61h4.62l3.88-10.81h14.3l3.99,10.81h4.9l-14.82-39.61ZM151.22,75.89l5.71-15.69,5.71,15.69h-11.42Z"></path> <path d="M188.73,4.25h-2.12l-14.76,39.61h4.62l3.88-10.81h14.3l3.99,10.81h4.9l-14.82-39.61ZM181.86,29.04l5.71-15.69,5.71,15.69h-11.42Z"></path> <path d="M35.03,5.3c1.41-.26,3.04-.46,4.87-.61,1.84-.15,3.52-.22,5.04-.22,1.71,0,3.33.19,4.87.56,1.54.37,2.9.98,4.07,1.84,1.17.85,2.11,1.97,2.81,3.34s1.06,3.04,1.06,5.01c0,3.05-.84,5.52-2.51,7.41-1.67,1.89-2.76,2.86-5.32,3.49l10.86,17.79h-5.4l-10.27-16.82h-5.46s0,16.82,0,16.82h-4.62V5.3ZM45.05,8.47h-1.5c-.52,0-1.02.02-1.5.06-.48.04-.94.08-1.37.11-.43.04-.77.09-1.03.17v14.37h4.34c2.56,0,4.68-.63,6.35-1.89,1.67-1.26,2.51-3.23,2.51-5.91,0-2-.69-3.66-2.06-4.96-1.37-1.3-3.29-1.95-5.74-1.95"></path> <polygon points="274.27 51.39 274.27 76.79 274.27 80.33 253.05 50.78 250.6 50.78 250.6 90.38 254.94 90.38 254.94 61.19 276.17 91 278.62 91 278.62 51.39 274.27 51.39"></polygon> <path class="lg-acc" d="M143.64,4.26h-4.62v24.95c0,1.89.04,3.53-.27,4.87-.31,1.36-.79,2.43-1.45,3.22-.61.86-1.48,1.47-2.59,1.84-.73.3-1.55.49-2.47.56-.31.06-.61.1-.92.1h-.19c-1.16-.06-2.2-.25-3.12-.56-1.16-.37-2.14-.95-2.93-1.75-.81-.86-1.39-1.96-1.74-3.32-.37-1.34-.56-3-.56-4.96V4.26h-4.6v27.15c0,4.17,1.16,7.29,3.49,9.37,1.16,1.05,2.61,1.82,4.33,2.3.36.13.78.23,1.28.29-4.23,1.53-7.11,3.62-8.65,6.25-2.15,3.24-2.21,7.35-.19,12.33l12.59,30.6,12.16-30.6c1.95-4.97,1.89-9.08-.19-12.33-1.47-2.58-4.25-4.63-8.36-6.15.49-.13.97-.26,1.45-.39,1.6-.48,2.95-1.28,4.04-2.37,1.16-1.11,2.03-2.49,2.59-4.14.61-1.71.92-3.74.92-6.08V4.26M139.21,51.92c1.23,2.21,1.17,5-.17,8.36l-8.02,20.76-8.45-20.76c-1.4-3.36-1.46-6.14-.17-8.36,1.41-2.28,4.19-3.96,8.36-5.06,4.17,1.1,6.98,2.79,8.45,5.06"></path> <path d="M241.51,51.39h-1.05v24.73c0,2,.08,3.83-.31,5.19-.19.65-.29,1.04-.57,1.57-.33.53-.67,1-.98,1.41-.05.07-.11.13-.16.19-.77.79-1.71,1.37-2.84,1.73-1.09.35-1.93.53-3.29.55-1.37-.02-2.21-.21-3.3-.55-1.13-.36-2.07-.94-2.84-1.73-.05-.06-.11-.13-.16-.19-.16-.21-.35-.43-.54-.67-.48-.7-.68-1.14-.96-2.11-.39-1.36-.31-3.28-.31-5.38v-24.73h-4.6v26.91c0,4.23,1.17,7.39,3.51,9.47,1.81,1.61,3.71,2.59,6.6,2.95.7.11,1.45.16,2.33.16.09,0,.17,0,.26,0,.09,0,.17,0,.26,0,.88,0,1.62-.06,2.33-.16,2.89-.37,4.8-1.35,6.6-2.95,2.34-2.08,3.51-5.24,3.51-9.47v-26.91h-3.49Z"></path> </svg></a><nav class="sh-nav" aria-label="Sections"><a href="/en/#retreats">Retreats</a><a href="/en/#temple">Temple</a><a href="/en/#ashram">Ashram</a><a href="/en/#groups">For groups</a><a href="/en/#seva" class="on" aria-current="page">Our seva</a></nav><div class="sh-r"><span class="sh-lang"><b>EN</b><a href="/en/brajcare">RU</a></span><div class="sh-ct"><button type="button" class="sh-ctb" aria-expanded="false" data-ct>Contact us</button><div class="sh-cm" role="menu"><a href="https://wa.me/79250077575" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5l1.4-4A7.5 7.5 0 1 1 8.6 19z"/><path d="M9 10.5h6M9 13.5h4"/></svg>WhatsApp</a><a href="https://t.me/+79250077575" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6.5 2.5L12 20l3-5 4.5 3z"/><path d="M9.5 13.5L21 4"/></svg>Telegram</a><a href="mailto:info@rupaseva.ru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 6.5l8.5 7 8.5-7"/></svg>info@rupaseva.ru</a><a href="tel:+79250077575"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>+7 925 007 7575</a></div></div><button type="button" class="hm-burg" aria-label="Menu" data-burg><i></i><i></i></button></div></div><div class="hm-mob" data-mob><nav><a href="/en/#retreats" data-mob-x>Retreats</a><a href="/en/#temple" data-mob-x>Temple</a><a href="/en/#ashram" data-mob-x>Ashram</a><a href="/en/#groups" data-mob-x>For groups</a><a href="/en/#seva" data-mob-x>Our seva</a><a href="/en/join-us" data-mob-x>Join us</a><a href="/en/contacts" data-mob-x>Contacts</a></nav><div class="hm-mob-c"><a class="btn " href="https://wa.me/79250077575" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5l1.4-4A7.5 7.5 0 1 1 8.6 19z"/><path d="M9 10.5h6M9 13.5h4"/></svg>WhatsApp</a><a class="btn " href="https://t.me/+79250077575" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6.5 2.5L12 20l3-5 4.5 3z"/><path d="M9.5 13.5L21 4"/></svg>Telegram</a><a class="btn " href="mailto:info@rupaseva.ru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 6.5l8.5 7 8.5-7"/></svg>Email</a></div></div></header><main><section class="s-hero gi-hero"><div class="wrap s-hero-g"><div class="s-hero-t rv"><p class="eb"><i></i>Our seva · foundation</p><h1 class="caps">BrajCare</h1><p class="lead">We help you serve Vraja. Srila Sacinandana Swami founded BrajCare to serve the holy land and its people.</p></div><figure class="s-hero-ph gi-hero-ph rv"><button type="button" class="gi-ph " data-lb="0" aria-label="Feeding cows at Govardhan — open"><img src="/images/groups/84da0376f9b4952042bd5a394e3e332e.jpg" alt="Feeding cows at Govardhan" loading="lazy"></button></figure></div><div class="wrap"><ul class="s-facts rv"><li><b>400 kg</b><span>of grass for stray cows every day</span></li><li><b>A school</b><span>for children from poor families in Radha-kunda</span></li><li><b>Giriraj</b><span>cleanups with fellow Vaishnavas on our retreats</span></li><li><b>Sadhus</b><span>care for the elderly saints of Radha-kunda</span></li></ul></div></section><section class="sec bc-q"><div class="wrap bc-q-in rv"><p class="bc-qt">“O friend, if you cannot renounce this illusory world at once and go to Vrindavan, then at least meditate on Vrindavan. Serve the residents of Vrindavan by offering them food, clothing and other gifts.”</p><p class="bc-qs">Sri Vrindavana-mahimamrita, 1.72</p><p class="sv-p">Vrindavan, glorified in the scriptures, has become home to thousands of sadhus — holy people who have given their whole lives to serving God. It makes you long to serve this holy land and its people, even in some small way.</p></div></section><section class="sec bc-pr"><div class="wrap"><div class="head rv"><div><p class="eb"><i></i>Programs</p><h2 class="caps">Four kinds<br>of service</h2></div><div><p class="lead">Almost all our programs are long-term commitments — they need ongoing support.</p></div></div><div class="bc-tb rv" data-tabs><ol class="bc-tl"><li><button type="button" class="on" data-tab="0"><span>01</span>Feeding stray cows</button></li><li><button type="button" class="" data-tab="1"><span>02</span>A school for children</button></li><li><button type="button" class="" data-tab="2"><span>03</span>Caring for sadhus</button></li><li><button type="button" class="" data-tab="3"><span>04</span>Cleaning Giriraj</button></li></ol><div class="bc-tp"><div class="bc-pn on" data-pane="0"><div class="bc-pp"><button type="button" class="gi-ph " data-lb="1" aria-label="Cows by the kunda — open"><img src="/images/groups/0aad2958d324f68f44ff2dda0601d252.jpg" alt="Cows by the kunda" loading="lazy"></button><button type="button" class="gi-ph " data-lb="2" aria-label="A rickshaw loaded with grass — open"><img src="/images/groups/d8fee9b783f86a176a64a423f33928fc.jpg" alt="A rickshaw loaded with grass" loading="lazy"></button><button type="button" class="gi-ph " data-lb="3" aria-label="Cows waiting — open"><img src="/images/groups/623bb99993ee372a44f6e2bada1cd5bd.jpg" alt="Cows waiting" loading="lazy"></button></div><h3>Feeding stray cows</h3><p>Every day our rickshaw, loaded with sacks of chopped grass, makes its way from Govinda-kunda to Surabhi-kunda. The cows wait for us, and as soon as they spot the rickshaw they come running, lowing happily. We now give out 400 kg of grass a day and would like to give more.</p></div><div class="bc-pn" data-pane="1"><div class="bc-pp"><button type="button" class="gi-ph " data-lb="4" aria-label="Students with their textbooks — open"><img src="/images/groups/bb8579cf90ad851252b39fa17b0ad2fc.jpg" alt="Students with their textbooks" loading="lazy"></button><button type="button" class="gi-ph " data-lb="5" aria-label="Schoolchildren — open"><img src="/images/groups/950a23c32a673bcc4c6bf3134d000f7b.jpg" alt="Schoolchildren" loading="lazy"></button><button type="button" class="gi-ph " data-lb="6" aria-label="Morning exercises — open"><img src="/images/groups/ff0214aedc971f1d2b5384315e59b59e.jpg" alt="Morning exercises" loading="lazy"></button></div><h3>A school for children</h3><p>Education in India is not free, and many families in Radha-kunda are too poor to send their children to a fee-paying school. So we opened Sri Rupa Seva School: we teach Hindi and English, reading, writing and arithmetic, and how to play the mridanga, and we provide uniforms and textbooks.</p></div><div class="bc-pn" data-pane="2"><div class="bc-pp"><button type="button" class="gi-ph " data-lb="7" aria-label="Helping sadhus — open"><img src="/images/groups/ff17c94493f688d1c09b7fc2e014608b.jpg" alt="Helping sadhus" loading="lazy"></button><button type="button" class="gi-ph " data-lb="8" aria-label="Sadhus of Radha-kunda — open"><img src="/images/groups/8a33b3dae5f36e22e69cae9f784371ec.jpg" alt="Sadhus of Radha-kunda" loading="lazy"></button><button type="button" class="gi-ph " data-lb="9" aria-label="Sadhus of Radha-kunda — open"><img src="/images/groups/d673656bf982b1030de1bb8598341915.jpg" alt="Sadhus of Radha-kunda" loading="lazy"></button></div><h3>Caring for sadhus</h3><p>Many saints have taken a vow never to leave the banks of Radha-kunda. They live in small kutirs for which they must pay rent. We repair the kutirs, arrange medical care, and help each month with rent and electricity bills.</p></div><div class="bc-pn" data-pane="3"><div class="bc-pp"><button type="button" class="gi-ph " data-lb="10" aria-label="Cleaning up at Giriraj — open"><img src="/images/groups/29a158965e27d93a718446afd62edb22.jpg" alt="Cleaning up at Giriraj" loading="lazy"></button><button type="button" class="gi-ph " data-lb="11" aria-label="Cleaning the parikrama path — open"><img src="/images/groups/64cfaf9411e6ffae258f92710d3fbb89.jpg" alt="Cleaning the parikrama path" loading="lazy"></button><button type="button" class="gi-ph " data-lb="12" aria-label="Clearing the hillside — open"><img src="/images/groups/453d54f68fd7d61c8c3d4dc1a7d3e06b.jpg" alt="Clearing the hillside" loading="lazy"></button></div><h3>Cleaning Giriraj</h3><p>Rather than looking for someone to blame, we clean up ourselves. On almost every retreat we head out with our Vaishnava guests to the foot of Giriraj. In an hour, one person can fill a large sack with litter; a group of fifty fills fifty.</p></div></div></div></div></section><section class="sec bc-fc"><div class="wrap"><div class="head rv"><div><p class="eb"><i></i>Faces of Radha-kunda</p><h2 class="caps">The people<br>we serve</h2></div><div><p class="lead">The chance to serve holy people is the greatest good fortune, and we try to do everything in that spirit.</p></div></div><div class="bc-fg rv"><span class="bc-f"><button type="button" class="gi-ph " data-lb="13" aria-label="Sadhus of Radha-kunda — open"><img src="/images/groups/a0c8ceae0d2c5ad0ba089d8ba0406d54.jpg" alt="Sadhus of Radha-kunda" loading="lazy"></button></span><span class="bc-f"><button type="button" class="gi-ph " data-lb="14" aria-label="Sadhus of Radha-kunda — open"><img src="/images/groups/d673656bf982b1030de1bb8598341915.jpg" alt="Sadhus of Radha-kunda" loading="lazy"></button></span><span class="bc-f"><button type="button" class="gi-ph " data-lb="15" aria-label="Sadhus of Radha-kunda — open"><img src="/images/groups/c123b3e5d5a64da94e1043081bf2cc4a.jpg" alt="Sadhus of Radha-kunda" loading="lazy"></button></span><span class="bc-f"><button type="button" class="gi-ph " data-lb="16" aria-label="Sadhus of Radha-kunda — open"><img src="/images/groups/59f1cd39bd9401c1112202d04f28cf16.jpg" alt="Sadhus of Radha-kunda" loading="lazy"></button></span><span class="bc-f"><button type="button" class="gi-ph " data-lb="17" aria-label="Sadhus of Radha-kunda — open"><img src="/images/groups/6088ccd8bd12da04c761e63e28f69c78.jpg" alt="Sadhus of Radha-kunda" loading="lazy"></button></span><span class="bc-f"><button type="button" class="gi-ph " data-lb="18" aria-label="Sadhus of Radha-kunda — open"><img src="/images/groups/4a208d13dec617062bf1cd5b9984391e.jpg" alt="Sadhus of Radha-kunda" loading="lazy"></button></span><span class="bc-f"><button type="button" class="gi-ph " data-lb="19" aria-label="Sadhus of Radha-kunda — open"><img src="/images/groups/b1aedaccf4ed1a672555476f0f7feec0.jpg" alt="Sadhus of Radha-kunda" loading="lazy"></button></span><span class="bc-f"><button type="button" class="gi-ph " data-lb="20" aria-label="Sadhus of Radha-kunda — open"><img src="/images/groups/8a33b3dae5f36e22e69cae9f784371ec.jpg" alt="Sadhus of Radha-kunda" loading="lazy"></button></span></div></div></section><section class="sec bc-pc"><div class="wrap"><div class="head rv"><div><p class="eb"><i></i>Principles</p><h2 class="caps">How we<br>serve</h2></div><div></div></div><div class="bc-pg rv"><article><span>1</span><h3>With love for Vraja</h3><p>We love Vrindavan, and we try to deepen that love and share it. In service, motive and mood are everything.</p></article><article><span>2</span><h3>Help that is truly needed</h3><p>We work with people who have lived in Vraja for many years and understand what is really needed.</p></article><article><span>3</span><h3>Hands-on involvement</h3><p>We don’t take on projects where all that’s needed is to raise money and hand it over. We oversee every step ourselves and bring in volunteers.</p></article><article><span>4</span><h3>Designated donations only</h3><p>Administrative and marketing costs are never paid out of donations made for specific projects.</p></article><article><span>5</span><h3>More than charity</h3><p>Serving holy people is the greatest good fortune. We keep this in mind in all that we do.</p></article></div></div></section><section class="sec bc-hp"><div class="wrap bc-hp-g"><div class="rv"><p class="eb"><i></i>How to help</p><h2 class="caps">Serve<br>with us</h2><p class="lead">Come in person: on our retreats we clean Giriraj together.</p><p class="sv-p">Or support us by donating to accounts used solely for BrajCare. Regular donations are especially valuable, since the programs need ongoing help.</p><div class="sv-b"><a class="btn btn-sun" href="/en/#retreats">Our retreats<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div></div><div class="bc-pay rv"><div class="bc-pay-r"><small>PayPal</small><b>info@rupaseva.ru</b><button type="button" class="bc-cp" data-copy="info@rupaseva.ru">Copy</button></div><div class="bc-pay-r"><small>Sberbank card</small><b>5484 3800 1917 6106</b><span>Adrian K.</span><button type="button" class="bc-cp" data-copy="5484 3800 1917 6106">Copy</button></div><div class="bc-pay-r"><small>UPI (India)</small><b>7060061230@pnb</b><span>Pooran Chand</span><button type="button" class="bc-cp" data-copy="7060061230@pnb">Copy</button></div><p class="bc-pay-n">All donations go solely to BrajCare’s seva.</p></div></div></section><section class="sec gi-nx"><div class="wrap"><p class="eb rv"><i></i>Other projects</p><div class="gi-nx-g"><a class="gi-nx-c rv" href="/en/vedarama"><span><img src="/images/groups/1c3c586faa8b8c548413843a7adcc622.jpg" alt="" loading="lazy"></span><b>Vedarama</b><small>A digital library</small></a><a class="gi-nx-c rv" href="/en/bhajanamrita"><span><img src="/images/groups/e4f5e7d1188aa405f2e5dae6ace47030.jpg" alt="" loading="lazy"></span><b>Bhajanamrita</b><small>Bhajans with translations</small></a><a class="gi-nx-c rv" href="/en/sad-gosvami"><span><img src="/images/groups/32adebdd86ea11dbe53a6fa5d8430308.jpg" alt="" loading="lazy"></span><b>Shad Goswami</b><small>A film about the Goswamis</small></a><a class="gi-nx-c rv" href="/en/mandir"><span><img src="/images/groups/9ae4918fbf0a251da9bcd6f68d3e69db.jpg" alt="" loading="lazy"></span><b>Radha-Govinda Temple</b><small>Opening on Radhashtami</small></a></div></div></section></main><footer class="sf" id="contacts"><div class="wrap hm-verse"><p>nija-nikaṭa-nivāsaṁ dehi govardhana tvam</p><span>O Govardhan, please grant me a home close to You…</span></div><div class="wrap sf-g"><a class="sf-logo" href="/en/#top" aria-label="Home"><svg class="lg" viewBox="0 0 308.75 98.28" role="img" aria-label="Sri Rupa Seva Kunj"><title>Sri Rupa Seva Kunj</title><path d="M26.44,33.99c0-1.56-.46-2.83-1.39-3.81-.93-.98-2.09-1.86-3.48-2.62-1.39-.76-2.91-1.48-4.54-2.14-1.63-.67-3.15-1.48-4.54-2.42-1.39-.95-2.55-2.12-3.48-3.51-.93-1.39-1.39-3.17-1.39-5.32,0-3.05,1.06-5.46,3.18-7.24,2.12-1.78,5.12-2.67,9.02-2.67,2.26,0,4.33.17,6.18.5,1.86.34,3.3.76,4.35,1.28l-1.39,4.12c-.85-.42-2.11-.82-3.76-1.21-1.65-.38-3.52-.58-5.6-.58-2.45,0-4.29.55-5.52,1.64-1.22,1.1-1.84,2.39-1.84,3.87s.46,2.66,1.39,3.62c.93.96,2.09,1.83,3.48,2.59,1.39.76,2.91,1.51,4.54,2.26,1.63.74,3.15,1.61,4.54,2.59,1.39.98,2.55,2.16,3.48,3.54.93,1.38,1.39,3.08,1.39,5.12,0,1.67-.3,3.18-.89,4.51-.59,1.34-1.47,2.49-2.62,3.46-1.15.97-2.54,1.71-4.18,2.23-1.64.52-3.49.78-5.57.78-2.79,0-5.09-.21-6.91-.64-1.82-.43-3.23-.9-4.23-1.42l1.56-4.12c.85.47,2.12.93,3.79,1.38,1.67.45,3.55.68,5.63.68,1.23,0,2.38-.12,3.45-.36,1.08-.24,2.01-.63,2.79-1.17.78-.54,1.4-1.22,1.87-2.03.46-.82.7-1.78.7-2.9"></path> <rect x="63.63" y="4.91" width="4.62" height="38.99"></rect> <path d="M89.54,5.25c1.41-.26,3.04-.46,4.87-.61,1.84-.15,3.52-.22,5.04-.22,1.71,0,3.33.19,4.87.56,1.54.37,2.9.98,4.07,1.84,1.17.86,2.11,1.97,2.81,3.34s1.06,3.05,1.06,5.01c0,3.04-.84,5.51-2.51,7.41-1.67,1.89-2.76,2.86-5.32,3.49l10.86,17.79h-5.4l-10.27-16.82h-5.46s0,16.82,0,16.82h-4.62V5.25ZM99.57,8.43h-1.5c-.52,0-1.02.02-1.5.06-.48.04-.94.08-1.37.11-.43.04-.77.09-1.03.17v14.37h4.34c2.56,0,4.68-.63,6.35-1.89,1.67-1.26,2.51-3.23,2.51-5.9,0-2.01-.69-3.66-2.06-4.96-1.37-1.3-3.29-1.95-5.74-1.95"></path> <path d="M150.26,5.25c1.41-.33,2.93-.56,4.57-.67,1.63-.11,3.25-.17,4.85-.17,1.71,0,3.44.17,5.21.5,1.76.33,3.37.95,4.82,1.84,1.45.89,2.63,2.12,3.54,3.68.91,1.56,1.36,3.55,1.36,5.96s-.43,4.38-1.28,6.02c-.86,1.64-1.99,2.96-3.4,3.98-1.41,1.02-3.03,1.75-4.85,2.2-1.82.45-3.7.67-5.63.67h-.92c-.43,0-.87,0-1.34-.03-.46-.02-.92-.05-1.37-.08-.45-.04-.76-.07-.95-.11v14.82h-4.62V5.25ZM159.78,8.43c-.97,0-1.89.02-2.79.06-.89.04-1.6.13-2.12.28v16.16c.19.08.48.12.89.14.41.02.84.04,1.28.06.45.02.87.03,1.28.03h.89c1.26,0,2.52-.12,3.76-.36,1.24-.24,2.37-.68,3.37-1.31,1-.63,1.81-1.52,2.42-2.67.61-1.15.92-2.62.92-4.4,0-1.52-.29-2.79-.86-3.81-.58-1.02-1.34-1.84-2.28-2.45-.95-.61-2.01-1.05-3.2-1.31-1.19-.26-2.37-.39-3.56-.39"></path> <path d="M80.84,80.79c0-1.56-.46-2.83-1.39-3.82-.93-.98-2.09-1.86-3.48-2.62-1.39-.76-2.91-1.48-4.54-2.15-1.63-.67-3.15-1.47-4.54-2.42-1.39-.95-2.55-2.12-3.48-3.51-.93-1.39-1.39-3.17-1.39-5.32,0-3.04,1.06-5.46,3.18-7.24,2.12-1.78,5.12-2.67,9.02-2.67,2.26,0,4.33.17,6.18.5,1.86.33,3.3.76,4.35,1.28l-1.39,4.12c-.85-.42-2.11-.82-3.76-1.21-1.65-.38-3.52-.58-5.6-.58-2.45,0-4.29.55-5.52,1.64-1.22,1.1-1.84,2.39-1.84,3.87s.46,2.66,1.39,3.62c.93.97,2.09,1.83,3.48,2.59,1.39.76,2.91,1.51,4.54,2.26,1.63.74,3.15,1.61,4.54,2.59,1.39.98,2.55,2.16,3.48,3.54.93,1.38,1.39,3.08,1.39,5.12,0,1.67-.3,3.18-.89,4.51-.59,1.34-1.47,2.49-2.62,3.45-1.15.97-2.54,1.71-4.18,2.23-1.64.52-3.49.78-5.57.78-2.79,0-5.09-.21-6.91-.64-1.82-.43-3.23-.9-4.23-1.42l1.56-4.12c.85.47,2.12.93,3.79,1.38,1.67.45,3.55.68,5.63.68,1.23,0,2.38-.12,3.45-.36,1.08-.24,2.01-.63,2.79-1.17.78-.54,1.4-1.22,1.87-2.03.46-.82.7-1.78.7-2.9"></path> <polygon points="89.42 51.71 111.13 51.71 111.13 55.84 94.05 55.84 94.05 68.59 109.25 68.59 109.25 72.72 94.05 72.72 94.05 86.59 112.38 86.59 112.38 90.71 89.42 90.71 89.42 51.71"></polygon> <polygon points="195.8 72.33 195.61 72.33 195.61 90.38 190.98 90.38 190.98 51.39 195.61 51.39 195.61 68.77 195.69 68.77 211.2 51.39 216.55 51.39 199.62 69.92 217.8 90.38 212.43 90.38 195.8 72.33"></polygon> <path d="M291.04,51.39h4.62v30.42c0,2.97-.66,5.24-1.98,6.8-1.32,1.56-3.31,2.34-5.99,2.34-.3,0-.67-.02-1.11-.06-.45-.04-.89-.09-1.34-.17-.45-.08-.88-.17-1.31-.28-.43-.11-.77-.24-1.03-.39l.89-3.9c1.04.45,2.17.67,3.4.67,1.56,0,2.59-.55,3.09-1.64.5-1.09.75-2.59.75-4.48v-29.3Z"></path> <path d="M158.1,51.1h-2.12l-14.76,39.61h4.62l3.88-10.81h14.3l3.99,10.81h4.9l-14.82-39.61ZM151.22,75.89l5.71-15.69,5.71,15.69h-11.42Z"></path> <path d="M188.73,4.25h-2.12l-14.76,39.61h4.62l3.88-10.81h14.3l3.99,10.81h4.9l-14.82-39.61ZM181.86,29.04l5.71-15.69,5.71,15.69h-11.42Z"></path> <path d="M35.03,5.3c1.41-.26,3.04-.46,4.87-.61,1.84-.15,3.52-.22,5.04-.22,1.71,0,3.33.19,4.87.56,1.54.37,2.9.98,4.07,1.84,1.17.85,2.11,1.97,2.81,3.34s1.06,3.04,1.06,5.01c0,3.05-.84,5.52-2.51,7.41-1.67,1.89-2.76,2.86-5.32,3.49l10.86,17.79h-5.4l-10.27-16.82h-5.46s0,16.82,0,16.82h-4.62V5.3ZM45.05,8.47h-1.5c-.52,0-1.02.02-1.5.06-.48.04-.94.08-1.37.11-.43.04-.77.09-1.03.17v14.37h4.34c2.56,0,4.68-.63,6.35-1.89,1.67-1.26,2.51-3.23,2.51-5.91,0-2-.69-3.66-2.06-4.96-1.37-1.3-3.29-1.95-5.74-1.95"></path> <polygon points="274.27 51.39 274.27 76.79 274.27 80.33 253.05 50.78 250.6 50.78 250.6 90.38 254.94 90.38 254.94 61.19 276.17 91 278.62 91 278.62 51.39 274.27 51.39"></polygon> <path class="lg-acc" d="M143.64,4.26h-4.62v24.95c0,1.89.04,3.53-.27,4.87-.31,1.36-.79,2.43-1.45,3.22-.61.86-1.48,1.47-2.59,1.84-.73.3-1.55.49-2.47.56-.31.06-.61.1-.92.1h-.19c-1.16-.06-2.2-.25-3.12-.56-1.16-.37-2.14-.95-2.93-1.75-.81-.86-1.39-1.96-1.74-3.32-.37-1.34-.56-3-.56-4.96V4.26h-4.6v27.15c0,4.17,1.16,7.29,3.49,9.37,1.16,1.05,2.61,1.82,4.33,2.3.36.13.78.23,1.28.29-4.23,1.53-7.11,3.62-8.65,6.25-2.15,3.24-2.21,7.35-.19,12.33l12.59,30.6,12.16-30.6c1.95-4.97,1.89-9.08-.19-12.33-1.47-2.58-4.25-4.63-8.36-6.15.49-.13.97-.26,1.45-.39,1.6-.48,2.95-1.28,4.04-2.37,1.16-1.11,2.03-2.49,2.59-4.14.61-1.71.92-3.74.92-6.08V4.26M139.21,51.92c1.23,2.21,1.17,5-.17,8.36l-8.02,20.76-8.45-20.76c-1.4-3.36-1.46-6.14-.17-8.36,1.41-2.28,4.19-3.96,8.36-5.06,4.17,1.1,6.98,2.79,8.45,5.06"></path> <path d="M241.51,51.39h-1.05v24.73c0,2,.08,3.83-.31,5.19-.19.65-.29,1.04-.57,1.57-.33.53-.67,1-.98,1.41-.05.07-.11.13-.16.19-.77.79-1.71,1.37-2.84,1.73-1.09.35-1.93.53-3.29.55-1.37-.02-2.21-.21-3.3-.55-1.13-.36-2.07-.94-2.84-1.73-.05-.06-.11-.13-.16-.19-.16-.21-.35-.43-.54-.67-.48-.7-.68-1.14-.96-2.11-.39-1.36-.31-3.28-.31-5.38v-24.73h-4.6v26.91c0,4.23,1.17,7.39,3.51,9.47,1.81,1.61,3.71,2.59,6.6,2.95.7.11,1.45.16,2.33.16.09,0,.17,0,.26,0,.09,0,.17,0,.26,0,.88,0,1.62-.06,2.33-.16,2.89-.37,4.8-1.35,6.6-2.95,2.34-2.08,3.51-5.24,3.51-9.47v-26.91h-3.49Z"></path> </svg></a><div><p class="sf-h">Where we are</p><p>Sri Rupa Seva Kunj<br>Govardhan Parikrama Marg, Aanyor<br>Uttar Pradesh 281502, India</p></div><div><p class="sf-h">Contact us</p><p><a href="https://wa.me/79250077575" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/+79250077575" target="_blank" rel="noopener">Telegram</a><br><a href="mailto:info@rupaseva.ru">info@rupaseva.ru</a><br><a href="tel:+79250077575">+7 925 007 7575</a></p></div><div><p class="sf-h">Sections</p><p><a href="/en/#retreats">Retreats</a> · <a href="/en/#temple">Temple</a> · <a href="/en/#ashram">Ashram</a> · <a href="/en/#groups">For groups</a> · <a href="/en/#seva">Our seva</a> · <a href="/en/join-us">Join us</a></p></div></div><div class="wrap sf-b"><span>© 2026 Sri Rupa Seva Kunj · rupaseva.com</span><span class="sf-ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>All photos on this site were taken at the ashram. The temple is still a design.</span></div></footer><div class="lb" data-lb-box hidden><button type="button" class="lb-x" aria-label="Close" data-lb-x>×</button><button type="button" class="lb-a lb-p" aria-label="Previous photo" data-lb-p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button><figure><img alt="" data-lb-img><figcaption data-lb-cap></figcaption></figure><button type="button" class="lb-a lb-n" aria-label="Next photo" data-lb-n><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button></div></div>
+</x-dc></template>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7600}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+
+  componentDidMount() {
+    const __pg = document.querySelector('.pg'); if (!__pg || __pg.__ys) return; __pg.__ys = 1;
+    const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const LB = [["/images/groups/84da0376f9b4952042bd5a394e3e332e.jpg", "Feeding cows at Govardhan"], ["/images/groups/0aad2958d324f68f44ff2dda0601d252.jpg", "Cows by the kunda"], ["/images/groups/d8fee9b783f86a176a64a423f33928fc.jpg", "A rickshaw loaded with grass"], ["/images/groups/623bb99993ee372a44f6e2bada1cd5bd.jpg", "Cows waiting"], ["/images/groups/bb8579cf90ad851252b39fa17b0ad2fc.jpg", "Students with their textbooks"], ["/images/groups/950a23c32a673bcc4c6bf3134d000f7b.jpg", "Schoolchildren"], ["/images/groups/ff0214aedc971f1d2b5384315e59b59e.jpg", "Morning exercises"], ["/images/groups/ff17c94493f688d1c09b7fc2e014608b.jpg", "Helping sadhus"], ["/images/groups/8a33b3dae5f36e22e69cae9f784371ec.jpg", "Sadhus of Radha-kunda"], ["/images/groups/d673656bf982b1030de1bb8598341915.jpg", "Sadhus of Radha-kunda"], ["/images/groups/29a158965e27d93a718446afd62edb22.jpg", "Cleaning up at Giriraj"], ["/images/groups/64cfaf9411e6ffae258f92710d3fbb89.jpg", "Cleaning the parikrama path"], ["/images/groups/453d54f68fd7d61c8c3d4dc1a7d3e06b.jpg", "Clearing the hillside"], ["/images/groups/a0c8ceae0d2c5ad0ba089d8ba0406d54.jpg", "Sadhus of Radha-kunda"], ["/images/groups/d673656bf982b1030de1bb8598341915.jpg", "Sadhus of Radha-kunda"], ["/images/groups/c123b3e5d5a64da94e1043081bf2cc4a.jpg", "Sadhus of Radha-kunda"], ["/images/groups/59f1cd39bd9401c1112202d04f28cf16.jpg", "Sadhus of Radha-kunda"], ["/images/groups/6088ccd8bd12da04c761e63e28f69c78.jpg", "Sadhus of Radha-kunda"], ["/images/groups/4a208d13dec617062bf1cd5b9984391e.jpg", "Sadhus of Radha-kunda"], ["/images/groups/b1aedaccf4ed1a672555476f0f7feec0.jpg", "Sadhus of Radha-kunda"], ["/images/groups/8a33b3dae5f36e22e69cae9f784371ec.jpg", "Sadhus of Radha-kunda"]];
+
+    // логотип: наведение на слово → его значение
+    const lg = $('[data-logo]');
+    if (lg) { const ls = $$('.lg-l', lg), ms = $$('[data-mean]');
+      const show = k => { lg.classList.toggle('hov', k >= 0); ls.forEach((l, j) => l.classList.toggle('on', j === k)); ms.forEach(m => m.classList.toggle('on', +m.dataset.mean === k)); };
+      ls.forEach((l, j) => { l.addEventListener('mouseenter', () => show(j)); l.addEventListener('click', () => show(lg.classList.contains('hov') && l.classList.contains('on') ? -1 : j)); });
+      lg.addEventListener('mouseleave', () => show(-1)); }
+    // храм: листаемые баннеры
+    $$('[data-sl]').forEach(sl => { const it = $$('[data-sl-i]', sl), dt = $$('[data-sl-d]', sl); let k = 0, tm;
+      const go = i => { k = (i + it.length) % it.length; it.forEach((x, j) => x.classList.toggle('on', j === k)); dt.forEach((d, j) => { d.classList.remove('on'); void d.offsetWidth; d.classList.toggle('on', j === k); }); clearTimeout(tm); tm = setTimeout(() => go(k + 1), 7000); };
+      $('[data-sl-p]', sl).addEventListener('click', () => go(k - 1)); $('[data-sl-n]', sl).addEventListener('click', () => go(k + 1)); dt.forEach((d, j) => d.addEventListener('click', () => go(j)));
+      let x0 = null; sl.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true }); sl.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(k + (dx < 0 ? 1 : -1)); x0 = null; });
+      go(0); });
+    // отсчёт
+    $$('[data-cd-d]').forEach(cd => { const t = new Date(2027, 8, 8), n = new Date(); n.setHours(0, 0, 0, 0); cd.textContent = Math.max(0, Math.round((t - n) / 864e5)); });
+    // ашрам A2: точка по тропе в такт прокрутке
+    $$('.a-trail').forEach(tr => { const p = $('.h2-trail path', tr), sv = p.ownerSVGElement, dot = $('[data-trail-dot]', tr), cs = $$('.h2-ac', tr);
+      const upd = () => { const r = tr.getBoundingClientRect(), t = Math.min(1, Math.max(0, (innerHeight * .85 - r.top) / (r.height + innerHeight * .3)));
+        const L = p.getTotalLength(), pt = p.getPointAtLength(t * L), b = sv.getBoundingClientRect();
+        dot.style.left = (pt.x / 1000 * b.width) + 'px'; dot.style.top = (pt.y / 60 * b.height) + 'px'; cs.forEach((c, i) => c.classList.toggle('lit', t >= (i + .5) / cs.length - .05)); };
+      addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd(); });
+    // ашрам A3: раскрытие арок
+    $$('.a-acc').forEach(a => { const cs = $$('.h2-ac', a); const on = c => cs.forEach(x => x.classList.toggle('on', x === c)); cs.forEach(c => { c.addEventListener('mouseenter', () => on(c)); c.addEventListener('click', e => { if (!c.classList.contains('on')) { e.preventDefault(); on(c); } }); }); on(cs[0]); });
+    // конверт и путь — запуск при появлении
+    if ('IntersectionObserver' in window) { const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io2.unobserve(e.target); } }), { threshold: .35 });
+      $$('[data-env],.t2-path,.g3-day li').forEach(el => io2.observe(el)); setTimeout(() => $$('[data-env],.t2-path,.g3-day li').forEach(el => el.classList.add('in')), 3000); } else $$('[data-env],.t2-path,.g3-day li').forEach(el => el.classList.add('in'));
+    // G2: счётчики
+    $$('[data-count]').forEach(b => { const n = +b.dataset.count; let done = false; const run = () => { if (done) return; done = true; let s = null; const f = t => { s = s || t; const p = Math.min(1, (t - s) / 1400); b.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); }; requestAnimationFrame(f); };
+      if ('IntersectionObserver' in window) new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { run(); o.disconnect(); } })).observe(b); else run(); });
+    // служение S1: картинка за курсором
+    $$('[data-follow]').forEach(l => { const pv = $('[data-follow-img]', l.parentNode), im = $('img', pv);
+      $$('a', l).forEach(a => { a.addEventListener('mouseenter', () => { if (a.dataset.img) { im.src = a.dataset.img; pv.classList.add('on'); } }); a.addEventListener('mouseleave', () => pv.classList.remove('on')); });
+      l.addEventListener('mousemove', e => { pv.style.left = e.clientX + 'px'; pv.style.top = e.clientY + 'px'; }); });
+    // служение S2: строка → описание
+    $$('[data-s2]').forEach(a => a.addEventListener('mouseenter', () => { const info = $('[data-s2-info]'); const i = +a.dataset.s2 % 6; const D = [["BrajCare", "Helping you serve Vraja"], ["Vedarama", "A Vaishnava digital library"], ["Bhajanamrita", "Bhajans with translations and melodies"], ["Slokamrita", "Learning shlokas by heart"], ["Vrajapedia", "An encyclopedia of Vraja"], ["Shad Goswami", "A documentary series about the Goswamis of Vrindavan"]]; $('b', info).textContent = D[i][0]; $('span', info).textContent = D[i][1]; $$('[data-s2]').forEach(x => x.classList.toggle('on', +x.dataset.s2 % 6 === i)); }));
+    // служение S3: орбита
+    $$('[data-orb]').forEach(o => { let a = 0, run = true; const d = $('[data-orb-d]', o);
+      $$('.s3-p', o).forEach(p => { p.addEventListener('mouseenter', () => { run = false; d.textContent = p.dataset.orbT; }); p.addEventListener('mouseleave', () => { run = true; d.textContent = 'Hover over a project'; }); });
+      const f = () => { if (run) { a = (a + .06) % 360; o.style.setProperty('--spin', a + 'deg'); } requestAnimationFrame(f); }; requestAnimationFrame(f); });
+    // анкета поселения (прототип: без отправки)
+    $$('[data-form]').forEach(f => f.addEventListener('submit', e => { e.preventDefault(); if (!f.checkValidity()) { f.reportValidity(); return; } $('[data-form-ok]', f).hidden = false; }));
+
+    // группы GR2: показ пространств по вкладкам
+    $$('[data-show]').forEach(s => { const im = $$('[data-show-i]', s), tb = $$('[data-show-t]', s); let k = 0, tm;
+      const go = i => { k = (i + im.length) % im.length; im.forEach((x, j) => x.classList.toggle('on', j === k)); tb.forEach((b, j) => { b.classList.remove('on'); void b.offsetWidth; b.classList.toggle('on', j === k); }); clearTimeout(tm); tm = setTimeout(() => go(k + 1), 4000); };
+      tb.forEach((b, j) => b.addEventListener('click', () => go(j))); go(0); });
+    // служение C: список → витрина
+    $$('[data-sc]').forEach(li => li.addEventListener('mouseenter', () => { $$('[data-sc]').forEach(x => x.classList.toggle('on', x === li)); $$('[data-sc-p]').forEach(p => p.classList.toggle('on', p.dataset.scP === li.dataset.sc)); }));
+    // ступени и тропа команды — запуск при появлении
+    if ('IntersectionObserver' in window) { const io3 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io3.unobserve(e.target); } }), { threshold: .3 });
+      $$('.tb-st,.tc-g').forEach(el => io3.observe(el)); }
+    setTimeout(() => $$('.tb-st,.tc-g').forEach(el => el.classList.add('in')), 3000);
+
+    // переключатель групп
+    $$('[data-gt]').forEach(g => { const bs = $$('[data-gt-k]', g), ps = $$('[data-gt-p]', g), tg = $('.gt-tg', g);
+      bs.forEach(b => b.addEventListener('click', () => { bs.forEach(x => x.classList.toggle('on', x === b)); ps.forEach(p => p.classList.toggle('on', p.dataset.gtP === b.dataset.gtK)); tg.classList.toggle('y', b.dataset.gtK === 'yoga'); })); });
+    // V2: список → окно
+    $$('[data-gv2]').forEach(li => li.addEventListener('mouseenter', () => { const p = li.closest('.gt-p'); $$('[data-gv2]', p).forEach(x => x.classList.toggle('on', x === li)); $$('[data-gv2-i]', p).forEach(im => im.classList.toggle('on', im.dataset.gv2I === li.dataset.gv2)); }));
+    // команда: запуск линии
+    if ('IntersectionObserver' in window) { const io4 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io4.unobserve(e.target); } }), { threshold: .3 }); $$('.tm4-p').forEach(el => io4.observe(el)); }
+    setTimeout(() => $$('.tm4-p').forEach(el => el.classList.add('in')), 3000);
+
+    // круг из секторов: центр показывает наведённый раздел
+    $$('[data-g6w]').forEach(w => { const c = $('[data-g6c]', w), t = $('[data-g6t]', w), d = $('[data-g6d]', w), base = [t.textContent, d.textContent, c.getAttribute('href')];
+      const set = (tt, dd, hh) => { c.classList.add('sw'); setTimeout(() => { t.textContent = tt; d.textContent = dd; c.setAttribute('href', hh); c.classList.remove('sw'); }, 150); };
+      $$('.g6-s', w).forEach(s => { s.addEventListener('mouseenter', () => { $$('.g6-s', w).forEach(x => x.classList.toggle('on', x === s)); set(s.dataset.t, s.dataset.d, s.getAttribute('href')); }); });
+      $('svg', w).addEventListener('mouseleave', () => { $$('.g6-s', w).forEach(x => x.classList.remove('on')); set(...base); }); });
+    // вакансии: стрелки
+    $$('[data-car]').forEach(cr => { const t = $('[data-car-t]', cr), p = $('[data-car-p]', cr), n = $('[data-car-n]', cr);
+      const step = () => (t.firstElementChild ? t.firstElementChild.getBoundingClientRect().width + 16 : 300);
+      const upd = () => { p.disabled = t.scrollLeft < 4; n.disabled = t.scrollLeft + t.clientWidth > t.scrollWidth - 4; };
+      p.addEventListener('click', () => t.scrollBy({ left: -step() })); n.addEventListener('click', () => t.scrollBy({ left: step() })); t.addEventListener('scroll', upd, { passive: true }); setTimeout(upd, 300); });
+    // ашрам: фото чуть следует за мышью, как у «Пространств»
+    $$('.a-acc .h2-ac').forEach(c => c.addEventListener('mousemove', e => { if (!c.classList.contains('on')) return; const b = c.getBoundingClientRect(); c.style.setProperty('--mx', ((e.clientX - b.left) / b.width - .5).toFixed(3)); c.style.setProperty('--my', ((e.clientY - b.top) / b.height - .5).toFixed(3)); }));
+
+    // A: колода карточек
+    $$('[data-dk]').forEach(d => { const c = $$('[data-dk-c]', d), t = $$('[data-dk-t]', d), n = c.length; let k = 0, tm;
+      const go = i => { k = (i + n) % n; c.forEach((x, j) => x.dataset.pos = (j - k + n) % n); t.forEach((b, j) => b.classList.toggle('on', j === k)); clearTimeout(tm); tm = setTimeout(() => go(k + 1), 5000); };
+      t.forEach((b, j) => { b.addEventListener('mouseenter', () => go(j)); b.addEventListener('click', () => go(j)); }); go(0); });
+    // B: полосы
+    $$('.sp7').forEach(s => { let tm; const it = $$('.sp7-s', s); it.forEach(x => x.addEventListener('mouseenter', () => { clearTimeout(tm); tm = setTimeout(() => it.forEach(y => y.classList.toggle('on', y === x)), 120); })); });
+
+    // вкладки программ
+    $$('[data-tabs]').forEach(t => $$('[data-tab]', t).forEach(b => b.addEventListener('click', () => { $$('[data-tab]', t).forEach(x => x.classList.toggle('on', x === b)); $$('[data-pane]', t).forEach(p => p.classList.toggle('on', p.dataset.pane === b.dataset.tab)); })));
+
+    // копирование реквизитов
+    $$('[data-copy]').forEach(b => b.addEventListener('click', () => { navigator.clipboard?.writeText(b.dataset.copy).then(() => { b.classList.add('ok'); b.textContent = 'Copied'; setTimeout(() => { b.classList.remove('ok'); b.textContent = 'Copy'; }, 1800); }); }));
+    // меню на телефоне
+    const sh = $('.hm-sh'), bg = $('[data-burg]');
+    if (bg) { bg.addEventListener('click', () => sh.classList.toggle('open')); $$('[data-mob-x]').forEach(a => a.addEventListener('click', () => sh.classList.remove('open'))); }
+    // первый экран: случайное фото
+    const hb = $('[data-hero]'); if (hb) { try { const pool = JSON.parse(hb.dataset.hero); hb.src = pool[Math.floor(Math.random() * pool.length)]; } catch (e) {} }
+    // отсчёт до открытия храма (8 сентября 2027, Радхаштами)
+    const cd = $('[data-cd-d]'); if (cd) { const t = new Date(2027, 8, 8), n = new Date(); n.setHours(0, 0, 0, 0); cd.textContent = Math.max(0, Math.round((t - n) / 864e5)); }
+
+    // появление при прокрутке
+    if ('IntersectionObserver' in window) { 
+      const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+      $$('.rv').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add('in'); else io.observe(el); });
+      setTimeout(() => $$('.rv').forEach(el => el.classList.add('in')), 2600); }
+    // «Связаться»
+    const ct = $('.sh-ct') || document.createElement('div'), ctb = $('[data-ct]') || document.createElement('button');
+    ctb.addEventListener('click', e => { e.stopPropagation(); const o = ct.classList.toggle('open'); ctb.setAttribute('aria-expanded', o); });
+    document.addEventListener('click', e => { if (!ct.contains(e.target)) { ct.classList.remove('open'); ctb.setAttribute('aria-expanded', 'false'); } });
+    // номера: миниатюры
+    $$('[data-room]').forEach(r => { const main = $('[data-room-main]', r);
+      $$('.rm-th button', r).forEach(b => b.addEventListener('click', () => { main.src = b.dataset.src; main.alt = b.dataset.alt; $$('.rm-th button', r).forEach(x => x.classList.toggle('on', x === b)); })); });
+    // галерея: вкладки
+    $$('[data-gt]').forEach(b => b.addEventListener('click', () => { $$('[data-gt]').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b); }); $$('[data-gp]').forEach(p => p.classList.toggle('on', p.dataset.gp === b.dataset.gt)); }));
+    // лайтбокс
+    const box = $('[data-lb-box]'), im = $('[data-lb-img]'), cap = $('[data-lb-cap]'); let at = 0;
+    const show = i => { at = (i + LB.length) % LB.length; im.src = LB[at][0]; im.alt = LB[at][1]; cap.textContent = LB[at][1]; };
+    const open = i => { show(i); box.hidden = false; document.documentElement.style.overflow = 'hidden'; };
+    const close = () => { box.hidden = true; document.documentElement.style.overflow = ''; };
+    document.addEventListener('click', e => { const t = e.target.closest && e.target.closest('[data-lb]'); if (t && !box.contains(t)) open(+t.dataset.lb);
+      const rm = e.target.closest && e.target.closest('.rm-ph'); if (rm) { const src = $('img', rm).getAttribute('src'); const i = LB.findIndex(x => x[0] === src); open(i >= 0 ? i : 0); } });
+    $('[data-lb-x]').addEventListener('click', close);
+    // видео на весь экран
+    document.addEventListener('click', e => { const b = e.target.closest && e.target.closest('[data-video]'); if (!b) return;
+      const vl = document.createElement('div'); vl.className = 'vl';
+      vl.innerHTML = '<video controls autoplay playsinline preload="auto"></video><button type="button" class="lb-x" aria-label="Close">×</button>';
+      const v = vl.querySelector('video'); v.poster = b.dataset.poster; v.src = b.dataset.video;
+      const shut = () => { v.pause(); vl.classList.remove('on'); document.documentElement.style.overflow = ''; document.removeEventListener('keydown', key); setTimeout(() => vl.remove(), 400); };
+      const key = ev => { if (ev.key === 'Escape') shut(); };
+      vl.addEventListener('click', ev => { if (ev.target !== v) shut(); }); document.addEventListener('keydown', key);
+      document.body.appendChild(vl); document.documentElement.style.overflow = 'hidden'; setTimeout(() => vl.classList.add('on'), 20);
+      const pr = v.play(); if (pr && pr.catch) pr.catch(() => {}); }); $('[data-lb-p]').addEventListener('click', () => show(at - 1)); $('[data-lb-n]').addEventListener('click', () => show(at + 1));
+    box.addEventListener('click', e => { if (e.target === box) close(); });
+    document.addEventListener('keydown', e => { if (box.hidden) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(at - 1); if (e.key === 'ArrowRight') show(at + 1); });
   }
-  function closeMenu() {
-    menuButton.classList.remove("open");
-    header.classList.remove("opened");
-    document.body.style.overflow = "";
-    setTimeout(function () {
-      headerNav.style.display = "none";
-      langSwitcher.style.display = "none";
-    }, 600);
-    menuButton.setAttribute("aria-expanded", "false");
-  }
-  let lastScrollY = 0;
-  const vh = window.innerHeight * 0.24;
-  const scrollThreshold = 20;
-  window.addEventListener("scroll", () => {
-    const currentScrollY = window.scrollY;
-    if (currentScrollY < window.innerHeight * 0.05) {
-      header.classList.remove("scrolled", "hidden");
-    } else if (currentScrollY < vh) {
-      if (Math.abs(currentScrollY - lastScrollY) > scrollThreshold) {
-        if (currentScrollY > lastScrollY) {
-          header.classList.add("hidden");
-        } else {
-          header.classList.remove("hidden");
-        }
-        lastScrollY = currentScrollY;
-      }
-    } else {
-      header.classList.add("scrolled");
-      if (Math.abs(currentScrollY - lastScrollY) > scrollThreshold) {
-        if (currentScrollY > lastScrollY) {
-          header.classList.add("hidden");
-        } else {
-          header.classList.remove("hidden");
-        }
-        lastScrollY = currentScrollY;
-      }
-    }
-  });
-  const links = document.querySelectorAll("a");
-  const currentUrl = window.location.pathname;
-  links.forEach(function (link) {
-    const href = link.getAttribute("href");
-    if (href && href === currentUrl) {
-      link.classList.add("inactive");
-      link.setAttribute("aria-current", "page");
-    }
-  });
-  const langSwitcherEn = document.getElementById("switch-to-en");
-  const langSwitcherRu = document.getElementById("switch-to-ru");
-  const currentPath = window.location.pathname;
-  if (!langSwitcherEn || !langSwitcherRu) {
-    return;
-  }
-  const isEnglish = currentPath.startsWith("/en");
-  let newPath;
-  if (isEnglish) {
-    langSwitcherEn.classList.add("inactive");
-    langSwitcherEn.setAttribute("aria-current", "page");
-    newPath = currentPath.replace("/en", "");
-    if (newPath === "") newPath = "/";
-    langSwitcherRu.href = newPath;
-  } else {
-    langSwitcherRu.classList.add("inactive");
-    langSwitcherRu.setAttribute("aria-current", "page");
-    newPath = "/en" + currentPath;
-    langSwitcherEn.href = newPath;
-  }
-});
-</script>
-  
-  
-  <script>
-var mySwiper = new Swiper ('#basic-swiper', {
- 	slidesPerView: 3.3,
-  slidesPerGroup: 1,
-  grabCursor: true,
-  preventClicks: false,
-  preventClicksPropagation: false,
-  speed: 400,
-  a11y: true,
-  spaceBetween: 42,
-  allowTouchMove: true,
-  navigation: {
-  nextEl: '#right-button',
-  prevEl: '#left-button',
-		},
-     breakpoints: {
-      0: { /* when window >=0px - webflow mobile landscape/portriat */
-          slidesPerView: 1.2,
-         slidesPerGroup: 1,
-        spaceBetween: 40,
-      },
-          480: { /* when window >=0px - webflow mobile landscape/portriat */
-          slidesPerView: 1.5,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      },
-      767: { /* when window >= 767px - webflow tablet */
-            slidesPerView: 2.2,
-         slidesPerGroup:1,
-        spaceBetween: 48,
-      },
-      992: { /* when window >= 988px - webflow desktop */
-         slidesPerView: 3.4,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      }
-    },
-      });
-</script>
-  <script>
-var mySwiper = new Swiper ('#basic-swiper2', {
- 	slidesPerView: 3.3,
-  slidesPerGroup: 1,
-  grabCursor: true,
-  preventClicks: false,
-  preventClicksPropagation: false,
-  speed: 400,
-  a11y: true,
-  spaceBetween: 42,
-  allowTouchMove: true,
-  navigation: {
-  nextEl: '#right-button2',
-  prevEl: '#left-button2',
-		},
-     breakpoints: {
-      0: { /* when window >=0px - webflow mobile landscape/portriat */
-          slidesPerView: 1.2,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      },
-          480: { /* when window >=0px - webflow mobile landscape/portriat */
-          slidesPerView: 1.5,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      },
-      767: { /* when window >= 767px - webflow tablet */
-            slidesPerView: 2.2,
-         slidesPerGroup:1,
-        spaceBetween: 48,
-      },
-      992: { /* when window >= 988px - webflow desktop */
-         slidesPerView: 3.4,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      }
-    },
-      });
-</script>
-  <script>
-var mySwiper = new Swiper ('#basic-swiper3', {
- 	slidesPerView: 3.3,
-  slidesPerGroup: 1,
-  grabCursor: true,
-  preventClicks: false,
-  preventClicksPropagation: false,
-  speed: 400,
-  a11y: true,
-  spaceBetween: 42,
-  allowTouchMove: true,
-  navigation: {
-  nextEl: '#right-button3',
-  prevEl: '#left-button3',
-		},
-     breakpoints: {
-      0: { /* when window >=0px - webflow mobile landscape/portriat */
-          slidesPerView: 1.2,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      },
-          480: { /* when window >=0px - webflow mobile landscape/portriat */
-          slidesPerView: 1.5,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      },
-      767: { /* when window >= 767px - webflow tablet */
-            slidesPerView: 2.2,
-         slidesPerGroup:1,
-        spaceBetween: 48,
-      },
-      992: { /* when window >= 988px - webflow desktop */
-         slidesPerView: 3.4,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      }
-    },
-      });
-</script>
-  <script>
-var mySwiper = new Swiper ('#basic-swiper4', {
- 	slidesPerView: 3.3,
-  slidesPerGroup: 1,
-  grabCursor: true,
-  preventClicks: false,
-  preventClicksPropagation: false,
-  speed: 400,
-  a11y: true,
-  spaceBetween: 42,
-  allowTouchMove: true,
-  navigation: {
-  nextEl: '#right-button4',
-  prevEl: '#left-button4',
-		},
-     breakpoints: {
-      0: { /* when window >=0px - webflow mobile landscape/portriat */
-          slidesPerView: 1.2,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      },
-          480: { /* when window >=0px - webflow mobile landscape/portriat */
-          slidesPerView: 1.5,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      },
-      767: { /* when window >= 767px - webflow tablet */
-            slidesPerView: 2.2,
-         slidesPerGroup:1,
-        spaceBetween: 48,
-      },
-      992: { /* when window >= 988px - webflow desktop */
-         slidesPerView: 3.4,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      }
-    },
-      });
-</script>
-  <script>
-var mySwiper = new Swiper ('#basic-swiper5', {
- 	slidesPerView: 3.3,
-  slidesPerGroup: 1,
-  grabCursor: true,
-  preventClicks: false,
-  preventClicksPropagation: false,
-  speed: 400,
-  a11y: true,
-  spaceBetween: 42,
-  allowTouchMove: true,
-  navigation: {
-  nextEl: '#right-button5',
-  prevEl: '#left-button5',
-		},
-     breakpoints: {
-      0: { /* when window >=0px - webflow mobile landscape/portriat */
-          slidesPerView: 1.2,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      },
-          480: { /* when window >=0px - webflow mobile landscape/portriat */
-          slidesPerView: 1.5,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      },
-      767: { /* when window >= 767px - webflow tablet */
-            slidesPerView: 2.2,
-         slidesPerGroup:1,
-        spaceBetween: 48,
-      },
-      992: { /* when window >= 988px - webflow desktop */
-         slidesPerView: 3.4,
-         slidesPerGroup:1,
-        spaceBetween: 40,
-      }
-    },
-      });
+}
 </script>
 </body>
 </html>
