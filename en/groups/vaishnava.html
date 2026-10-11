@@ -2444,7 +2444,7 @@ html.vf-lock{overflow:hidden}
 const SLIDES = [{"src": "/images/groups/3113a1e8d736df5044be5874cb942190.webp", "cap": "Inner courtyard at sunset", "ar": 1.5}, {"src": "/images/groups/d11ea72c16d2cb0aa828c6489aa79fa7.webp", "cap": "Guests in the inner courtyard", "ar": 1.5}, {"src": "/images/groups/cfda67a7ae33fb92a8de8d9c356fc824.webp", "cap": "The guest house at night", "ar": 1.333}, {"src": "/images/groups/79e2f02ff951a3855ceb97336082d653.webp", "cap": "Façade", "ar": 1.5}, {"src": "/images/groups/724c2e217c8ba70e8c2dd242560ac760.webp", "cap": "The garden in front of the guest house", "ar": 1.5}, {"src": "/images/groups/a31c3b15efe5402fa33afdd331edaffb.webp", "cap": "Evening light in the garden", "ar": 1.5}, {"src": "/images/groups/12acbad10d44b85e9a4cc72a50063447.webp", "cap": "Rooftop pavilions", "ar": 1.5}, {"src": "/images/groups/0c0ca5111e8f471d6c005bdfe6d5fd17.webp", "cap": "Jali screens on the roof", "ar": 0.667}, {"src": "/images/groups/9345b11f48a3306e76ada8ea70ddaa55.webp", "cap": "View from a balcony", "ar": 1.778}, {"src": "/images/groups/76b19c53a23fce46b44c78cbe20b6707.webp", "cap": "Twin room", "ar": 1.5}, {"src": "/images/groups/1e74a0a674862392aaf63a3a43e66001.webp", "cap": "Two beds and an altar niche", "ar": 1.5}, {"src": "/images/groups/b48251069d43cd97a817a87d41d8601e.webp", "cap": "Private bathroom", "ar": 0.667}, {"src": "/images/groups/51724293b89e6ef699bd0e92d9079795.webp", "cap": "Reception: hand-painted walls", "ar": 1.333}, {"src": "/images/groups/c72427d962e24b8f843c760f2d10d44b.webp", "cap": "Your room key", "ar": 1.778}];
 const CAFE = [{"src": "/images/groups/9b3d4cc132e3b9ed902a92a6a57c6463.webp", "cap": "Something sweet between sessions"}];
 const SPN = [2, 3, 1, 2];
-const RATE = 96.67, R2 = 3500 / RATE, R4 = 5500 / RATE, N2 = 24, N4 = 6, MEAL = 800 / RATE, HOUSE = N2 * R2 + N4 * R4, YTT = 980, FREE_FROM = 61;
+const RATE = 96.67, R2 = 3500 / RATE, R4 = 5500 / RATE, N2 = 24, N4 = 6, MEAL = 800 / RATE, HOUSE = N2 * R2 + N4 * R4, FREE_FROM = 61;
 const ROOMFIT = (n) => { let b = null; for (let q = 0; q <= N4; q++) { const d2 = Math.max(0, Math.ceil((n - 4 * q) / 2)); if (d2 > N2) continue; const c = q * R4 + d2 * R2; if (!b || c < b.c) b = { q, d2, c }; } return b; };
 
 let SEASON = 0, START = new Date(2026, 9, 1);
@@ -2775,12 +2775,10 @@ class Component extends DCLogic {
     const rm = ROOMFIT(n);
     const calc = {
       pp: (rm.c + (meals ? MEAL * n : 0)) * d,
-      house: HOUSE * d + (meals ? MEAL * n * d : 0),
-      ytt: YTT * n
+      house: HOUSE * d + (meals ? MEAL * n * d : 0)
     };
     const LONG = 16, disc = d >= LONG, raw = { pp: calc.pp, house: calc.house };
     if (disc) { calc.pp = Math.round(calc.pp * 0.85); calc.house = Math.round(calc.house * 0.85); }
-    const yttOk = d >= 21 && meals;
     const best = calc.pp < calc.house - 1 ? 'pp' : 'house';
     const opt = best;
     const tot = calc[opt], free = n >= FREE_FROM;
@@ -2798,14 +2796,13 @@ class Component extends DCLogic {
       totD: this.odD(this.money(tot)), perD: this.odD(this.money(tot / n)),
       pet: (this.state.pet || 0) > 0, petK: 'pt' + (this.state.pet || 0)
     };
-    ['pp', 'house', 'ytt'].forEach(k => {
-      const na = k === 'ytt' && !yttOk;
-      v['oc_' + k] = 'pc-op' + (k === opt ? ' on' : '') + (na ? ' pc-na' : '');
+    ['pp', 'house'].forEach(k => {
+      v['oc_' + k] = 'pc-op' + (k === opt ? ' on' : '');
       v['op_' + k] = k === opt ? 'true' : 'false';
       v['ob_' + k] = k === best;
-      v['ot_' + k] = na ? (meals ? '21+ nights' : 'With meals only') : this.money(calc[k]);
-      v['ok_' + k] = k + calc[k] + inr + na;
-      v['os_' + k] = () => { if (!na) this.setState({ opt: k }); };
+      v['ot_' + k] = this.money(calc[k]);
+      v['ok_' + k] = k + calc[k] + inr;
+      v['os_' + k] = () => this.setState({ opt: k });
     });
     const L = [];
     if (opt === 'pp') {
@@ -2813,18 +2810,14 @@ class Component extends DCLogic {
       if (rm.q) L.push({ a: 'Four-bed rooms', b: this.money(R4) + ' × ' + rm.q + ' × ' + d, c: '' });
       L.push({ a: 'Prasadam: breakfast and lunch', b: meals ? this.money(MEAL) + ' × ' + n + ' × ' + d : 'Not included', c: meals ? '' : 'pc-off' });
       L.push({ a: 'Hall and rooftop', b: free ? 'Free for your group' : 'To be agreed', c: free ? 'pc-free' : 'pc-off', k: free ? 'f' : 'a' });
-    } else if (opt === 'house') {
+    } else {
       L.push({ a: 'Whole guest house, 30 rooms', b: this.money(HOUSE) + ' × ' + d + ' days', c: '' });
       L.push({ a: 'Prasadam: breakfast and lunch', b: meals ? this.money(MEAL) + ' × ' + n + ' × ' + d : 'Not included', c: meals ? '' : 'pc-off' });
       L.push({ a: 'Halls, rooftop, prasadam hall', b: 'Included', c: 'pc-free' });
       L.push({ a: 'Other guests', b: 'None. The house is all yours', c: '' });
-    } else {
-      L.push({ a: 'YTT package', b: this.money(YTT) + ' × ' + n, c: '' });
-      L.push({ a: 'Room and full board', b: 'For the whole course', c: '' });
-      L.push({ a: 'Yoga hall, rooftop, kutirs', b: 'Included', c: 'pc-free' });
     }
-    if (disc && opt !== 'ytt') L.push({ a: 'Long-stay discount, 15%', b: '−' + this.money(raw[opt] - calc[opt]), c: 'pc-free', k: 'd' });
-    v.dshow = opt !== 'ytt'; v.dc = 'pc-halls pc-disc' + (disc ? ' pc-open' : '');
+    if (disc) L.push({ a: 'Long-stay discount, 15%', b: '−' + this.money(raw[opt] - calc[opt]), c: 'pc-free', k: 'd' });
+    v.dshow = true; v.dc = 'pc-halls pc-disc' + (disc ? ' pc-open' : '');
     v.dt = disc ? 'More than 15 nights: 15% off' : (LONG - d) + ' more night' + (LONG - d === 1 ? '' : 's') + ' and you get 15% off';
     v.dw = 'width:' + Math.min(100, (d - 3) / (LONG - 3) * 100).toFixed(1) + '%';
     v.lines = L.map((l, i) => ({ a: l.a, b: l.b, c: l.c, k: opt + i + (l.k || '') }));

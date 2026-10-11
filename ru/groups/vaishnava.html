@@ -2449,7 +2449,7 @@ html.vf-lock{overflow:hidden}
 const SLIDES = [{"src": "/images/groups/3113a1e8d736df5044be5874cb942190.webp", "cap": "Внутренний двор на закате", "ar": 1.5}, {"src": "/images/groups/d11ea72c16d2cb0aa828c6489aa79fa7.webp", "cap": "Гости во внутреннем дворе", "ar": 1.5}, {"src": "/images/groups/cfda67a7ae33fb92a8de8d9c356fc824.webp", "cap": "Гостевой дом ночью", "ar": 1.333}, {"src": "/images/groups/79e2f02ff951a3855ceb97336082d653.webp", "cap": "Фасад", "ar": 1.5}, {"src": "/images/groups/724c2e217c8ba70e8c2dd242560ac760.webp", "cap": "Сад перед гостевым домом", "ar": 1.5}, {"src": "/images/groups/a31c3b15efe5402fa33afdd331edaffb.webp", "cap": "Вечерний свет в саду", "ar": 1.5}, {"src": "/images/groups/12acbad10d44b85e9a4cc72a50063447.webp", "cap": "Беседки на крыше", "ar": 1.5}, {"src": "/images/groups/0c0ca5111e8f471d6c005bdfe6d5fd17.webp", "cap": "Резные решётки-джали на крыше", "ar": 0.667}, {"src": "/images/groups/9345b11f48a3306e76ada8ea70ddaa55.webp", "cap": "Вид с балкона", "ar": 1.778}, {"src": "/images/groups/76b19c53a23fce46b44c78cbe20b6707.webp", "cap": "Двухместный номер", "ar": 1.5}, {"src": "/images/groups/1e74a0a674862392aaf63a3a43e66001.webp", "cap": "Две кровати и ниша для алтаря", "ar": 1.5}, {"src": "/images/groups/b48251069d43cd97a817a87d41d8601e.webp", "cap": "Своя ванная", "ar": 0.667}, {"src": "/images/groups/51724293b89e6ef699bd0e92d9079795.webp", "cap": "Ресепшен: стены расписаны вручную", "ar": 1.333}, {"src": "/images/groups/c72427d962e24b8f843c760f2d10d44b.webp", "cap": "Ключ от вашего номера", "ar": 1.778}];
 const CAFE = [{"src": "/images/groups/9b3d4cc132e3b9ed902a92a6a57c6463.webp", "cap": "Сладкое между занятиями"}];
 const SPN = [2, 3, 1, 2];
-const RATE = 96.67, R2 = 3500 / RATE, R4 = 5500 / RATE, N2 = 24, N4 = 6, MEAL = 800 / RATE, HOUSE = N2 * R2 + N4 * R4, YTT = 980, FREE_FROM = 61;
+const RATE = 96.67, R2 = 3500 / RATE, R4 = 5500 / RATE, N2 = 24, N4 = 6, MEAL = 800 / RATE, HOUSE = N2 * R2 + N4 * R4, FREE_FROM = 61;
 const ROOMFIT = (n) => { let b = null; for (let q = 0; q <= N4; q++) { const d2 = Math.max(0, Math.ceil((n - 4 * q) / 2)); if (d2 > N2) continue; const c = q * R4 + d2 * R2; if (!b || c < b.c) b = { q, d2, c }; } return b; };
 
 let SEASON = 0, START = new Date(2026, 9, 1);
@@ -2781,12 +2781,10 @@ class Component extends DCLogic {
     const rm = ROOMFIT(n);
     const calc = {
       pp: (rm.c + (meals ? MEAL * n : 0)) * d,
-      house: HOUSE * d + (meals ? MEAL * n * d : 0),
-      ytt: YTT * n
+      house: HOUSE * d + (meals ? MEAL * n * d : 0)
     };
     const LONG = 16, disc = d >= LONG, raw = { pp: calc.pp, house: calc.house };
     if (disc) { calc.pp = Math.round(calc.pp * 0.85); calc.house = Math.round(calc.house * 0.85); }
-    const yttOk = d >= 21 && meals;
     const best = calc.pp < calc.house - 1 ? 'pp' : 'house';
     const opt = best;
     const tot = calc[opt], free = n >= FREE_FROM;
@@ -2804,14 +2802,13 @@ class Component extends DCLogic {
       totD: this.odD(this.money(tot)), perD: this.odD(this.money(tot / n)),
       pet: (this.state.pet || 0) > 0, petK: 'pt' + (this.state.pet || 0)
     };
-    ['pp', 'house', 'ytt'].forEach(k => {
-      const na = k === 'ytt' && !yttOk;
-      v['oc_' + k] = 'pc-op' + (k === opt ? ' on' : '') + (na ? ' pc-na' : '');
+    ['pp', 'house'].forEach(k => {
+      v['oc_' + k] = 'pc-op' + (k === opt ? ' on' : '');
       v['op_' + k] = k === opt ? 'true' : 'false';
       v['ob_' + k] = k === best;
-      v['ot_' + k] = na ? (meals ? 'от 21 ночи' : 'Только с питанием') : this.money(calc[k]);
-      v['ok_' + k] = k + calc[k] + inr + na;
-      v['os_' + k] = () => { if (!na) this.setState({ opt: k }); };
+      v['ot_' + k] = this.money(calc[k]);
+      v['ok_' + k] = k + calc[k] + inr;
+      v['os_' + k] = () => this.setState({ opt: k });
     });
     const L = [];
     if (opt === 'pp') {
@@ -2819,18 +2816,14 @@ class Component extends DCLogic {
       if (rm.q) L.push({ a: 'Четырёхместные номера', b: this.money(R4) + ' × ' + rm.q + ' × ' + d, c: '' });
       L.push({ a: 'Прасад, завтрак и обед', b: meals ? this.money(MEAL) + ' × ' + n + ' × ' + d : 'Не включено', c: meals ? '' : 'pc-off' });
       L.push({ a: 'Зал и крыша', b: free ? 'Бесплатно для вашей группы' : 'По договорённости', c: free ? 'pc-free' : 'pc-off', k: free ? 'f' : 'a' });
-    } else if (opt === 'house') {
+    } else {
       L.push({ a: 'Весь гостевой дом, 30 номеров', b: this.money(HOUSE) + ' × ' + d + ' ' + PL(d, 'день', 'дня', 'дней'), c: '' });
       L.push({ a: 'Прасад, завтрак и обед', b: meals ? this.money(MEAL) + ' × ' + n + ' × ' + d : 'Не включено', c: meals ? '' : 'pc-off' });
       L.push({ a: 'Залы, крыша, прасадам-холл', b: 'Включено', c: 'pc-free' });
       L.push({ a: 'Другие гости', b: 'Нет, дом полностью ваш', c: '' });
-    } else {
-      L.push({ a: 'YTT package', b: this.money(YTT) + ' × ' + n, c: '' });
-      L.push({ a: 'Номер с питанием', b: 'На весь курс', c: '' });
-      L.push({ a: 'Зал для йоги, крыша, кутиры', b: 'Включено', c: 'pc-free' });
     }
-    if (disc && opt !== 'ytt') L.push({ a: 'Скидка за долгое проживание, 15%', b: '−' + this.money(raw[opt] - calc[opt]), c: 'pc-free', k: 'd' });
-    v.dshow = opt !== 'ytt'; v.dc = 'pc-halls pc-disc' + (disc ? ' pc-open' : '');
+    if (disc) L.push({ a: 'Скидка за долгое проживание, 15%', b: '−' + this.money(raw[opt] - calc[opt]), c: 'pc-free', k: 'd' });
+    v.dshow = true; v.dc = 'pc-halls pc-disc' + (disc ? ' pc-open' : '');
     v.dt = disc ? 'Больше 15 ночей — скидка 15%' : 'Ещё ' + (LONG - d) + ' ' + PL(LONG - d, 'ночь', 'ночи', 'ночей') + ' — и скидка 15%';
     v.dw = 'width:' + Math.min(100, (d - 3) / (LONG - 3) * 100).toFixed(1) + '%';
     v.lines = L.map((l, i) => ({ a: l.a, b: l.b, c: l.c, k: opt + i + (l.k || '') }));
