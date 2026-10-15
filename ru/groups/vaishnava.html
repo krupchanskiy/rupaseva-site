@@ -2562,17 +2562,20 @@ function place(x, y, ar) {
   if (ar < FA) { const v = ar / FA; return [x, (y - (1 - v) / 2 * 100) / v]; }
   const h = FA / ar; return [(x - (1 - h) / 2 * 100) / h, y];
 }
+const ixR = (k, j, i) => { const u = (j === 0 ? IXPW : IXPN)[k][i], ok = window.__ixok; if (!ok || ok.has(u)) return true; window.__ixget && window.__ixget(u); return false; };
 class Component extends DCLogic {
   constructor(p) { super(p); this.state = { i: 0, open: 0, rs: ROOMS.map(() => ({ p: 0, s: 0 })), dx: 0, drag: null, cx: 0, cy: 0, hov: false, ci: 0, pet: 0, dwy: 0, rvp: -1, rvd: 'n', fss: 0, fsw: false, fsg: 0, vi: 0, rvi: 0, ixa: 0, ixs: [[0,1,2],[0,1,2],[0,1,2],[0,1,2],[0,1,2]], ixn: [3,3,3,3,3], ixp: [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]], ixd: [['l','l','l'],['l','l','l'],['l','l','l'],['l','l','l'],['l','l','l']], ixc: [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]], hs: false, hh: false, ha: -1, hm: false, hl: 'en', hd: false, ht: 0, fqo: 0, dwk: 1, dwhov: null, dws: null, dwe: null, dwdh: null, dwrr: null, n: 40, d: 7, inr: true, meals: true, opt: null, pah: -1, pam: [0, 0], svx: 50, svy: 50, sa: 0, sph: 0, suser: false, smx: 0, smy: 0 }; }
   componentDidMount() {
     /*ix-preload*/
-    if (!window.__ixpre && matchMedia('(hover:hover)').matches) { window.__ixpre = 1;
-      const rows = IXPW.map((w, k) => [...new Set(w.concat(IXPN[k] || []))]), seen = new Set();
-      const get = u => new Promise(r => { if (seen.has(u)) return r(); seen.add(u); const im = new Image(); im.decoding = 'async'; im.onload = im.onerror = r; im.src = u; });
+    if (!window.__ixpre && matchMedia('(hover:hover), (min-width:1200px)').matches) { window.__ixpre = 1;
+      const rows = IXPW.map((w, k) => [...new Set(w.concat(IXPN[k] || []))]), seen = new Set(), ok = window.__ixok = new Set();
+      // фото считается готовым, когда скачано и раскодировано — тогда смена кадра без мигания
+      const get = window.__ixget = u => new Promise(r => { if (seen.has(u)) return r(); seen.add(u); const im = new Image(); im.decoding = 'async';
+        im.onload = () => (im.decode ? im.decode().catch(() => {}) : Promise.resolve()).then(() => { ok.add(u); r(); }); im.onerror = r; im.src = u; });
+      document.querySelectorAll('.ix3 img, .ix3-rw img').forEach(im => { if (im.complete && im.naturalWidth) ok.add(im.getAttribute('src')); });
       const queue = [].concat(...rows); let qi = 0;
       const lane = () => { while (qi < queue.length && seen.has(queue[qi])) qi++; if (qi < queue.length) get(queue[qi++]).then(lane); };
-      const start = () => setTimeout(() => { lane(); lane(); lane(); }, 600);
-      if (document.readyState === 'complete') start(); else addEventListener('load', start, { once: true });
+      setTimeout(() => { lane(); lane(); lane(); lane(); }, 150);
       document.addEventListener('mouseover', e => { const rw = e.target.closest && e.target.closest('.ix3-rw'); if (!rw) return;
         const k = [...rw.parentNode.children].indexOf(rw); (rows[k] || []).forEach(get); });
     }
@@ -2786,7 +2789,7 @@ class Component extends DCLogic {
       this.ixj = 0;
       this.ixT = setInterval(() => {
         const st = this.state, k = st.ixa, n = IXP[k].length, j = this.ixj = (this.ixj + 1) % 3;
-        let c = st.ixn[k]; for (let t = 0; t < n && (st.ixs[k].includes(c % n) || st.ixp[k].some((p, q) => q !== j && p === c % n)); t++) c++; c = c % n;
+        let c = st.ixn[k], t = 0; for (; t < n && (st.ixs[k].includes(c % n) || st.ixp[k].some((p, q) => q !== j && p === c % n) || !ixR(k, j, c % n)); t++) c++; if (t >= n) return; c = c % n;
         const m = a => a.map(r => r.slice()); const s2 = m(st.ixs), p2 = m(st.ixp), d2 = m(st.ixd), n2 = m(st.ixc);
         p2[k][j] = s2[k][j]; s2[k][j] = c; d2[k][j] = 'l'; n2[k][j] += 1; const nx = st.ixn.slice(); nx[k] = (c + 1) % n;
         this.setState({ ixs: s2, ixp: p2, ixd: d2, ixc: n2, ixn: nx });
@@ -3094,8 +3097,8 @@ class Component extends DCLogic {
           const ds = { l: x - b.left, r: b.right - x, t: y - b.top, b: b.bottom - y };
           const dir = Object.keys(ds).reduce((a, q) => ds[q] < ds[a] ? q : a, 'l');
           let c2 = st.ixn[k];
-          for (let t = 0; t < n && (cur.includes(c2 % n) || st.ixp[k].some((p, q) => q !== j && p === c2 % n)); t++) c2++;
-          c2 = c2 % n;
+          let t = 0; for (; t < n && (cur.includes(c2 % n) || st.ixp[k].some((p, q) => q !== j && p === c2 % n) || !ixR(k, j, c2 % n)); t++) c2++;
+          if (t >= n) return; c2 = c2 % n;
           const m = a => a.map(r => r.slice());
           const s2 = m(st.ixs), p2 = m(st.ixp), d2 = m(st.ixd), n2 = m(st.ixc);
           p2[k][j] = s2[k][j]; s2[k][j] = c2; d2[k][j] = dir; n2[k][j] = n2[k][j] + 1;
