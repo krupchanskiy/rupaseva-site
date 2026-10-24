@@ -2384,7 +2384,7 @@ html.vf-lock{overflow:hidden}
 <div class="pc-calc">
 <div class="pc-ctl"><div class="pc-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7.5" r="2.8"></circle><circle cx="5.5" cy="9.5" r="2.2"></circle><circle cx="18.5" cy="9.5" r="2.2"></circle><path d="M7.5 19c.5-3.2 2.3-5 4.5-5s4 1.8 4.5 5"></path><path d="M2.5 18c.3-2.4 1.5-3.8 3-3.8 1 0 1.8.4 2.4 1.2"></path><path d="M21.5 18c-.3-2.4-1.5-3.8-3-3.8-1 0-1.8.4-2.4 1.2"></path></svg>Ваша группа</div>
 <div class="pc-sl"><label for="pc-n">Гостей</label><input id="pc-n" class="rng" type="range" min="30" max="72" value="{{PC_n}}" style="{{PC_pn}}" onChange="{{PC_setN}}"><div class="pc-mark" style="left:calc(13px + (100% - 26px) * 0.714)"><span>Залы бесплатно</span><i></i></div><div class="pc-scale"><span class="pc-val" style="{{PC_nL}}">{{PC_n}}</span><span style="{{PC_nM}}">72</span></div></div>
-<div class="pc-sl"><label for="pc-d">Ночей</label><input id="pc-d" class="rng" type="range" min="3" max="28" value="{{PC_d}}" style="{{PC_pd}}" onChange="{{PC_setD}}"><div class="pc-mark" style="left:calc(13px + (100% - 26px) * 0.52)"><span>−15%</span><i></i></div><div class="pc-scale"><span class="pc-val" style="{{PC_dL}}">{{PC_d}}</span><span style="{{PC_dM}}">28</span></div></div>
+<div class="pc-sl"><label for="pc-d">Ночей</label><input id="pc-d" class="rng" type="range" min="2" max="28" value="{{PC_d}}" style="{{PC_pd}}" onChange="{{PC_setD}}"><div class="pc-mark" style="left:calc(13px + (100% - 26px) * 0.538)"><span>−15%</span><i></i></div><div class="pc-scale"><span class="pc-val" style="{{PC_dL}}">{{PC_d}}</span><span style="{{PC_dM}}">28</span></div></div>
 <div><div class="pc-lbl">Питание</div><div class="pc-seg" role="group" aria-label="Питание"><span class="pc-ind" style="{{PC_mInd}}"></span><button type="button" class="{{PC_mF}}" onClick="{{PC_setF}}" aria-pressed="{{PC_mFp}}">С питанием</button><button type="button" class="{{PC_mR}}" onClick="{{PC_setR}}" aria-pressed="{{PC_mRp}}">Без питания</button></div></div>
 <div class="pc-row2"><div class="pc-lbl" style="margin:0">Валюта</div><div class="pc-cur" role="group" aria-label="Валюта"><span class="pc-ind" style="{{PC_indPos}}"></span><button type="button" class="{{PC_cu}}" onClick="{{PC_setU}}" aria-pressed="{{PC_pu}}">$ USD</button><button type="button" class="{{PC_ci}}" onClick="{{PC_setI}}" aria-pressed="{{PC_pi}}">₹ INR</button></div></div>
 <div class="pc-talk"><p>Другие даты, группа больше или особый формат? Давайте обсудим.</p><div class="bs"><a class="pc-chn" href="https://wa.me/79250077575" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5l1.4-4A7.5 7.5 0 1 1 8.6 19z"></path><path d="M9 10.5h6M9 13.5h4"></path></svg>WhatsApp</a><a class="pc-chn" href="https://t.me/+79250077575" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6.5 2.5L12 20l3-5 4.5 3z"></path><path d="M9.5 13.5L21 4"></path></svg>Telegram</a><a class="pc-chn" href="mailto:info@rupaseva.ru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"></rect><path d="M3.5 6.5l8.5 7 8.5-7"></path></svg>Email</a></div></div>
@@ -2836,9 +2836,9 @@ class Component extends DCLogic {
       cu: inr ? '' : 'on', ci: inr ? 'on' : '', pu: inr ? 'false' : 'true', pi: inr ? 'true' : 'false',
       setU: () => this.setState({ inr: false }), setI: () => this.setState({ inr: true }),
       n, d,
-      nL: 'left:calc(13px + (100% - 26px) * ' + ((n - 30) / 42).toFixed(3) + ')', dL: 'left:calc(13px + (100% - 26px) * ' + ((d - 3) / 25).toFixed(3) + ')',
-      nM: (n - 30) / 42 > .86 ? 'opacity:0' : '', dM: (d - 3) / 25 > .86 ? 'opacity:0' : '',
-      pn: '--p:' + ((n - 30) / 42 * 100).toFixed(1) + '%', pd: '--p:' + ((d - 3) / 25 * 100).toFixed(1) + '%',
+      nL: 'left:calc(13px + (100% - 26px) * ' + ((n - 30) / 42).toFixed(3) + ')', dL: 'left:calc(13px + (100% - 26px) * ' + ((d - 2) / 26).toFixed(3) + ')',
+      nM: (n - 30) / 42 > .86 ? 'opacity:0' : '', dM: (d - 2) / 26 > .86 ? 'opacity:0' : '',
+      pn: '--p:' + ((n - 30) / 42 * 100).toFixed(1) + '%', pd: '--p:' + ((d - 2) / 26 * 100).toFixed(1) + '%',
       setN: (e) => { const nn = +e.target.value, st = { n: nn }; if (nn >= FREE_FROM && this.state.n < FREE_FROM) st.pet = (this.state.pet || 0) + 1; this.setState(st); }, setD: (e) => { const dd = +e.target.value, st = { d: dd }; if (dd >= 16 && this.state.d < 16) st.pet = (this.state.pet || 0) + 1; this.setState(st); },
       mInd: 'transform:translateX(' + (meals ? 0 : 100) + '%)', mF: meals ? 'on' : '', mR: meals ? '' : 'on', mFp: meals ? 'true' : 'false', mRp: meals ? 'false' : 'true',
       setF: () => this.setState({ meals: true }), setR: () => this.setState({ meals: false }),
@@ -2870,7 +2870,7 @@ class Component extends DCLogic {
     if (disc) L.push({ a: 'Скидка за долгое проживание, 15%', b: '−' + this.money(raw[opt] - calc[opt]), c: 'pc-free', k: 'd' });
     v.dshow = true; v.dc = 'pc-halls pc-disc' + (disc ? ' pc-open' : '');
     v.dt = disc ? 'Больше 15 ночей — скидка 15%' : 'Ещё ' + (LONG - d) + ' ' + PL(LONG - d, 'ночь', 'ночи', 'ночей') + ' — и скидка 15%';
-    v.dw = 'width:' + Math.min(100, (d - 3) / (LONG - 3) * 100).toFixed(1) + '%';
+    v.dw = 'width:' + Math.min(100, (d - 2) / (LONG - 2) * 100).toFixed(1) + '%';
     v.lines = L.map((l, i) => ({ a: l.a, b: l.b, c: l.c, k: opt + i + (l.k || '') }));
     const showHalls = opt === 'pp';
     v.hc = 'pc-halls' + (free || !showHalls ? ' pc-open' : '');
@@ -2942,7 +2942,7 @@ class Component extends DCLogic {
     if (ri) {
       v.selText = ri.text; v.selK = 'r' + ri.a + '-' + ri.b; v.selCls = 'dw-stt dw-' + (ri.ok ? (ri.sh ? 'ok dw-shok' : ri.pv ? 'ok dw-pvok' : 'ok') : 'bad');
       v.selMsg = ri.nights + ' ' + PL(ri.nights, 'ночь', 'ночи', 'ночей') + ' · ' + (ri.ok ? (ri.sh ? 'В эти дни идёт наш ретрит, но место ещё для одной группы есть — мы всё подтвердим' : ri.pv ? 'На часть дней есть предварительная бронь. Их всё равно можно запросить — мы всё проверим' : 'Все даты свободны') : ri.msg);
-      v.nights = Math.max(3, ri.nights); v.ok = ri.ok; v.bad = !ri.ok;
+      v.nights = Math.max(2, ri.nights); v.ok = ri.ok; v.bad = !ri.ok;
       v.hasArc = true; v.arcD = arcPath(RS, RE, ri.a, ri.b); v.arcCls = 'dw-selarc' + (ri.ok ? '' : ' dw-bad'); v.arcK = v.selK;
     } else { v.selText = ''; v.selK = 'none'; v.selCls = 'dw-stt'; v.selMsg = ''; v.nights = 3; v.hasArc = false; v.arcD = ''; v.arcCls = 'dw-selarc'; v.arcK = 'none'; }
     v.hintText = st.dws == null ? 'Укажите даты заезда и выезда выше или выберите их в календаре ниже.' : 'Теперь выберите дату выезда.';
@@ -3060,7 +3060,7 @@ class Component extends DCLogic {
     });
     const pv = this.priceVals(); Object.keys(pv).forEach(k => { v['PC_' + k] = pv[k]; });
     const dv = this.dwVals(); Object.keys(dv).forEach(k => { v['DW_' + k] = dv[k]; });
-    v.DW_toPrice = (e) => { e.preventDefault(); const st = this.state; if (st.dws != null && st.dwe != null && !rangeInfo2(st.dws, st.dwe).ok) return; const nn = st.dws != null && st.dwe != null ? Math.abs(st.dwe - st.dws) : 7; this.setState({ d: Math.min(28, Math.max(3, nn)), opt: null }); const el = document.getElementById('prices'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+    v.DW_toPrice = (e) => { e.preventDefault(); const st = this.state; if (st.dws != null && st.dwe != null && !rangeInfo2(st.dws, st.dwe).ok) return; const nn = st.dws != null && st.dwe != null ? Math.abs(st.dwe - st.dws) : 7; this.setState({ d: Math.min(28, Math.max(2, nn)), opt: null }); const el = document.getElementById('prices'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
     [0,1,2,3,4].forEach(k => { const o = this.state.fqo; v['FQQ' + k] = 'fq-q' + (o === k ? ' on' : ''); v['FQE' + k] = o === k ? 'true' : 'false'; v['FQP' + k] = () => this.setState({ fqo: this.state.fqo === k ? -1 : k }); });
     const ru = true, h = this.state;
     v.hCls = 'gh solid' + (h.hs ? ' past' : '') + (h.hh && !h.hd ? ' hide' : '');
