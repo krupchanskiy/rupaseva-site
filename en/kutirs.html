@@ -552,7 +552,7 @@ class Component extends DCLogic {
   const url = i => root.dataset.apBase + lang + '/' + items[i].dataset.src + '.m4a';
   const face = i => { $$('[data-vf-i]').forEach(f => f.classList.toggle('on', +f.dataset.vfI === i)); };
   const load = i => { if (i !== cur || !au.src) { cur = i; au.src = url(i); } };
-  const toggle = i => { if (i === cur && au.src && !au.paused) au.pause(); else { load(i); au.play(); face(i); } };
+  const toggle = i => { if (i === cur && au.src && !au.paused) au.pause(); else { load(i); au.play().catch(() => {}); face(i); } };
   const render = () => {
     const on = !au.paused && !!au.src;
     items.forEach((x, j) => { x.classList.toggle('cur', j === cur && !!au.src); x.classList.toggle('is-playing', j === cur && on);
@@ -572,7 +572,7 @@ class Component extends DCLogic {
   $$('[data-ap-toggle]').forEach(b => b.addEventListener('click', () => toggle(cur)));
   $$('[data-ap-stop]').forEach(b => b.addEventListener('click', () => { au.pause(); au.removeAttribute('src'); au.load(); render(); tick(); }));
   $$('[data-ap-lang]').forEach(b => b.addEventListener('click', () => { if (b.dataset.apLang === lang) return; lang = b.dataset.apLang;
-    const was = !au.paused; if (au.src) { au.src = url(cur); if (was) au.play(); } render(); tick(); }));
+    const was = !au.paused; if (au.src) { au.src = url(cur); if (was) au.play().catch(() => {}); } render(); tick(); }));
   render();
 })(); /*gs-audio-end*/
 /*gs-mantra-js*/
